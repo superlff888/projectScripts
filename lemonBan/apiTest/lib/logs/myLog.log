@@ -1,0 +1,17 @@
+2022-01-29 12:37:52   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:12" - <module> - INFO  这是一个info日志
+2022-01-29 12:51:02   my_log - "D:/Program Files/pythonProject_CTTQ/lemonBan/apiTest/lib/logs/logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:05:11   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:05:45   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:09:30   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:09:44   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:09:47   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:11:15   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:11:19   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:11:22   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:12:16   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:13:15   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:13:20   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:13:24   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个info日志
+2022-01-29 13:13:39   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个error日志
+2022-01-29 13:13:43   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个error日志
+2022-01-29 13:14:01   my_log - "D:\Program Files\pythonProject_CTTQ\lemonBan\apiTest\lib\logs\logTest.py:14" - <module> - ERROR  这是一个error日志

@@ -1,0 +1,6 @@
+2022-02-10 11:12:24   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-02-12 14:30:29   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-02-12 15:03:13   log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-02-12 15:03:20   log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-02-12 21:59:37   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-02-12 21:59:52   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - ERROR  这是一个info日志
