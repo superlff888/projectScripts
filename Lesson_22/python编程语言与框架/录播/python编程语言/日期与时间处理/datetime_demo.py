@@ -12,7 +12,7 @@ print(f'当前时间为：{now}')
 # 将时间转化为字符串
 now_strf = now.strftime('%Y%m%d %H:%M:%S')
 print(now_strf)
-# 将字符串转化为datatime实例
+# 将字符串转化为datetime实例
 now_strp = now.strptime(now_strf, '%Y%m%d %H:%M:%S')
 print(now_strp)
 # 将时间转化为字符串

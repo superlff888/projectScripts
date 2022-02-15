@@ -20,10 +20,11 @@ def div(a, b):
 @pytest.mark.parametrize('a, b, c',
                          [(10, 2, 5), (0, 2, 0), (2, 0, pytest.raises((ArithmeticError, ZeroDivisionError, ValueError)))],
                          ids=["整除", "被除数为0", "除数为0"])
-def test_div(a, b, c):
+def test_div(a, b, c=None):
     if b == 0:
         with c as exc_info:  # 捕获异常
             raise ArithmeticError("算数异常,除数不可以为0")  # 抛出捕获的异常; 抛出的异常类中init构造方法中要传一个消息参数：msg,自定义该信息
+        print(exc_info.value)
         assert exc_info.value.args[0] == "算数异常,除数不可以为0"
         print("执行了")
     else:
@@ -33,3 +34,4 @@ def test_div(a, b, c):
 
 def test_demo():
     print("just test")
+

@@ -5,7 +5,13 @@
 
 import logging.config
 
-logging.config.fileConfig('../conf/logging.conf')
-logger = logging.getLogger("main")
-logger.debug("日志")
 
+def getLogger_conf(filepath, loggers_key):
+    logging.config.fileConfig(filepath)  # '../conf/logging.conf'
+    conf_logger = logging.getLogger(loggers_key)  # logging.conf中的key
+    return conf_logger
+
+
+logger = getLogger_conf('../conf/logging.conf', 'main')
+
+logger.debug('打印日志')
