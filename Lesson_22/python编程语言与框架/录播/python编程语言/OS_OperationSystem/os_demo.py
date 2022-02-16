@@ -47,20 +47,20 @@ os.remove('./test.txt')  # 传入一个路径
 # print(f"当前文件的绝对路径 {os.path.abspath(r'./os_demo.py')}")
 # print(f"当前文件的绝对路径 {os.path.abspath(__file__)}")
 # # 返回文件名
-# print(os.path.basename('./demo.py'))
+# print(os.path.basename('./testDemo.py'))
 #
 # # 返回文件路径（不含文件名）
-# print(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\demo.py'))
+# print(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
 # print(f'返回文件路径 {os.path.dirname(os.path.abspath(__file__))}')
 # sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # print(f'导包路径: {sys.path}')
 #
 # # 分割路径 （返回元组）
-# print(os.path.split(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\demo.py'))
+# print(os.path.split(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
 #
 # # 拼接路径
-# print(os.path.join(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\demo.py'),
-#                    os.path.basename('./demo.py')))
+# print(os.path.join(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'),
+#                    os.path.basename('./testDemo.py')))
 #
 # Path1 = 'home'
 # Path2 = 'develop'
