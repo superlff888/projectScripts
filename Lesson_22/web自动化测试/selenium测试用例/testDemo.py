@@ -10,6 +10,7 @@ class TestHogwarts:
     def setup(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
+        # 自动每隔0.5秒轮询查找元素；全局等待(self.driver.implicitly)，作用于所有find_element,只要在设定时间内有元素定位不到就抛异常
         self.driver.implicitly_wait(5)
 
     def test_selenium(self):
