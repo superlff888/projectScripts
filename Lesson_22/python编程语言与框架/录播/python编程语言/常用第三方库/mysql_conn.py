@@ -39,7 +39,7 @@ class DbConnect(object):
 
         # 使用cursor()方法获取操作游标
         self.cursor = self.db.cursor()
-        print(f'cls.cursor为： {self.cursor}')
+        print(f'self.cursor为： {self.cursor}')
         print(f'dbinfo为： {db_cof}')
 
     def select(self, sql):
@@ -47,9 +47,9 @@ class DbConnect(object):
         # sql = "SELECT * FROM EMPLOYEE
         #        WHERE INCOME > %s" % (1000)
         self.cursor.execute(sql)
-        # results = cls.cursor.fetchall() # 获取所有sql结果中数据
-        # re = cls.cursor.fetchone() # 从sql结果（cls.cursor.execute(sql)）中获取第一条数据
-        re_m = self.cursor.fetchmany(3)  # 从sql结果（cls.cursor.execute(sql)）中获取指定条数数据
+        # results = self.cursor.fetchall() # 获取所有sql结果中数据
+        # re = self.cursor.fetchone() # 从sql结果（self.cursor.execute(sql)）中获取第一条数据
+        re_m = self.cursor.fetchmany(3)  # 从sql结果（self.cursor.execute(sql)）中获取指定条数数据
         return re_m
 
     def execute(self, sql):
