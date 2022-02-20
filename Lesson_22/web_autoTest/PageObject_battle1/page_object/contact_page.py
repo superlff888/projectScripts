@@ -13,7 +13,7 @@ from Lesson_22.web_autoTest.PageObject_battle1.page_object.wework_page import We
 
 
 class ContactPage(WeworkPage):
-    _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#contacts"
+    _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#contacts"  # 重写父类属性
 
     def goto_add_member(self):
         pass

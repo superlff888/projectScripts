@@ -18,7 +18,7 @@ from Lesson_22.web_autoTest.PageObject_battle1.page_object.base_page import Base
 
 
 class MainPageObject(WeworkPage):
-    #
+    # 可以写在配置文件中，去读取
     _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#index"  # 类属性重写，重写了_BASE_URL
 
     # 跳转通讯录页面的功能
