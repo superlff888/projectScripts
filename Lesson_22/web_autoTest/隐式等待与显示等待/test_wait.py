@@ -12,7 +12,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestWait:
     """
     locator ！= element
-    locator
+    locator 定位器  就是 ： “(By.ID, value)”  注意：一定要带括号
+    element 元素 value
+    on_element  代表 ： “driver.find_element(By.ID, value)”
     """
 
     def setup(self):
@@ -25,9 +27,9 @@ class TestWait:
     def test_wait(self):
         # until()方法中要传一个f方法method，即函数
         # 元素存在presence，但元素默认是隐藏
-        # WebDriverWait(self.driver, 5).until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "#ember31")))
+        WebDriverWait(self.driver, 5).until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "#ember31")))
         # 可见visibility，但可能还没加载完
-        # WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, //*[id="ember31"])))
+        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, '//*[id="ember31"]')))
 
         # 自定义一个方法
         def wait(x):  # 方法中一定要带一个参数，因为until中会将self._driver传给该方法
