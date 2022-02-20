@@ -47,6 +47,7 @@ class TestCookieLogin:
         self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
         # 从已经写入的cookie.yml文件中获取
         cookie = yaml.safe_load(open(os.path.dirname(__file__) + "./cookie.yml"))
+        # cookie = yaml.safe_load(open(r"D:\Develop\git_pub_repositories\projectScripts\Lesson_22\web_autoTest\get_cookie_login_\cookie.yml"))
         # 植入cookie
         for c in cookie:
             self.driver.add_cookie(c)
