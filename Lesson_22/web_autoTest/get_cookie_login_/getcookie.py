@@ -54,3 +54,4 @@ class TestCookieLogin:
         sleep(2)
         # 再次访问企业微信，发现无需扫码，自动登录
         self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        self.driver.quit()
