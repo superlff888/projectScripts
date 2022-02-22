@@ -21,6 +21,8 @@ class TestCookieLogin:
     #  通过get_cookies获得cookie_list，并存储于文件中
     def test_get_cookies(self):
         self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        # 窗口最大化
+        self.driver.maximize_window()
         # 扫码登录,显示等待企业微信登录成功
         WebDriverWait(self.driver, 30).until(e.visibility_of_element_located((By.CSS_SELECTOR, '.index_explore_title')))
         '''# 企业微信登录成功后，再去获得cookie （重点！！！）'''
