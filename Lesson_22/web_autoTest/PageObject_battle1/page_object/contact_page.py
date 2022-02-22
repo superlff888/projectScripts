@@ -8,8 +8,8 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from Lesson_22.web_autoTest.PageObject_battle.page_object.base_page import BasePage
-from Lesson_22.web_autoTest.PageObject_battle.page_object.wework_page import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle1.page_object.base_page import BasePage
+from Lesson_22.web_autoTest.PageObject_battle1.page_object.wework_page import WeworkPage
 
 
 class ContactPage(WeworkPage):

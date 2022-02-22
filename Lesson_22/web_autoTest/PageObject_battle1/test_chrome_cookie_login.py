@@ -1,0 +1,49 @@
+# -*- coding=utf-8 -*-
+# @Time    : 2022/02/20 18:11
+# @Author  : ╰☆H.俠ゞ
+# =============================================================
+
+
+import os
+from time import sleep
+
+import yaml
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as e
+from selenium.webdriver.support.wait import WebDriverWait
+
+
+class TestCookieLogin:
+    def setup_class(self):
+        self.driver = webdriver.Chrome()
+
+    #  通过get_cookies获得cookie_list，并存储于文件中
+    def test_get_cookies(self):
+        self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        # 扫码登录,显示等待企业微信登录成功
+        WebDriverWait(self.driver, 30).until(e.visibility_of_element_located((By.CSS_SELECTOR, '.index_explore_title')))
+        '''# 企业微信登录成功后，再去获得cookie （重点！！！）'''
+        cookie_list = self.driver.get_cookies()
+        print(cookie_list)
+        # 将cookie存储于一个可持久化的地方（数据库或文件）
+        with open(os.path.dirname(__file__) + "/data/cookie.yml", "w") as file:  # 获取当前文件的根目录，再做字符串拼接
+            # 参数1：要写入的数据(Python对象); 参数2：要存放的文件流(这里放在了打开的文件中)
+            yaml.safe_dump(cookie_list, file)  # 将 Python 对象序列化为 YAML流(文件)。 Python 对象，如 str、dict、set、list
+
+    # 通过driver.add_cookie(cookie)形式 植入cookie
+    def test_add_cookie_login(self):
+        # 访问企业微信主页（登录cookie认证要找到对的URL）
+        self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        # 从已经写入的cookie.yml文件中获取
+        cookie_list = yaml.safe_load(open(os.path.dirname(__file__) + "/data/cookie.yml"))
+        # cookie = yaml.safe_load(open(r"D:\Develop\git_pub_repositories\projectScripts\Lesson_22\web_autoTest\get_cookie_login_\cookie.yml"))
+        # 植入cookie （以单个字典形式将cookie传入）
+        for c in cookie_list:
+            self.driver.add_cookie(c)
+        sleep(2)
+        # 再次访问企业微信，发现无需扫码，自动登录
+        self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        self.driver.quit()
+
+
