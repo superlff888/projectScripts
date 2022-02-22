@@ -12,8 +12,7 @@ import requests
 
 # 新式
 from lemonBan.apiTest.lib.logs.loggerMy import MyLogging
-
-logger = MyLogging()
+from lemonBan.logs.logMutiTest import logger
 
 
 class HttpRequest(object):
