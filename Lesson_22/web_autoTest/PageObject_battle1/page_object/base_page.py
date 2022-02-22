@@ -25,6 +25,7 @@ class BasePage:
     封装一些和业务无关的重复代码
     是某些操作的底层
     """
+
     def __init__(self, base_driver=None):
         if base_driver is None:
             # 实例化
@@ -34,7 +35,7 @@ class BasePage:
         else:
             self.driver: WebDriver = base_driver
 
-    def find(self, by, locator=None):
+    def fond(self, by, locator=None):
         """
         有可能传入 的是一个元祖(a, b)
         也有可能是传入两个参数

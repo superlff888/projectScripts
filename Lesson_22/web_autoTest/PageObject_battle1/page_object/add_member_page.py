@@ -23,17 +23,17 @@ class AddMemberPage(WeworkPage):
         # 问题： driver实例化了多次，影响用例的执行
         # 解决方案： 让driver 只实例化一次
         # self.driver.find_element(By.ID, "username").send_keys("金克斯3")
-        self.find(self._INPUT_USERNAME).send_keys(username)
-        self.find(By.ID, "memberAdd_acctid").send_keys(accid)
-        self.find(By.ID, "memberAdd_phone").send_keys(phone)
-        self.find(By.CSS_SELECTOR, ".js_btn_save").click()
+        self.fond(self._INPUT_USERNAME).send_keys(username)
+        self.fond(By.ID, "memberAdd_acctid").send_keys(accid)
+        self.fond(By.ID, "memberAdd_phone").send_keys(phone)
+        self.fond(By.CSS_SELECTOR, ".js_btn_save").click()
         return ContactPage(self.driver)
 
     def add_member_fail(self, username, accid, phone):
-        self.find(self._INPUT_USERNAME).send_keys(username)
-        self.find(By.ID, "memberAdd_acctid").send_keys(accid)
-        self.find(By.ID, "memberAdd_phone").send_keys(phone)
-        self.find(By.CSS_SELECTOR, ".js_btn_save").click()
+        self.fond(self._INPUT_USERNAME).send_keys(username)
+        self.fond(By.ID, "memberAdd_acctid").send_keys(accid)
+        self.fond(By.ID, "memberAdd_phone").send_keys(phone)
+        self.fond(By.CSS_SELECTOR, ".js_btn_save").click()
         eles = self.driver.find_elements(By.CSS_SELECTOR, ".ww_inputWithTips_tips")
         error_list = [ele.text for ele in eles]
         return error_list

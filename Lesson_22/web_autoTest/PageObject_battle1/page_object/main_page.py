@@ -28,5 +28,5 @@ class MainPageObject(WeworkPage):
     # 跳转添加成员页面的功能
     def goto_add_member_page(self):
         # 点击添加成员按钮
-        self.driver.find_element(By.CSS_SELECTOR, ".ww_indexImg_AddMember").click()
+        self.fond(By.CSS_SELECTOR, ".ww_indexImg_AddMember").click()  # c继承b，b继承a，则c也继承a的方法
         return AddMemberPage(self.driver)
