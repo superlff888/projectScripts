@@ -45,7 +45,9 @@ class BasePage:
         print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
         if locator is None:
             # 如果传入元祖，那么给元祖做解包，分别传入到函数中
-            return self.driver.find_element(*by)
+            return self.driver.find_element(*by)  # 解包
         else:
             # 如果传入两个参数，则正常使用。
             return self.driver.find_element(by, locator)
+
+
