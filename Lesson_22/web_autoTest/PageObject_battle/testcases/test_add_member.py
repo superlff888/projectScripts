@@ -2,7 +2,7 @@
 # @Time    : 2022/02/20 18:12
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.main_page import MainPageObject
+from Lesson_22.web_autoTest.PageObject_battle.page_object.main_page import MainPageObject
 
 
 class TestAddMember:

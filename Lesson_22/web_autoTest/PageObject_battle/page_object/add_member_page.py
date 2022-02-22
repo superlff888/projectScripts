@@ -8,8 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.contact_page import ContactPage
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.wework_page import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle.page_object.contact_page import ContactPage
+from Lesson_22.web_autoTest.PageObject_battle.page_object.wework_page import WeworkPage
 
 
 class AddMemberPage(WeworkPage):
