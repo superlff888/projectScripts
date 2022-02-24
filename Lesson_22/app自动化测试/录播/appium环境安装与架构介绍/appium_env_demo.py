@@ -14,7 +14,7 @@ desired_caps['platformName'] = 'Android'
 desired_caps['deviceName'] = '127.0.0.1：7555'  # 自定义，随便命名
 # desired_caps['appPackage'] = 'com.xueqiu.android'
 # desired_caps['appActivity'] = '.common.MainActivity'
-desired_caps['noReSet'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
+# desired_caps['noReSet'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
 desired_caps['dontStopAppOnReSet'] = 'true'  # 首次启动时，不停止app（相当于debugging）--> 注释掉或设置为false后，重新启动app
 desired_caps['skipDeviceInitialization'] = 'true'  # 首次启动时，不停止app（相当于web自动化的debugger；注意保证该页面元素能够定位到）
 
