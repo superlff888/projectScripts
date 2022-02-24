@@ -12,11 +12,11 @@ desired_caps = {}
 desired_caps['platformName'] = 'Android'
 # desired_caps['platformVersion'] = '6.0'
 desired_caps['deviceName'] = '127.0.0.1：7555'  # 自定义，随便命名
-# desired_caps['appPackage'] = 'com.xueqiu.android'
-# desired_caps['appActivity'] = '.common.MainActivity'
-# desired_caps['noReSet'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
-desired_caps['dontStopAppOnReSet'] = 'true'  # 首次启动时，不停止app（相当于debugging）--> 注释掉或设置为false后，重新启动app
-desired_caps['skipDeviceInitialization'] = 'true'  # 首次启动时，不停止app（相当于web自动化的debugger；注意保证该页面元素能够定位到）
+desired_caps['appPackage'] = 'com.xueqiu.android'
+desired_caps['appActivity'] = '.common.MainActivity'  # 可能是之前录制时，noReset的缘故，正常应该是欢迎页activity
+desired_caps['noReset'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
+desired_caps['dontStopAppOnReset'] = 'true'  # 首次启动时，不停止app（相当于web端的debugger）--> 注释掉或设置为false后，重新启动app
+desired_caps['skipDeviceInitialization'] = 'true'
 
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
@@ -41,5 +41,6 @@ el3 = driver.find_element_by_id("com.xueqiu.android:id/search_input_text")
 el3.send_keys("alibaba")
 el4 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[7]/android.widget.LinearLayout/android.widget.TextView[1]")
 el4.click()
+print("测试结束")
 
 

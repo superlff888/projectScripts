@@ -9,9 +9,9 @@ desired_caps = {
     "deviceName": "127.0.0.1:7555",
     "appPackage": "com.xueqiu.android",
     "appActivity": ".view.WelcomeActivityAlias",
-    # "noReSet": "true",
+    "noReset": "true",
     "dontStopAppOnReset": "true",
-    # "skipDeviceInitialization": "true"
+    "skipDeviceInitialization": "true"
 }
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)

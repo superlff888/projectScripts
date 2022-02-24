@@ -20,7 +20,7 @@ class TestDw:
         desired_caps['appActivity'] = 'com.xueqiu.android.view.WelcomeActivityAlias'
         desired_caps['unicodeKeyBoard'] = 'true'
         desired_caps['ReSetKeyBoard'] = 'true'
-        desired_caps['noReSet'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
+        desired_caps['noReset'] = 'true'  # 处理弹窗（点同意） ~ 记住之前的动作，住操作缓存信息
         desired_caps['dontStopAppOnReset'] = 'true'  # 首次启动时，不停止app（相当于debugging）--> 注释掉或设置为false后，重新启动app
         desired_caps['skipDeviceInitialization'] = 'true'
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
