@@ -24,6 +24,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 """
 
 
+@pytest.mark.skip
 def test_start():
     os.system('adb shell am start -W -n com.xueqiu.android/.view.WelcomeActivityAlias -S')  # 打开app应用
 
@@ -48,6 +49,7 @@ class TestDw:
         # （全局）下面每个find都会等待
         self.driver.implicitly_wait(10)  # 存在于driver整个生命周期，全局（每个find均等待这个时间）
 
+    @pytest.mark.skip
     def test_search_1(self):
         self.driver.find_element_by_id("com.xueqiu.android:id/tv_search").click()
         self.driver.find_element_by_id("com.xueqiu.android:id/search_input_text").send_keys("阿里巴巴")
@@ -62,6 +64,7 @@ class TestDw:
             print("测试失败")
         self.driver.back()
 
+    @pytest.mark.skip
     def test_search_2(self):
         self.driver.find_element_by_id("com.xueqiu.android:id/tv_search").click()
         print(self.driver.find_element_by_id("com.xueqiu.android:id/tv_search"))
@@ -72,10 +75,21 @@ class TestDw:
         WebDriverWait(self.driver, 10).until(lambda x: x.find_element(*locator))  # 方法中一定要带一个参数x，因为until中会将self._driver传给该方法
         self.driver.find_element(*locator).click()
 
+    @pytest.mark.skip
     def test_touchAction(self):
         if self.driver.find_element_by_id("com.xueqiu.android:id/tv_search").is_enabled():
-            touch_action_ = TouchAction(self.driver)
+            touch_action_ = TouchAction(self.driver)  # 切记传入self,driver
             touch_action_.press(x=320, y=666).wait(300).move_to(x=320, y=300).release().perform()
+
+    def test_window_rect(self):
+        if self.driver.find_element_by_id("com.xueqiu.android:id/tv_search").is_enabled():
+            touch_action_ = TouchAction(self.driver)
+            print(self.driver.get_window_rect())  # 打印屏幕尺寸（像素）
+            win_rect = self.driver.get_window_rect()
+            width = win_rect['width']
+            height = win_rect['height']
+            print(type(width))
+            touch_action_.press(x=width/2, y=height*4/5).wait(300).move_to(x=width/2, y=height*1/5).release().perform()
 
     # 待优化
     def teardown(self):

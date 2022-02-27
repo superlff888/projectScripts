@@ -8,13 +8,16 @@ from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.contact_page import ContactPage
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.wework_page import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle.page_object.contact_page import ContactPage
+from Lesson_22.web_autoTest.PageObject_battle.page_object.wework_page import WeworkPage
 
 
 class AddMemberPage(WeworkPage):
+    """理论支撑：方法中可以读取类变量，但是不能修改"""
     # 页面元素不要暴露出去，只给页面的方法提供使用。
-    _INPUT_USERNAME = (By.ID, "username")
+    _INPUT_USERNAME = (By.ID, "username")  # 直接修改为改变后的元素，兼容元素发生变化（前端有尽可能改元素）
+    _INPUT_ACCID = (By.ID, "memberAdd_acctid")  # 直接修改为改变后的元素，兼容元素发生变化（前端有尽可能改元素）
+    _INPUT_PHONE = (By.ID, "username")  # 直接修改为改变后的元素，兼容元素发生变化（前端有尽可能改元素）
 
     def add_member(self, username, accid, phone):
         """
@@ -24,8 +27,8 @@ class AddMemberPage(WeworkPage):
         # 解决方案： 让driver 只实例化一次
         # self.driver.find_element(By.ID, "username").send_keys("金克斯3")
         self.fond(self._INPUT_USERNAME).send_keys(username)
-        self.fond(By.ID, "memberAdd_acctid").send_keys(accid)
-        self.fond(By.ID, "memberAdd_phone").send_keys(phone)
+        self.fond(self._INPUT_ACCID).send_keys(accid)
+        self.fond(self._INPUT_PHONE).send_keys(phone)
         self.fond(By.CSS_SELECTOR, ".js_btn_save").click()
         return ContactPage(self.driver)
 

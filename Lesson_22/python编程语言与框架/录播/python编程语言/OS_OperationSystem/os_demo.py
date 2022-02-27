@@ -16,6 +16,7 @@ print(os.name)  # nt代码windows系统
 print(f'environ:{os.environ}')
 # 3、获取指定的环境变量信息
 print(f"getenv: {os.getenv('PATH')}")  # 系统环境变量 PATH
+
 # 4、模拟Terminal终端命令
 os.system('cmd')  # linux
 """目录之‘增删改查’"""

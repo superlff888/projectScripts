@@ -26,7 +26,9 @@ class BasePage:
     是某些操作的底层
     """
 
-    def __init__(self, base_driver=None):
+    def __init__(self, base_driver: WebDriver = None):
+        # self._BASE_URL = ""  # 类变量要大写；私有化属性
+
         if base_driver is None:
             # 实例化
             self.driver = webdriver.Chrome()  # 打开一个浏览器 ，WebDriver Object
@@ -34,8 +36,14 @@ class BasePage:
             self.driver.implicitly_wait(3)
         else:
             self.driver: WebDriver = base_driver
+        # if self._BASE_URL != "":  # 子类隔代继承；属性私有化，目的不把内部元素暴漏给外部（预防被修改）
+        #     try:
+        #         self.driver.get(self._BASE_URL)
+        #     except Exception as e:
+        #         print(f"url填写错误{e}")
+        #         logging.info(f"url填写错误{e}")
 
-    def fond(self, by, locator=None):
+    def fond(self, by, locator=None):  # 兼容元组
         """
         有可能传入 的是一个元祖(a, b)
         也有可能是传入两个参数
@@ -44,6 +52,7 @@ class BasePage:
         :return:
         """
         print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
         if locator is None:
             # 如果传入元祖，那么给元祖做解包，分别传入到函数中
             return self.driver.find_element(*by)  # 解包

@@ -8,7 +8,7 @@ import time
 
 import yaml
 
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.base_page import BasePage
+from Lesson_22.web_autoTest.PageObject_battle.page_object.base_page import BasePage
 
 
 class WeworkPage(BasePage):
@@ -16,8 +16,8 @@ class WeworkPage(BasePage):
     是企业微信的公共业务的封装
     """
     # baseurl是指每个页面的url
-    _BASE_URL = ""  # _ 私有属性可以被重写，肯定是可以被继承的，但是子类无法访问父类的私有属性;  __更私有
-
+    _BASE_URL = ""  # _ 私有属性可以被重写，肯定是可以被继承的，但是子类无法访问父类的私有属性;  __更私有;
+    """如果将self.driver.get(self._BASE_URL)封装在基类中，则"""
     def login(self):
         # 打开index 页面
         self.driver.get(self._BASE_URL)

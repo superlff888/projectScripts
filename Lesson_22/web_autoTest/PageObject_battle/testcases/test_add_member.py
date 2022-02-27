@@ -2,7 +2,9 @@
 # @Time    : 2022/02/20 18:12
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from Lesson_22.web_autoTest.PageObject_battle1.page_object.main_page import MainPageObject
+from hamcrest import *
+
+from Lesson_22.web_autoTest.PageObject_battle.page_object.main_page import MainPageObject
 
 
 class TestAddMember:
@@ -34,10 +36,9 @@ class TestAddMember:
 
     # 数据清理的两种方式：
     # 1. 在teardown/teardown_class 即为每条用例执行之后，清理用例数据。
-    # 2. setup_class的时候清理数据。
-    # 保证自动化测试用例在执行过程中，有一个比较干净的数据环境
+    # 2. setup_class的时候清理数据。保证自动化测试用例在执行过程中，有一个比较干净的数据环境 【推荐】
     # 在UI自动化测试中，测试的前置后置动作，不一定要通过UI的方式完成。
-    # 建议大家使用稳定的方式去完成。比如通过接口去做数据清理。
+    # 建议大家使用稳定的方式去完成。比如通过接口去做数据清理（关联表不熟悉的话）。
 
     def test_add_member(self):
         # 1. 点击添加成员，跳转到添加成员页面
@@ -60,4 +61,5 @@ class TestAddMember:
         """
         name = "伊泽瑞尔5"
         res = self.main.goto_add_member_page().add_member_fail(name, "0101233", "009")
-        assert "请填写正确的手机号码" in res
+        assert "请填写正确的手机号码" in res  # 断言：实例结果也就是成员列表是否符合预期
+        # assert_that(res, equal_to("请填写正确的手机号码"), "电话号码输入错了")
