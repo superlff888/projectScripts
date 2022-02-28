@@ -59,7 +59,7 @@ def swipe_fond(self, text, num=3):  #
         except Exception as e:
             print("未找到")
             logging.debug(f"debug:{e}")
-            size = self.driver.get_window_size()  #
+            size = self.driver.get_window_size()  # 获取当前屏幕的尺寸（不同设备，坐标不同，可能无法滑动）
             # 'width', 'height'
             width = size.get("width")
             height = size.get("height")
@@ -68,6 +68,5 @@ def swipe_fond(self, text, num=3):  #
             end_x = start_x
             end_y = height * 0.3
             self.driver.swipe(start_x, start_y, end_x, end_y, duration=2000)
-
         if i == num - 1:
             raise NoSuchElementException(f"找了{num}次，未找到元素")  # 次数用完，抛异常NoSuchElement

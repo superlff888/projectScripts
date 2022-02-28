@@ -44,13 +44,11 @@ class TestUiAutomator:
         self.driver.find_element(*locator).click()
         # print(list(self.driver.page_source))
 
-        # 把想要查找的text文本输入text("")中,在隐式等待（implicitly）时间内执行查询
+        # 把想要查找的text文本输入text("")中
         locator = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).'
                                                  'scrollIntoView(new UiSelector().text("阿里巴巴").instance(0));')
         # WebDriverWait(self.driver, 3600).until(lambda x: x.find_element(*locator).text == "苹果")
         self.driver.find_element(*locator).click()
-        # 将元素移动到可见区域
-        # self.driver.execute_script(self, script, *args)
 
     def teardown(self):
         pass

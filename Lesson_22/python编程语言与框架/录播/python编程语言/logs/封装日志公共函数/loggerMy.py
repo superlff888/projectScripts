@@ -47,7 +47,7 @@ class MyLogging:
         return my_log
 
 
-# logger = MyLogging('ERROR', '../../logs/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象，所以此时的logger就是my_log
+logger = MyLogging('ERROR', '../../logs/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象，所以此时的logger就是my_log
 
 # print(logger)
 

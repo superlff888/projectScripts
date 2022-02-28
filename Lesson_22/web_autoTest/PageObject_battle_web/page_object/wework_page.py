@@ -8,7 +8,7 @@ import time
 
 import yaml
 
-from Lesson_22.web_autoTest.PageObject_battle.page_object.base_page import BasePage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.base_page import BasePage
 
 
 class WeworkPage(BasePage):
