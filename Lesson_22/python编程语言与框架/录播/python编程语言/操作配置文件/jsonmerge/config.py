@@ -16,7 +16,7 @@ configs = config_default.configs
 try:
     import config_override
     # Merge head into base
-    # config_override.configs与configs取并集；同时config_override.configs覆盖configs中相同key的value(json格式层次关系要一致)
+    # config_override.configs覆盖configs中相同key的value(json格式层次关系要一致),返回被覆盖后的json对象
     configs = merge(configs, config_override.configs)
     pprint(configs)
 except ImportError:

@@ -35,7 +35,7 @@ class TestDw:
         desired_caps['platformName'] = 'Android'
         desired_caps['platformVersion'] = '6.0'
         desired_caps['deviceName'] = '127.0.0.1：7555'  # 自定义，随便命名
-        desired_caps['appPackage'] = 'com.xueqiu.android' # 每次执行setup，就会重新打开app
+        desired_caps['appPackage'] = 'com.xueqiu.android'  # 每次执行setup，就会重新打开app
         desired_caps['appActivity'] = 'com.xueqiu.android.view.WelcomeActivityAlias'  # 每次执行setup，就会重新打开app
         # desired_caps['appActivity'] = '.common.MainActivity'  # 直接定义MainActivity，页面数据刷新有问题
         desired_caps['unicodeKeyBoard'] = 'true'

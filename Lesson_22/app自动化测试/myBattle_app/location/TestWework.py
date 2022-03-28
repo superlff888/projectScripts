@@ -9,6 +9,8 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 
+from Lesson_22.app自动化测试.myBattle_app.location.swipe_find import swipe_fond
+
 
 class Test_contact:
 
@@ -89,6 +91,7 @@ class Test_contact:
         self.driver.find_element(MobileBy.XPATH, "//*[@text='外出打卡']").click()
         self.driver.find_element(MobileBy.XPATH, "//*[contains(@text,'次外出')]").click()
         print(datetime.datetime.now().strftime('%Y%m%d %H:%M:%S'))
+        WebDriverWait(self.driver, 20).until(lambda x: '外出打卡成功' in x.page_source)
         # 验证（自带断言，找不到元素就返回NoSuchElement）
         self.driver.find_element(MobileBy.XPATH, "//*[@text='外出打卡成功']")
-
+        self.driver.page_source()
