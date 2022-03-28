@@ -12,6 +12,7 @@ import requests
 class Test_demo:
     def test_demo(self):
         r = requests.get("https://httpbin.testing-studio.com/get")
-        # print(r.text)
+        print(r.text)
         print(r.request.method)
+        print(r.json())
         assert r.request.method == 'GET'
