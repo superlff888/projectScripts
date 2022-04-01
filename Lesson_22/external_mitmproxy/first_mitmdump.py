@@ -7,6 +7,6 @@ from mitmproxy import http
 
 
 # request方法名不能更改~hook
-def request(flow: http.HTTPFlow):  # flow为录制保存在文件中的数据（含过滤）,即抓到的包
+def request(flow: http.HTTPFlow):  # flow为mitmdump抓到的包
     flow.request.headers["myHeader"] = "lee"  # 添加或修改请求头信息
     print(flow.request.headers)
