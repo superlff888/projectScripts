@@ -10,59 +10,62 @@ import os
 import sys
 
 """操作系统相关"""
-# 1、获取系统名称
-print(os.name)  # nt代码windows系统
-# 2、获取系统环境变量
-print(f'environ:{os.environ}')
-# 3、获取指定的环境变量信息
-print(f"getenv: {os.getenv('PATH')}")  # 系统环境变量 PATH
-
-# 4、模拟Terminal终端命令
-os.system('cmd')  # linux
-"""目录之‘增删改查’"""
-# 1、获取当前目录(目录不包含文件名，路径可以含文件名)
-print(f'获取当前目录: {os.getcwd()}')
-# 2、切换目录
-os.chdir('../sys_my/sys_import')
-print(f'获取切换目录: {os.getcwd()}')  # 已经切到该目录下了 '../sys_my/sys_import'
-# 3、列出当前目录的所有文件
-print(os.listdir())  # f图标的时方法；v图标的是属性
-# 4、在当前目录下创建空目录 （目录已经切到'../sys_my/sys_import'，所以会在sys_import下新建一个空目录）
-# os.mkdir('mk_demo')  # 不能重复创建
-os.makedirs(r'mk_demo\1\2')  # 注意mkdir 不同于 makedirs
-print(r"已创建路径： mk_demo\1\2")
-# 5、重命名一个目录
-print(f'重命名前：{os.listdir()}')  # f图标的时方法；v图标的是属性
-os.rename('./mk_demo', 'mk')
-print(f'重命名后：{os.listdir()}')  # f图标的时方法；v图标的是属性
-# 6、删除空目录
-os.rmdir(r'mk\1\2')  # 删除文件夹2
-os.rmdir(r'mk\1')  # 删除文件夹1
-os.rmdir(r'mk')  # 删除文件夹mk_demo
-# 删除文件
-os.remove('./test.txt')  # 传入一个路径
-
-
-"""路径相关"""
-# # 返回绝对路径
-# print(f"当前文件的绝对路径 {os.path.abspath(r'./os_demo.py')}")
-# print(f"当前文件的绝对路径 {os.path.abspath(__file__)}")
-# # 返回文件名
-# print(os.path.basename('./testDemo.py'))
+# # 1、获取系统名称
+# print(os.name)  # nt代码windows系统
+# # 2、获取系统环境变量
+# print(f'environ:{os.environ}')
+# # 3、获取指定的环境变量信息
+# print(f"getenv: {os.getenv('PATH')}")  # 系统环境变量 PATH
+#
+# # 4、模拟Terminal终端命令
+# os.system('cmd')  # linux
+# """目录之‘增删改查’"""
+# # 1、获取当前目录(目录不包含文件名，路径可以含文件名)
+# print(f'获取当前目录: {os.getcwd()}')
+# # 2、切换目录
+# os.chdir('../sys_my/sys_import')
+# print(f'获取切换目录: {os.getcwd()}')  # 已经切到该目录下了 '../sys_my/sys_import'
+# # 3、列出当前目录的所有文件
+# print(os.listdir())  # f图标的时方法；v图标的是属性
+# # 4、在当前目录下创建空目录 （目录已经切到'../sys_my/sys_import'，所以会在sys_import下新建一个空目录）
+# # os.mkdir('mk_demo')  # 不能重复创建
+# os.makedirs(r'mk_demo\1\2')  # 注意mkdir 不同于 makedirs
+# print(r"已创建路径： mk_demo\1\2")
+# # 5、重命名一个目录
+# print(f'重命名前：{os.listdir()}')  # f图标的时方法；v图标的是属性
+# os.rename('./mk_demo', 'mk')
+# print(f'重命名后：{os.listdir()}')  # f图标的时方法；v图标的是属性
+# # 6、删除空目录
+# os.rmdir(r'mk\1\2')  # 删除文件夹2
+# os.rmdir(r'mk\1')  # 删除文件夹1
+# os.rmdir(r'mk')  # 删除文件夹mk_demo
+# # 删除文件
+# os.remove('./test.txt')  # 传入一个路径
+#
+#
+# """路径相关"""
+# # # 返回绝对路径
+# # print(f"当前文件的绝对路径 {os.path.abspath(r'./os_demo.py')}")
+# # print(f"当前文件的绝对路径 {os.path.abspath(__file__)}")
+# # # 返回文件名
+# # print(os.path.basename('./testDemo.py'))
 #
 # # 返回文件路径（不含文件名）
 print("返回文件路径（不含文件名）:")
 print(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
-# print(f'返回文件路径 {os.path.dirname(os.path.abspath(__file__))}')
+print(f'返回文件路径 {os.path.dirname(os.path.abspath(__file__))}')
+print(f'返回文件base路径 {os.path.basename(os.path.abspath(__file__))}')
+
+print(os.path.abspath(__file__))
 # sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # print(f'导包路径: {sys.path}')
 #
 # # 分割路径 （返回元组）
-# print(os.path.split(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
+print(os.path.split(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
 #
-# # 拼接路径
-# print(os.path.join(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'),
-#                    os.path.basename('./testDemo.py')))
+# # 拼接路径  D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\../demo 表示先找src上级，定位上级下面的demo，其实是跟src平级
+print(os.path.join(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'),
+                   os.path.basename('./testDemo.py')))
 #
 # Path1 = 'home'
 # Path2 = 'develop'
