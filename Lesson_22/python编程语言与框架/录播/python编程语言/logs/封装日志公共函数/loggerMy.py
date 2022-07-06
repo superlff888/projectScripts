@@ -23,7 +23,7 @@ class MyLogging:
         # 创建自己的日志收集器
         my_log = logging.getLogger('my_log')  # 将返回的"my_log"赋值给my_log，自定义my_log参数
         # 设置收集的日志的等级，这里设置为DEBUG（表示只收集DEBUG等级及以上的日志）
-        my_log.setLevel(level)  # 执行my_log.info(),不会打印日志收集，因为等级为debug
+        my_log.setLevel(level)  # 若level=debug，则执行my_log.info(),不会打印日志收集，因为等级为debug
         # 创建一个日志输出渠道（输出到控制台）
         l_c = logging.StreamHandler()
         # 设置‘输出到控制台的日志’的级别，该级别若低于收集器的级别，则控制台日志将不会被打印
