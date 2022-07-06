@@ -32,7 +32,6 @@ class classMethod:
 
     @classmethod  # 类方法
     def class_method_1(cls):
-        # cls.demo_method_1()  # 类方法内cls不能直接调用实例方法（需要传参数self?）
         # cls.a  # 也不能直接调用实例属性 AttributeError: type object 'classMethod' has no attribute 'a'
         cls.class_method_2()  # 类方法中类本身cls可以调用类方法
         print("这是一个类方法1", cls.CLASS_PARAM)  # 类本身cls可以调用类属性
@@ -49,7 +48,7 @@ classMethod.class_method_1()
 
 demo = classMethod()
 demo.class_method_1()  # 实例对象可以调用类方法
-demo.demo_method()  # 实例对象可以可调用普通方法
+# demo.demo_method()  # 实例对象可以可调用普通方法
 
 
 """
