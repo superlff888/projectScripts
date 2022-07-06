@@ -13,7 +13,7 @@ from mitmproxy import http
 """
 
 
-def request(flow: http.HTTPFlow):
+def request(flow: http.HTTPFlow) -> None:
     if "quote.json" in flow.request.pretty_url:
         # 打开本地数据文件; encoding默认gbk编解码器（底层自动执行编码和解码），即默认gbk解码对应文件（可用decode方法修改解码规则）
         with open(r"C:\Users\HouseLee\Desktop\mapLocal.json", mode="rb+") as f:  # mode="rb+"或者 encoding = "utf-8"

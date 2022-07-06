@@ -51,7 +51,8 @@ os.remove('./test.txt')  # 传入一个路径
 # print(os.path.basename('./testDemo.py'))
 #
 # # 返回文件路径（不含文件名）
-# print(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
+print("返回文件路径（不含文件名）:")
+print(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
 # print(f'返回文件路径 {os.path.dirname(os.path.abspath(__file__))}')
 # sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # print(f'导包路径: {sys.path}')
