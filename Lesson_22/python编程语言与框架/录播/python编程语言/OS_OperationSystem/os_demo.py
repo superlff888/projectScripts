@@ -63,7 +63,8 @@ print(os.path.abspath(__file__))
 # # 分割路径 （返回元组）
 print(os.path.split(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'))
 #
-# # 拼接路径  D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\../demo 表示先找src上级，定位上级下面的demo，其实是跟src平级
+# # 拼接路径  （该路径是模拟路径，属于字符串拼接）
+# D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\../demo 表示先找src上级，定位上级下面的demo，其实是跟src平级
 print(os.path.join(os.path.dirname(r'D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\src\testDemo.py'),
                    os.path.basename('./testDemo.py')))
 #
