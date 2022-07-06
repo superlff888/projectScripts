@@ -16,7 +16,7 @@ class MyLogging:
         """
         定义一个实例，该实例需要被指定收集器级别，低于该级别的日志将不会被收集
         :param level: "DEBUG"/"INFO"/"WARNING"/"ERROR"/"CRITICAL"；可单独设置文件日志级别和控制台日志级别
-        :param filename: 日志文件所在路径
+        :param filename: 日志文件所在路径，os.path.dirname
         :param args:
         :param kwargs:
         """
