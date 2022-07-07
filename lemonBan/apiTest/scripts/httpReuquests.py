@@ -54,7 +54,8 @@ class HttpRequestCookies:
     """
 
     def __init__(self):
-        # 创建一个session对象，已登录好的session
+        # 创建一个session对象，先用session发起登陆请求 ，然后复用该session
+
         self.session = requests.sessions.Session()
 
     def request(self, method, url,

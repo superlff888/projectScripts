@@ -3,7 +3,7 @@
 # -*-coding=utf-8-*-
 # =============================================================
 """
-假如该from . import x语句存在于proj/test.py中，它会导入同级目录下的__init__.py即proj/__init__.py中的x对象
+假如该from . import x 语句存在于proj/test.py中，它会导入同级目录下的__init__.py即proj/__init__.py中的x对象
 """
 from . import get_conn  # 从init模块中导入方法，获取连接对象
 import pymysql
@@ -24,7 +24,7 @@ dbinfo = {
 # 最关键的是，判断入参形式是可变长，还是收集参数
 class DbConnect(object):
     """
-    :收集参数 : **db_cof解包后，相当于"host"="172.17.6.205"；可不传，也可传入对个
+    :收集参数 : **db_cof解包后，相当于"host"="172.17.6.205"；可不传，也可以集合方式传入多个
     :可变长参数 ：假如dbinfo=("host","user","password","port"),元组*dbinfo解包后，顺序入参，此处联系不定长入参;
                 相反：若a,b,c,d = ("host","user","password","port")，此时形参a = "host";
                 可不传，也可传入对个
@@ -64,7 +64,7 @@ class DbConnect(object):
             b = self.cursor.execute(sql)  # 执行SQL语句
             print(f'excute执行结果为： {b}')
             self.db.commit()  # 提交修改
-        except Exception:
+        except Exception as e:
             # 发生错误时回滚
             self.db.rollback()
 
@@ -74,7 +74,7 @@ class DbConnect(object):
 
 
 if __name__ == '__main__':
-    db = DbConnect("dt_qas", dbinfo, 'utf8mb4')  # 注意：此处为 推荐'utf8mb4',防止因编码报错
+    db = DbConnect("dt_qas", dbinfo, 'utf8mb4')  # 注意：此处为 推荐'utf8mb4',防止因编码报错;也可以utf-8
     print(db)
     sql = "SELECT * FROM dt_cdm_salesdata_dept where dept01_cd = '00001903' and sale_date = '20210516';"
     a = db.select(sql)
