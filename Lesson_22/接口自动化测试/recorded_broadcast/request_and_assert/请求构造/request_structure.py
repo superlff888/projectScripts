@@ -50,7 +50,7 @@ class Test_demo:
         print(r.text)
         print(r.cookies)
 
-    # header 附加到请求header中
+    # header 附加到请求headers中
     def test_header(self):
         headers = {'H': 'HEADER_DEMO',
                    "User-Agent": "python-requests/2.25.8"}  # 覆盖或追加header信息
