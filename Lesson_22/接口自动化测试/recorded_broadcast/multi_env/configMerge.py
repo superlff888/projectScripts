@@ -16,5 +16,5 @@ def envFind():
     with open("./env.yml") as dict_f:  # 以只读的形式打开文件
         env_dict = yaml.safe_load(dict_f)
     return env_dict
-    print(env_dict)
-    print(f"env_dict的type为：{type(env_dict)}")
+    # print(env_dict)
+    # print(f"env_dict的type为：{type(env_dict)}")

@@ -26,4 +26,6 @@ class Test_demo:
             "name": "lee"
             }
         r = requests.post(url="https://httpbin.testing-studio.com/post", json=payload)
-        pprint(r.json())
+        # pprint(r.json())
+        pprint(r.request)
+        pprint(r.headers)
