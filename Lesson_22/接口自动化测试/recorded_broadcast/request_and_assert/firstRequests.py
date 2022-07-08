@@ -6,13 +6,24 @@
 接口自动化演练环境
 https://httpbin.testing-studio.com/
 """
+from pprint import pprint
+
 import requests
 
 
 class Test_demo:
-    def test_demo(self):
+    def test_get_demo(self):
         r = requests.get("https://httpbin.testing-studio.com/get")
         print(r.text)
         print(r.request.method)
         print(r.json())
         assert r.request.method == 'GET'
+
+    def test_post_demo(self):
+        # post请求
+        payload = {
+            "level": 1,
+            "name": "lee"
+            }
+        r = requests.post(url="https://httpbin.testing-studio.com/post", json=payload)
+        pprint(r.json())
