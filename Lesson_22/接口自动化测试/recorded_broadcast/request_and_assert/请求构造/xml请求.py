@@ -6,7 +6,6 @@
 
 import requests
 
-
 """
 requests没有封装xml，所以需要额外配置下headers，指定Content-Type为application/xml
 """
