@@ -7,7 +7,7 @@ from jsonschema import validate, ValidationError, SchemaError
 
 
 """
-封装schema方法，避免程序走不到assert
+封装schema的validate方法，避免程序在assert断言前抛异常，从而无法在控制台展示具体错误
 """
 
 
