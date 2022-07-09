@@ -11,6 +11,6 @@ class TestDemo:
     def test_jsonpath(self):
         r = requests.get('https://ceshiren.com/categories.json')
         # jsonpath传递的参数必须是json object
-        pprint(jsonpath(r.json(), '$..name'))  # $..name递归深度遍历，获取子孙路径的 name
+        pprint(jsonpath(r.json(), '$..name'))  # $..name递归深度遍历，获取子孙路径的所有name
         assert jsonpath(r.json(), '$..name')[1] == '开源项目'
 
