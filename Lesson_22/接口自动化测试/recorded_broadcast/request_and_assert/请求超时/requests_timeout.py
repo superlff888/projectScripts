@@ -4,7 +4,11 @@
 # =============================================================
 from pprint import pprint
 import requests
-import urllib3
+
+
+"""
+需要打开charles
+"""
 
 
 class Test_timeout:
