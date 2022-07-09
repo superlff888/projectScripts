@@ -20,7 +20,7 @@ class Test_demo:
     # get请求 默认params入参 带参数
     def test_demo(self):
         payload = {"level": 1, "name": "seveniruby"}
-        r = requests.get("https://httpbin.testing-studio.com/get", payload)
+        r = requests.get("https://httpbin.testing-studio.com/get", params=payload)
         print(r.text)
 
     # get请求 params入参 带参数
@@ -28,6 +28,8 @@ class Test_demo:
         payload = {"level": 1, "name": "seveniruby"}
         r = requests.get("https://httpbin.testing-studio.com/get", params=payload)
         print(r.text)
+        print(r.json())
+        print(r.request.method)
 
     # post请求 data传参=form表单 dict词典格式
     def test_post_form(self):
@@ -74,7 +76,8 @@ class Test_demo:
 
     # xml请求
     def test_post_xml(self):
+        xml = """<?xml version='1.0' encoding='utf-8'?><a>6</a>"""
         headers = {'Content-Type': 'application/xml'}  # requests里没有封装xml，需要在headers里要追加application/xml
-        r = requests.post('https://httpbin.testing-studio.com/post', headers=headers)
+        r = requests.post('https://httpbin.testing-studio.com/post', data=xml, headers=headers)
         print(r.text)
 

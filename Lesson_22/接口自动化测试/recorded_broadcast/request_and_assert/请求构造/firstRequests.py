@@ -16,6 +16,7 @@ class Test_demo:
         r = requests.get("https://httpbin.testing-studio.com/get")
         print(r.text)
         print(r.request.method)
+        print(r.request.body)
         print(r.json())
         assert r.request.method == 'GET'
 
