@@ -13,4 +13,4 @@ print("年龄{0},姓名{0}or{1},体重{1}{1}{2}".format(*list_a))
 dict_a = {"age": 21, "name": "lee", "weigh": 73.25}
 print("年龄{age},姓名{name},体重{weigh}".format(**dict_a))
 print("年龄:{0},姓名{0}or{1},体重{1} {1} {2}".format(*dict_a))
-print(f"年龄{list_a[1]},姓名{dict_a['name']}")
+print(f"\n年龄{list_a[1]},姓名{dict_a['name']}")

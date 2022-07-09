@@ -16,13 +16,16 @@ class TestDemo:
     def test_jsonpath(self):
         r = requests.get('https://ceshiren.com/categories.json')
         print(r.json())
-        print(f"r.json()为：{type(r.json())}")
+        print(f"r.json()的类型为：{type(r.json())}")
         print(type(r.text))
         print(r.text)
+        print(type(r.content))
         print(r.content)
         # pprint(jsonpath(r.json(), '$..name'))  # $..name递归深度遍历，获取子孙路径的 name;# jsonpath传递的参数必须是json obj
-        print(type(jsonpath(r.json(), '$..name')[0]))
-        assert_that(jsonpath(r.json(), '$..name')[0], contains_string('开源项'))  # 真实结果 匹配器
-
+        print(f"jsonpath(r.json(), '$..name')[0])的类型：{type(jsonpath(r.json(), '$..name')[0])}")
+        print(f"jsonpath(r.json(), '$..name')[0])为：{jsonpath(r.json(), '$..name')[0]}")
+        print(f"jsonpath(r.json(), '$..name'))为：{jsonpath(r.json(), '$..name')}")
+        assert_that(jsonpath(r.json(), '$..name')[1], contains_string('开源项目'))  # 真实结果 匹配器
+        assert_that(jsonpath(r.json(), '$..name'), has_item("开源项目"))  #
 
 
