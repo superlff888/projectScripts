@@ -4,7 +4,6 @@
 # =============================================================
 import requests
 import yaml
-from Lesson_22.接口自动化测试.recorded_broadcast.multi_env.hogwarts_multiEnv import configMerge, pyEnv_
 
 """
 在请求之前，对请求的url进行替换
@@ -17,18 +16,25 @@ from Lesson_22.接口自动化测试.recorded_broadcast.multi_env.hogwarts_multi
 
 
 class Api:
-    # 注意：类属性可以用self去调用，示例： self.env_yml, 可不用构方法初始化
-    env_yml = yaml.safe_load(open("env.yml"))  # 读取yaml流文件数据
-    # env_py = pyEnv_.env  # 直接从py文件中取值
-    # env_conf = configMerge.envFind()  # 封装了读取yaml流文件数据的方法
 
-    # def __init__(self):
-    #     self.env_py = pyEnv_.env  # 直接从py文件中取值
-    #     self.env_conf = configMerge.envFind()  # 封装了读取yaml流文件数据的方法
+    # 注意：类属性可以用self实例本身去调用，示例： self.env_yml
+    env_yml = yaml.safe_load(open("env.yml"))  # 读取yaml流文件数据
 
     def send(self, data: dict):
-        # 字符串替换，只需修改“default”;       self.env["testing-studio"][self.env["default"]]相当于self.env["testing-studio"]["dev"]
-        data["url"] = str(data["url"]).replace("httpsbin", self.env_yml["testing-studio"][self.env_yml["default"]])  # 先由dict强转json字符串，然后字符串替换,最后重新赋值于字典key
+        """必须传递一个字典类型参数
+
+        :: param data: Dictionary
+
+        usage::
+         >> data = {
+                    "method": "get",
+                    "url": "http://httpsbin.testing-studio.com/get"
+                    }
+        >>  确定需要被替换的部分字符串，维护在yml文件中的old字段下，将新环境维护在new字段下
+        """
+        # 字符串替换，replace(__old,__new)
+        data["url"] = str(data["url"]).replace(self.env_yml["testing-studio"][self.env_yml["old"]],
+                                               self.env_yml["testing-studio"][
+                                                   self.env_yml["override"]])  # 先由dict强转json字符串，然后字符串替换,最后重新赋值于字典key
         r = requests.request(method=data["method"], url=data["url"])
         return r  # r.json()   json格式响应值
-

@@ -7,15 +7,14 @@
 """
 
 env = {
-    "default": "dev",  # 通过env["default"]取值 【"dev": "127.0.0.1"】
+    "default": "old",  # 通过env["default"]取值 【"dev": "127.0.0.1"】
+    "overload": "new",
     "testing-studio":
         {
-            "dev": "httpbin",
-            "test": "127.0.0.2"
+            "old": "httpbin",  # 默认环境对应的host
+            "new": "127.0.0.2"
         }
 }
 
 # print(type(env["default"]))  # 字典中的key和values属于str类型
-
-
 
