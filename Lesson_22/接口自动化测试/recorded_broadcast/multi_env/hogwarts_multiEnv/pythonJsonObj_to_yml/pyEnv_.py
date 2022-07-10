@@ -11,8 +11,8 @@ env = {
     "override": "new",
     "testing-studio":
         {
-            "old": "httpsbin",  # 默认环境对应的host
-            "new": "127.0.0.1"
+            "old": "127.0.0.1",  # 默认环境对应的host
+            "new": "httpsbin"
         }
 }
 
