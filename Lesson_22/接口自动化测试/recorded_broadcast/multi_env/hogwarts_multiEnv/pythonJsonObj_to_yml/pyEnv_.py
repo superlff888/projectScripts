@@ -12,7 +12,7 @@ env = {
     "testing-studio":
         {
             "old": "127.0.0.1",  # 默认环境对应的host
-            "new": "httpsbin"
+            "new": "httpbin"
         }
 }
 

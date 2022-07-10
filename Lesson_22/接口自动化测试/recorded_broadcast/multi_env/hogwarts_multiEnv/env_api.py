@@ -28,7 +28,7 @@ class Api:
         usage::
          >> data = {
                     "method": "get",
-                    "url": "http://httpsbin.testing-studio.com/get"
+                    "url": "http://httpbin.testing-studio.com/get"
                     }
         >>  确定需要被替换的部分字符串，维护在yml文件中的old字段下，将新环境维护在new字段下
         """

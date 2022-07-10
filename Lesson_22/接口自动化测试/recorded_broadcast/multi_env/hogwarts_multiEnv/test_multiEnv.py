@@ -10,9 +10,9 @@ class Test_api:
 
     data = {
         "method": "get",
-        "url": "http://httpsbin.testing-studio.com/get"
+        "url": "http://127.0.0.1.testing-studio.com/get"
     }
 
     def test_send(self):
         api = Api()
-        print(api.send(self.data).text)
+        print(api.send(self.data))
