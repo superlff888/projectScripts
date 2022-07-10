@@ -19,8 +19,8 @@ from Lesson_22.接口自动化测试.recorded_broadcast.multi_env.hogwarts_multi
 class Api:
     # 注意：类属性可以用self去调用，示例： self.env_yml, 可不用构方法初始化
     env_yml = yaml.safe_load(open("env.yml"))  # 读取yaml流文件数据
-    env_py = pyEnv_.env  # 直接从py文件中取值
-    env_conf = configMerge.envFind()  # 封装了读取yaml流文件数据的方法
+    # env_py = pyEnv_.env  # 直接从py文件中取值
+    # env_conf = configMerge.envFind()  # 封装了读取yaml流文件数据的方法
 
     # def __init__(self):
     #     self.env_py = pyEnv_.env  # 直接从py文件中取值

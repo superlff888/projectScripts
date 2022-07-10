@@ -8,6 +8,7 @@ from Lesson_22.接口自动化测试.recorded_broadcast.multi_env.hogwarts_multi
 
 
 def envMerge():
+    """担心手写yaml出错的话，就可以用此方法生成yaml文件"""
     with open("env.yml", "w") as file:  # 以写的形式创建并打开一个yml文件（因为要写入，故mode = "w"），打开的文件重命名为file
         yaml.safe_dump(env, stream=file)  # 将 Python 对象序列化为 YAML 流存到yml文件中
 
