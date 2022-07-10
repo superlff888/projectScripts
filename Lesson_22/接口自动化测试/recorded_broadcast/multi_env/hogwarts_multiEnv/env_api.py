@@ -35,5 +35,6 @@ class Api:
         # 字符串替换，string_obj.replace(__old,__new)
         data["url"] = str(data["url"]).replace(self.env_yml["testing-studio"][self.env_yml["default"]],
                                                self.env_yml["testing-studio"][self.env_yml["override"]])  # 先由dict强转json字符串，然后字符串替换,最后重新赋值于字典key
+        print(data)
         r = requests.request(method=data["method"], url=data["url"])
-        return r  # r.json()   json格式响应值
+        return r.json()  # r.json()   json格式响应值

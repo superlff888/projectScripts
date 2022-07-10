@@ -7,12 +7,12 @@
 """
 
 env = {
-    "default": "old",  # 通过env["default"]取值 【"dev": "127.0.0.1"】
-    "overload": "new",
+    "default": "old",  # 通过env["default"]取值 【"old": "127.0.0.1"】
+    "override": "new",
     "testing-studio":
         {
-            "old": "httpbin",  # 默认环境对应的host
-            "new": "127.0.0.2"
+            "old": "httpsbin",  # 默认环境对应的host
+            "new": "127.0.0.1"
         }
 }
 
