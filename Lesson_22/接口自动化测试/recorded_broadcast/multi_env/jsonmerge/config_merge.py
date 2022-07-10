@@ -11,13 +11,13 @@ from pprint import pprint
 from jsonmerge import merge
 import config_default
 
-configs = config_default.configs
+default_configs = config_default.configs
 
 try:
     import config_override
     # Merge head into base
-    # config_override.configs覆盖configs中相同key的value(json格式层次关系要一致)，完成合并,最后返回合并后的json对象
-    configs = merge(configs, config_override.configs)
+    # config_override.configs覆盖config_default包中相同key的value(json格式层次关系要一致)，完成合并,最后返回合并后的json对象
+    configs = merge(default_configs, config_override.configs)
     pprint(configs)
 except ImportError:
     pass

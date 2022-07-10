@@ -18,3 +18,7 @@ def test_auth():
     print(r.status_code)
     print(r.headers)
     print(r.json())
+
+
+def test_auth_post():
+    requests.post("https://httpbin.testing-studio.com/post", auth=HTTPBasicAuth("banana", "123"))
