@@ -19,8 +19,7 @@ class Test_timeout:
         self.proxy = {"http": "http://127.0.0.1:8811", "https": "https://127.0.0.1:8811"}
 
     def test_timeout_00(self):
-        res = requests.get('http://httpbin.testing-studio.com/get', proxies=self.proxy,
-                           verify=False)  # 取消verify认证（类似于信任证书）
+        res = requests.get('http://httpbin.testing-studio.com/get')
         print(f'\n{res.json()}')
 
     def test_timeout_01(self):
