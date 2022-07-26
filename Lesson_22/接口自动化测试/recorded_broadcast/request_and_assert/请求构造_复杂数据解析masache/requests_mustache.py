@@ -7,8 +7,7 @@ from pprint import pprint
 
 import pystache  # 用两个花括号识别变量，可以对变量自动识别和替换
 
-from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.复杂数据解析masache.utils import read_json
-
+from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.请求构造_复杂数据解析masache.utils import read_json
 
 """
 mastache可以极大的简化代码，只需要替换{{}}里面的数据即可
