@@ -5,7 +5,7 @@
 import requests
 
 """
-data : 表单传参
+data : 表单传参 payload
 json: post请求体json传参
 params: url传参
 """
@@ -84,4 +84,4 @@ class TestDepartment:
         }
         # 调用更新接口
         res = requests.post(url=url, params=param, json=json_update_body)
-        assert res.json()["errcode"] == 0
+        assert res.json()["errcode"] == 60020
