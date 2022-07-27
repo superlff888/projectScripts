@@ -5,6 +5,7 @@
 import requests
 
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.contract.department import Department
+from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.loggerMy import logger
 
 """
 data : 表单传参 payload
@@ -23,10 +24,13 @@ class TestDepartment:
             # 尝试删除定义的department_id，排除干扰
             self.depart.del_department(self.department_id)
         except Exception as e:
-            print(e)
+            logger.debug(e)
 
     def test_create_department(self):
         assert self.depart.create_department(self.department_id).json()["errcode"] == 0
 
     def test_update_department(self):
         assert self.depart.update_department(self.department_id).json()["errcode"] == 0
+
+    def test_query_department(self):
+        assert self.depart.query_department(self.department_id).json()["errcode"] == 0
