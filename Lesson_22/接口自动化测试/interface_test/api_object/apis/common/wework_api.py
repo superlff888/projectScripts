@@ -12,12 +12,13 @@ import requests
 class Wework:
     def __init__(self):
         self.token = None
-        self.get_token()
+        self.get_token()  # 实例化时，自动调用get_token
+        print("已获取token")
 
     def get_token(self):
         # return： access_token的值
         corpid = 'wwba697e4878807a9f'
-        corpsecret = '631qSHbvs5vyhpFQmp7a5AJXM0jWzP-_yOO8EUX6JNU'
+        corpsecret = '631qSHbvs5vyhpFQmp7a5BZDkxkfBEF3Ev3VEV-DJNw'
         url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken'
         param = {
             "corpid": corpid,

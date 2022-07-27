@@ -26,20 +26,18 @@ class Department(Wework):
         res = requests.post(url=url, params=param, json=json_create_body)
         return res
 
-    def update_department(self, department_id):
-        # 创建部门id
-        self.create_department(department_id)
+    def update_department(self, _id):
         # 定义url
         url = "https://qyapi.weixin.qq.com/cgi-bin/department/update"
         param = {
             "access_token": self.token
         }
         json_update_body = {
-            "name": f"广州研发中心_update_{department_id}",
-            "name_en": f"RDGZ_update_{department_id}",
+            "name": f"广州研发中心_update_{_id}",
+            "name_en": f"RDGZ_update_{_id}",
             "parentid": 1,
-            "order": 1,
-            "id": department_id
+            "order": 2,
+            "id": _id
         }
         # 调用更新接口
         res = requests.post(url=url, params=param, json=json_update_body)
