@@ -15,17 +15,18 @@ params: url传参
 
 class TestDepartment:
 
-    def setup(self):
+    def setup_class(self):
         # 定义department_id
         self.department_id = 589
         self.depart = Department()  # 实例化时，自动调用父类init方法
+        try:
+            # 尝试删除定义的department_id，排除干扰
+            self.depart.del_department(self.department_id)
+        except Exception as e:
+            print(e)
 
     def test_create_department(self):
-        print(self.depart.create_department(self.department_id).json())
         assert self.depart.create_department(self.department_id).json()["errcode"] == 0
 
     def test_update_department(self):
-        assert self.depart.update_department(self.department_id)["errcode"] == 0
-
-    def test_del_department(self):
-        assert self.depart.del_department(self.department_id)["errcode"] == 0
+        assert self.depart.update_department(self.department_id).json()["errcode"] == 0
