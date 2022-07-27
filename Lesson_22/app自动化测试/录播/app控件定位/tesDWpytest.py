@@ -16,7 +16,7 @@ class TestDw:
         desired_caps['platformVersion'] = '6.0'
         desired_caps['deviceName'] = '127.0.0.1：7555'  # 自定义，随便命名
         desired_caps['appPackage'] = 'com.xueqiu.android'
-        # desired_caps['appActivity'] = '.common.MainActivity'  # 直接定义MainActivity，页面数据刷新有问题
+        # desired_caps['appActivity'] = '.commonWework.MainActivity'  # 直接定义MainActivity，页面数据刷新有问题
         desired_caps['appActivity'] = 'com.xueqiu.android.view.WelcomeActivityAlias'
         desired_caps['unicodeKeyBoard'] = 'true'
         desired_caps['ReSetKeyBoard'] = 'true'

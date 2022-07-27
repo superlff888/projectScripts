@@ -16,7 +16,7 @@ class TestHamcrest:
         desired_caps['deviceName'] = '127.0.0.1：7555'  # 自定义，随便命名
         desired_caps['appPackage'] = 'com.xueqiu.android'  # 每次执行setup，就会重新打开app
         desired_caps['appActivity'] = 'com.xueqiu.android.view.WelcomeActivityAlias'  # 每次执行setup，就会重新打开app
-        # desired_caps['appActivity'] = '.common.MainActivity'  # 直接定义MainActivity，页面数据刷新有问题
+        # desired_caps['appActivity'] = '.commonWework.MainActivity'  # 直接定义MainActivity，页面数据刷新有问题
         desired_caps['unicodeKeyBoard'] = 'true'
         desired_caps['ReSetKeyBoard'] = 'true'
         desired_caps['noReset'] = 'true'  # 不重置用户的操作状态（情况1：处理弹窗 ~ 点同意；情况2：之前登录过了  ）

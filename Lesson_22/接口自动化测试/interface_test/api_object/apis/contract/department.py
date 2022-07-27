@@ -4,7 +4,7 @@
 # =============================================================
 import requests
 
-from Lesson_22.接口自动化测试.interface_test.api_object.apis.common.wework_api import Wework
+from Lesson_22.接口自动化测试.interface_test.api_object.apis.commonWework.wework_api import Wework
 
 
 class Department(Wework):
