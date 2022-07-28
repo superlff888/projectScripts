@@ -26,4 +26,3 @@ print(f"str_env的type为：{type(str_env)}")
 env_dict = json.loads(str_env)
 print(env_dict)
 print(f"env_dict的type为：{type(env_dict)}")
-

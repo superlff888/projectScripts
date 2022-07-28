@@ -18,13 +18,13 @@ class TestDepartment:
 
     def setup_class(self):
         # 定义department_id
-        self.department_id = 589
+        self.department_id = 2
         self.depart = Department()  # 实例化时，自动调用父类init方法
         try:
             # 尝试删除定义的department_id，排除干扰
             self.depart.del_department(self.department_id)
         except Exception as e:
-            logger.debug(e)
+            logger.info(e)
 
     def test_create_department(self):
         assert self.depart.create_department(self.department_id).json()["errcode"] == 0

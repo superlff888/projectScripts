@@ -13,7 +13,7 @@ from Lesson_22.接口自动化测试.interface_test.api_object.apis.base_api.bas
 
 class Wework(BaseApi):
     def __init__(self):
-        self.token = None  # 可以不事先定义self.token
+        self.token = None  # 可以不事先定义self.token，只是这样更规范
         self.get_token()  # 实例化时，自动调用get_token
         print("已获取token")
 
