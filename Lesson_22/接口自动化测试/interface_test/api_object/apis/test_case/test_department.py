@@ -39,6 +39,7 @@ class TestDepartment:
         obj = self.depart.query_department()
         # print(jsonpath.jsonpath(obj, '$..department..id'))  # 相对定位输出所有目标值
         department_list = Jsonpath.myJsonpath(obj, '$..department..id')  # 相对定位输出所有目标值
+        logger.info(department_list)
         assert self.department_id in department_list
 
     def test_update_department(self):

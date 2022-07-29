@@ -17,7 +17,7 @@ class BaseApi:
         :: param  tools 如果以后出现比requests更好用的库,可以替换掉requests
         :: param req  url、method、param、data、json
         """
-        # logger.info(f"获取到的工具为{tools}")
+        logger.info(f"获取到的工具为{tools}")
         if tools == "requests":
             return requests.request(**req)
         if tools == "urllib3":
