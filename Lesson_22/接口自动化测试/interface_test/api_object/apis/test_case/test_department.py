@@ -5,7 +5,7 @@
 import jsonpath
 import pytest
 import requests
-
+import pytest_assume
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.contract.department import Department
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils._jsonpath import Jsonpath
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.getYamlData import Utils
@@ -47,3 +47,4 @@ class TestDepartment:
 
     def test_query_department(self):
         assert self.depart.query_department()["errcode"] == 0
+        # pytest.assume(1, 1)
