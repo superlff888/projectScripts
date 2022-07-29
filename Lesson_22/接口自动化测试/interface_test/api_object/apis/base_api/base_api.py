@@ -5,6 +5,8 @@
 import requests
 import urllib3
 
+from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.loggerMy import logger
+
 """对底层框架的封装"""
 
 
@@ -15,6 +17,7 @@ class BaseApi:
         :: param  tools 如果以后出现比requests更好用的库,可以替换掉requests
         :: param req  url、method、param、data、json
         """
+        # logger.info(f"获取到的工具为{tools}")
         if tools == "requests":
             return requests.request(**req)
         if tools == "urllib3":

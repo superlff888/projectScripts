@@ -5,3 +5,4 @@
 2022-02-12 21:59:37   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
 2022-02-12 21:59:52   my_log - "D:\Program Files\pythonProject_CTTQ\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - ERROR  这是一个info日志
 2022-07-28 00:35:47   my_log - "D:\Develop\git_pub_repositories\projectScripts\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志
+2022-07-28 20:55:22   my_log - "D:\Develop\git_pub_repositories\projectScripts\Lesson_22\python编程语言与框架\录播\python编程语言\logs\封装日志公共函数\logTest.py:13" - <module> - INFO  这是一个info日志

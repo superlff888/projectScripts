@@ -2,6 +2,9 @@
 # @Author    : House Lee
 # -*-coding=utf-8-*-
 import logging
+import os
+
+from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.getYamlData import Utils
 
 
 class MyLogging:
@@ -36,7 +39,7 @@ class MyLogging:
         # ft = '%(asctime)s - %(name)s - "%(pathname)s:%(lineno)d" - %(funcName)s - %(levelname)s - %(message)s',
         # '%Y-%m-%d %H:%M:%S'
         ft = logging.Formatter(
-            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno)d" - %(funcName)s - %(levelname)s  %(message)s',
+            '%(asctime)s   %(name)s   "%(pathname)s: %(lineno)d" - %(funcName)s - %(levelname)s  %(message)s',
             "%Y-%m-%d %H:%M:%S")
         # 设置渠道（控制台和文件）日志的输出格式
         l_c.setFormatter(ft)
@@ -47,7 +50,12 @@ class MyLogging:
         return my_log
 
 
-logger = MyLogging('DEBUG', '../myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象，所以此时的logger就是my_log
+log_path = Utils.get_log_path()
+if not log_path:  # log_path 路径不一定存在，所以需要做判断
+    os.mkdir(log_path)  # 如果log_path不存在，则创建该路径
+
+# 当前文件的上一级
+logger = MyLogging('DEBUG', f'{log_path}/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象，所以此时的logger就是my_log
 
 # print(logger)
 
@@ -58,3 +66,4 @@ logger = MyLogging('DEBUG', '../myLog.log')  # 按照__new__(cls)方法定义的
 3、__new__ 方法创建一个实例之后返回这个实例对象并传递给 __init__ 方法的 self 参数
 4、__new__在__init__之前被调用，__new__的返回值（实例）将传递给__init__方法的第一个参数
 """
+

@@ -5,9 +5,18 @@
 import requests
 
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.commonWework.wework_api import Wework
+from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.getYamlData import Utils
+
+corpid = Utils.get_yaml_data('corp_data.yaml')["corpid"]["hardware"]
+corpsecret = Utils.get_yaml_data('corp_data.yaml')["corpsecret"]["department"]
 
 
 class Department(Wework):
+
+    def __init__(self):
+        """优点：用例层不需要再维护参数"""
+        super().__init__()
+        self.get_token(corpid, corpsecret)  # 实例化时，自动调用get_token
 
     def create_department(self, _id):
         req = {
@@ -49,7 +58,7 @@ class Department(Wework):
         res = self.send_api(req)  # 实例化时自动调用send_api()方法,Wework继承了BaseApi的send_api()方法，Department继承了Wework的send_api()
         return res
 
-    def query_department(self, _id):
+    def query_department(self):
 
         req = {
             "method": "GET",
@@ -61,7 +70,7 @@ class Department(Wework):
             }
         # 发起请求
         res = self.send_api(req)  # 实例化时自动调用send_api()方法,Wework继承了BaseApi的send_api()方法，Department继承了Wework的send_api()
-        return res
+        return res.json()
 
     def del_department(self, _id):
         # 定义url
