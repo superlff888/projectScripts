@@ -3,7 +3,6 @@
 # -*-coding=utf-8-*-
 # =============================================================
 from requests.sessions import Session
-import requests
 
 """
 创建一个session会话对象，提供 cookie 持久性、连接池和配置。
