@@ -7,8 +7,8 @@ import json
 import pytest
 
 from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.buildSchema import buildSchema
-from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.utils import schema_validate
-from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.utils import schema_validate_max
+from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.schemaValidate import schema_validate
+from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.schemaValidate import schema_validate_max
 
 
 @pytest.mark.parametrize('obj', [{"a": "1", "b": "aaa", "c": "", "d": None}], ids=["校验响应数据类型"])  # ids=[]

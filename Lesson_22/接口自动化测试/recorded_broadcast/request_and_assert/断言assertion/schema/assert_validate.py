@@ -11,7 +11,7 @@ Schema会去通过validate方法，验证传入的对象是不是所指定的类
 import json
 from jsonschema import validate
 from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.buildSchema import buildSchema
-from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.utils import schema_validate
+from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.断言assertion.schema.schemaValidate import schema_validate
 
 
 def test_genson():
