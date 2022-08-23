@@ -4,7 +4,7 @@
 # =============================================================
 from hamcrest import *
 
-from Lesson_22.web_autoTest.PageObject_battle.page_object.main_page import MainPageObject
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.main_page import MainPageObject
 
 
 class TestAddMember:

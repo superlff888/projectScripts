@@ -1,0 +1,5 @@
+test_xxx:  # 用例名称
+  - print: ["调用python内置函数，这里是内置函数print的参数，测试步骤驱动1"]
+  - re.search: ['.*','ab']
+  - save: [tmp]
+  - print: [$tmp]  # 原理： a = 1; print(eval("a"))
