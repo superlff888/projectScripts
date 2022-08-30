@@ -11,7 +11,7 @@ import yaml
 from Lesson_22.web_autoTest.PageObject_battle_web.page_object.base_page import BasePage
 
 
-class WeworkPage(BasePage):
+class Login(BasePage):
     """
     是企业微信的公共业务的封装
     """
