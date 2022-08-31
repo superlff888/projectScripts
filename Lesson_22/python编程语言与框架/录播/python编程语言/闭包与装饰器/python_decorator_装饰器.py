@@ -11,7 +11,7 @@
                                                   调用now()将执行新函数wrapper！
                                                   调用now()将执行新函数wrapper！
                                                   调用now()将执行新函数wrapper！
-5、'返回'函数是“伪执行”func()，它执行的新'返回'函数wrapper！同时接收被装饰函数的参数; 装饰器“最内层嵌套函数”的返回
+5、'返回'函数是“伪执行”func()，它执行的新'返回'函数wrapper！同时接收被装饰函数的参数; 闭包与装饰器“最内层嵌套函数”的返回
    才是真正的返回原函数或原函数的执行结果
 6、被装饰的函数，即原函数要在装饰器内嵌函数中执行
   【特殊名词解析】
@@ -28,7 +28,7 @@
 
 import functools
 
-from Lesson_22.python编程语言与框架.录播.python编程语言.装饰器.decorator调用位置 import logging, logg
+from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.decorator调用位置 import logging, logg
 
 """
 【重要】
