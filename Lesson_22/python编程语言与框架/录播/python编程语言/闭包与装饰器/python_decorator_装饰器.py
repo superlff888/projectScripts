@@ -166,14 +166,14 @@ r()
     行新函数wrapper(*args, **kw)，执行新函数后，返回原函数func的内存地址
     
 2、我们来剖析上面的语句，具体是这样的：
-    首先执行log('execute')，返回的是decorator函数，再调用返回的decorator函数，参数是now原函数，执行decorator的返回值
-    是wrapper函数；观察函数decorator(func)就会发现，该函数传入func原函数名作为参数，返回wrapper函数，此时同名now变量指向了
+    首先执行log('execute')，返回的是decorator函数内存地址，再调用返回的decorator函数，参数是now原函数，执行decorator的返回值是wrapper函数；
+    观察函数decorator(func)就会发现，该函数传入func原函数名作为参数，返回wrapper函数，此时同名now变量指向了
     新的函数wrapper，因此可以总结一个定理："有借有还，指向定理"，借指的是将原函数作为入参传给decorator(func)，还指的是返回下一级
     内层嵌套函数，指向即是原now变量指向了返回的内嵌函数，即函数wrapper；于是调用now()将执行新函数wrapper(*args, **kw)，最终返回原
     函数func（内存地址），当然也可以返回原函数的执行结果
 【总结】
 1、首先，调用原函数now()前，先执行装饰器，即log('execute')(func),此时的func为原函数now
-2、同名的now变量不会指向log函数和decorator函数，func所在的函数decorator执行后才返回wrapper，记住：'入参'指向'返回' !!!
+2、同名的now变量不会指向log函数和decorator函数，func所在的函数decorator执行后才返回wrapper，记住：'返回'指向'入参' !!!
 
 """
 
