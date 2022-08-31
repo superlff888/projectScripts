@@ -4,13 +4,15 @@
 # =============================================================
 
 
-""""""
+"""前瞻"""
 
 import time
 
 
 def myFunc():
-    print("程序正在运行")
+    time.sleep(2)
+    print("程序正在运行~")
+    print("hello,world")
 
 
 def time_master(func):
@@ -18,7 +20,10 @@ def time_master(func):
     start = time.time()
     func()
     stop = time.time()
-    print(f"程序已经运行了{(stop-start):2f}秒")
+    print(f"程序已经运行了{(stop-start):.2f}秒")
 
 
 time_master(myFunc)
+
+
+
