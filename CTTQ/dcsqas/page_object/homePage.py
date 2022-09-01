@@ -3,7 +3,6 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from selenium.common.exceptions import *
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from CTTQ.dcsqas.page_object.base_page import BasePage
@@ -20,11 +19,11 @@ class HomePage(BasePage):
         by   列表或元组
         locator   列表或元组
         """
-        by_send, text, by_click, close_bn = obj
+        by_send, text, by_click = obj
 
         # 可以关闭按钮时，关闭弹框
-        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-        self.fond(close_bn).click()
+        # WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+        # self.fond(close_bn).click()
         try:
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by_send))  # 等待输入框可点击
             self.fond(by_send).send_keys(text)
@@ -43,14 +42,15 @@ class HomePage(BasePage):
             print(f"抛出异常{e}")
             return self.search(obj)
 
-    # def miss(self, by):
-    #     try:
-    #         self.fond(by).click()
-    #         # return HomePage()
-    #     except ElementClickInterceptedException:
-    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by))
-    #         return self.miss(by)
-    #     except Exception:
-    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by))
-    #         return self.miss(by)
+    def miss(self, close_bn):
+        try:
+            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+            self.fond(close_bn).click()
+            return self.search
+        except ElementClickInterceptedException:
+            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+            return self.miss(close_bn)
+        except Exception:
+            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+            return self.miss(close_bn)
 
