@@ -4,8 +4,8 @@
 # =============================================================
 from selenium.webdriver.common.by import By
 
-from CTTQ.dcsqas.page_object.base_page import BasePage
-from CTTQ.dcsqas.page_object.homePage import HomePage
+from cttq.dcsqas.page_object.base_page import BasePage
+from cttq.dcsqas.page_object.homePage import HomePage
 
 
 class Login(BasePage):

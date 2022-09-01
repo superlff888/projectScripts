@@ -5,7 +5,7 @@
 from selenium.common.exceptions import *
 from selenium.webdriver.support.wait import WebDriverWait
 
-from CTTQ.dcsqas.page_object.base_page import BasePage
+from cttq.dcsqas.page_object.base_page import BasePage
 
 from selenium.webdriver.support import expected_conditions as EC
 

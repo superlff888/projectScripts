@@ -31,3 +31,6 @@ class TestCas:
         print(self.driver.find_element(By.XPATH, "/html/body/section/div/header/div[2]/div[1]/span"))
         print(f"获取的元素text:{text}")
 
+
+
+
