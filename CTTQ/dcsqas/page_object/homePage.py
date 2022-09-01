@@ -1,34 +1,56 @@
 # -*- coding=utf-8 -*-
-# @Time    : 2022/02/20 18:14
+# @Time    : 2022/09/01 10:24
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-
-
-import logging
-import time
-
-import yaml
-from selenium import webdriver
+from selenium.common.exceptions import *
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 from CTTQ.dcsqas.page_object.base_page import BasePage
-from Lesson_22.web_autoTest.PageObject_battle_web.page_object.add_member_page import AddMemberPage
 
-"""
-首页
-"""
+from selenium.webdriver.support import expected_conditions as EC
 
 
-class HomePageObject(BasePage):
-    # 可以写在配置文件中，去读取
-    _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#index"  # 类属性重写，重写了_BASE_URL
+class HomePage(BasePage):
 
-    # 跳转到“通讯录”页面的功能
-    def homepage(self):
-        pass
+    def search(self, obj):
+        """
+        obj  列表或元组
+        by_*  列表或元组
+        by   列表或元组
+        locator   列表或元组
+        """
+        by_send, text, by_click, close_bn = obj
 
-    # 跳转到“添加成员”页面的功能
-    def goto_add_member_page(self):
-        # 点击添加成员按钮
-        self.fond(By.CSS_SELECTOR, ".ww_indexImg_AddMember").click()  # c继承b，b继承a，则c也继承a的方法
-        return AddMemberPage(self.driver)  # WebDriver Object赋值于新页面的driver
+        # 可以关闭按钮时，关闭弹框
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+        self.fond(close_bn).click()
+        try:
+            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by_send))  # 等待输入框可点击
+            self.fond(by_send).send_keys(text)
+            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by_click))  # 等待检索框可点击
+            self.fond(by_click).click()
+            self.driver.implicitly_wait(2)
+        except NoSuchElementException:
+            return self.search(obj)
+        except ElementClickInterceptedException:
+            return self.search(obj)
+        except WebDriverException:
+            return self.search(obj)
+        except ElementNotVisibleException:
+            return self.search(obj)
+        except Exception as e:
+            print(f"抛出异常{e}")
+            return self.search(obj)
+
+    # def miss(self, by):
+    #     try:
+    #         self.fond(by).click()
+    #         # return HomePage()
+    #     except ElementClickInterceptedException:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by))
+    #         return self.miss(by)
+    #     except Exception:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by))
+    #         return self.miss(by)
+

@@ -9,10 +9,10 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
 from Lesson_22.web_autoTest.PageObject_battle_web.page_object.contact_page import ContactPage
-from Lesson_22.web_autoTest.PageObject_battle_web.page_object.login import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.login import Login
 
 
-class AddMemberPage(WeworkPage):
+class AddMemberPage(Login):
     """理论支撑：方法中可以读取类变量，但是不能修改"""
     # 页面元素不要暴露出去，只给页面的方法提供使用。
     _INPUT_USERNAME = (By.ID, "username")  # 直接修改为改变后的元素，兼容元素发生变化（前端有尽可能改元素）

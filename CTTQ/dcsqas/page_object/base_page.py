@@ -9,15 +9,8 @@ import time
 
 import yaml
 from selenium import webdriver
-
-# 1. 为什么会出现重复打开页面，重复实例化driver 的问题
-# 答案： 其他的页面子类继承与basepage，一旦子类实例化。那么就会执行父类的构造函数
-# 子类实例化自己，那么父类的构造函数就会执行几次，就会打开几次浏览器
-# 解决方案：那如果无法解决构造函数要执行多次的问题，那么就考虑在父类的构造函数里面
-# 添加判断，避免driver 的重复实例化。定义一个base_driver 的形参
-# base_driver 代表，如果没有类在实例化的时候接收到参数，那么就实例化driver
-# 如果有接收到参数，那么就传递driver，保证driver 一直存在
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.support.relative_locator import with_tag_name
 
 
 class BasePage:
@@ -26,8 +19,8 @@ class BasePage:
     是某些操作的底层
     """
 
-    def __init__(self, base_driver: WebDriver = None):
-        # self._BASE_URL = ""  # 类变量要大写；私有化属性
+    def __init__(self, base_driver: WebDriver = None, url=None):
+        self._BASE_URL = url  # 类变量要大写；私有化属性
 
         if base_driver is None:
             # 实例化
@@ -36,12 +29,13 @@ class BasePage:
             self.driver.implicitly_wait(3)
         else:
             self.driver: WebDriver = base_driver
-        # if self._BASE_URL != "":  # 子类隔代继承；属性私有化，目的不把内部元素暴漏给外部（预防被修改）
-        #     try:
-        #         self.driver.get(self._BASE_URL)
-        #     except Exception as e:
-        #         print(f"url填写错误{e}")
-        #         logging.info(f"url填写错误{e}")
+        if self._BASE_URL != "":  # 子类隔代继承；属性私有化，目的不把内部元素暴漏给外部（预防被修改）
+            try:
+                self.driver.get(self._BASE_URL)
+                self.driver.implicitly_wait(3)
+            except Exception as e:
+                print(f"url填写错误{e}")
+                logging.info(f"url填写错误{e}")
 
     def fond(self, by, locator=None):  # 兼容元组
         """
@@ -60,4 +54,20 @@ class BasePage:
             # 如果传入两个参数，则正常使用。
             return self.driver.find_element(by, locator)
 
+    def closed(self):
+        self.driver.close()
 
+    def win_max(self):
+        self.driver.maximize_window()
+
+    def text_list(self, by):
+        ele = self.driver.find_elements(by)
+        list_a = []
+        for i in ele:
+            text = i.text
+            list_a.append(text)
+        return list_a
+
+    def below_s4(self, ag_name, element_or_locator):
+        """返回指定元素下方的元素 https://blog.csdn.net/qq_18298049/article/details/117194464"""
+        self.driver.find_element(with_tag_name(ag_name).below(element_or_locator))
