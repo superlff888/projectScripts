@@ -16,7 +16,7 @@ class Department(Wework):
     def __init__(self):
         """优点：用例层不需要再维护参数"""
         super().__init__()
-        self.get_token(corpid, corpsecret)  # 实例化时，自动调用get_token
+        self.get_token(corpid, corpsecret)  # 实例化时，自动调用get_token;重新赋值弗雷构造方法的token
 
     def create_department(self, _id):
         req = {

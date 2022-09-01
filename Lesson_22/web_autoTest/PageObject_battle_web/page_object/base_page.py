@@ -27,7 +27,7 @@ class BasePage:
     """
 
     def __init__(self, base_driver: WebDriver = None):
-        # self._BASE_URL = ""  # 类变量要大写；私有化属性
+        self._BASE_URL = ""  # 类变量要大写；私有化属性
 
         if base_driver is None:
             # 实例化

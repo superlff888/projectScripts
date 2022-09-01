@@ -4,7 +4,9 @@
 # =============================================================
 
 
-"""前瞻"""
+"""
+装饰器：金钟罩铁布衫
+"""
 
 import time
 
@@ -29,4 +31,27 @@ def myFunc():
 myFunc()
 
 
+"""多个装饰器"""
 
+
+def square(func):
+    def inner():
+        x = func()
+        return x * x
+    return inner
+
+
+def cube(func):
+    def inner():
+        x = func()
+        return x * x * x
+    return inner
+
+
+@cube  # 装饰器从里到外执行
+@square
+def test():
+    return 2
+
+
+print(test())  # 添加装饰器后，return结果发生变化

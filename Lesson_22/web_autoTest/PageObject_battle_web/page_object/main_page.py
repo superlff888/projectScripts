@@ -11,14 +11,16 @@ import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from Lesson_22.web_autoTest.PageObject_battle_web.page_object.login import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.add_member_page import AddMemberPage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.contact_page import ContactPage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.login import Login
 
 """
 首页
 """
 
 
-class MainPageObject(WeworkPage):
+class MainPageObject(Login):
     # 可以写在配置文件中，去读取
     _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#index"  # 类属性重写，重写了_BASE_URL
 

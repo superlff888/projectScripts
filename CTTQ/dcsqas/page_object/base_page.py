@@ -32,7 +32,7 @@ class BasePage:
         if base_driver is None:
             # 实例化
             self.driver = webdriver.Chrome()  # 打开一个浏览器 ，WebDriver Object
-            # 添加隐式等待的配置
+            # 添加隐式等待的配置【全局】
             self.driver.implicitly_wait(3)
         else:
             self.driver: WebDriver = base_driver

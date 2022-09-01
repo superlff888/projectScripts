@@ -8,14 +8,17 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from Lesson_22.web_autoTest.PageObject_battle.page_object.base_page import BasePage
-from Lesson_22.web_autoTest.PageObject_battle.page_object.wework_page import WeworkPage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.base_page import BasePage
+
+
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.login import Login
+
 """
 通讯录界面
 """
 
 
-class ContactPage(WeworkPage):
+class ContactPage(Login):
     _BASE_URL = "https://work.weixin.qq.com/wework_admin/frame#contacts"  # 重写父类属性
 
     # 跳转到“添加成员的页面”

@@ -12,6 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from CTTQ.dcsqas.page_object.base_page import BasePage
+from Lesson_22.web_autoTest.PageObject_battle_web.page_object.add_member_page import AddMemberPage
 
 """
 首页
