@@ -19,5 +19,5 @@ class Login(BasePage):
         self.fond(by_account).send_keys(text_account)
         self.fond(by_password).send_keys(text_password)
         self.fond(by_click).click()
-        return HomePage(self.driver)  # 又打开一个网页
+        return HomePage(self.driver)  # BasePage构造方法防止再次打开一个网页
 
