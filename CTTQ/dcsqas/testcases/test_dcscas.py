@@ -5,9 +5,12 @@
 from time import sleep
 
 import pytest
-from locust import task
+
 from selenium.webdriver.common.by import By
+
 from CTTQ.dcsqas.page_object.login_dcs import Login
+import sys
+# sys.path.append("D:\Develop\git_pub_repositories\projectScripts")  # （运行程序时）添加path环境变量
 
 
 class TestCas:
@@ -19,7 +22,6 @@ class TestCas:
                                        (By.ID, "login-password"), "cttq.1234", (By.ID, "login-btn")]) \
             .miss((By.XPATH, "/html/body/div[1]/div/div/div[2]/div[3]"))  # 关闭提示框
 
-    @task
     def test_search(self):
         self.searched([(By.XPATH,
                         "//input[@placeholder='请输入商品名、品牌、CAS号、货号']"), "华为",
