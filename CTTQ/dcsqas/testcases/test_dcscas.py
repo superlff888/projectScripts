@@ -7,6 +7,8 @@ from time import sleep
 
 import pytest
 from selenium.webdriver.common.by import By
+
+from CTTQ.dcsqas.page_object.homePage import HomePage
 from CTTQ.dcsqas.page_object.login_dcs import Login
 
 
@@ -28,4 +30,4 @@ class TestCas:
 
 
 if __name__ == "__main__":
-    os.system("test_dcscas.py")
+    os.system("pytest -sv test_dcscas.py")

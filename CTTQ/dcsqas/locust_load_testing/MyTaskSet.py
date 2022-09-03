@@ -2,7 +2,7 @@
 # @Time    : 2022/09/03 14:24
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from locust import HttpLocust
+
 from locust import HttpUser
 from locust import task
 from locust import TaskSet
@@ -42,9 +42,10 @@ class My_task_set(TaskSet):
 
 class WebSite(HttpUser):
     # 指定要执行哪个任务集
-    # task_set = My_task_set
-
+    task_set = My_task_set
+    # task_set = task(My_task_set)
     tasks = [My_task_set, ]
+
     # 请求和请求之间最小的间隔时间
     min_wait = 1000
     # 请求和请求之间最大的间隔时间
