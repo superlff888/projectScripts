@@ -2,7 +2,7 @@
 # @Time    : 2022/02/20 18:12
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-
+import os
 from time import sleep
 
 import pytest
@@ -25,3 +25,7 @@ class TestCas:
                         "//div[@class='el-input-group__append']/button[@class='el-button el-button--default']")])
         # 获取商品名列表
         pytest.assume(1 == 1)
+
+
+if __name__ == "__main__":
+    os.system("test_dcscas.py")

@@ -2,12 +2,13 @@
 # @Time    : 2022/09/03 10:36
 # @Author  : ╰☆H.俠ゞ
 # ========================================================
+import os
 
-from locust import HttpUser, between, task, TaskSet
+from locust import HttpUser, between, task, TaskSet, HttpLocust
 import pytest
 from selenium.webdriver.common.by import By
 import sys
-sys.path.append("D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量
+sys.path.append(f"D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量
 from CTTQ.dcsqas.page_object.login_dcs import Login
 
 
@@ -29,4 +30,7 @@ class WebSiteUser(HttpUser):
                         "//div[@class='el-input-group__append']/button[@class='el-button el-button--default']")])
         # 获取商品名列表
         pytest.assume(1 == 1)
-        self.client.get()
+
+
+if __name__ == "__main__":
+    os.system("locustfile.py")
