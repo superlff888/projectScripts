@@ -2,6 +2,7 @@
 # @Time    : 2022/09/01 10:11
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
+from locust import task
 from selenium.webdriver.common.by import By
 
 from CTTQ.dcsqas.page_object.base_page import BasePage

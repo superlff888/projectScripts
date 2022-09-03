@@ -5,9 +5,6 @@
 
 
 import logging
-import time
-
-import yaml
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.relative_locator import with_tag_name
@@ -45,7 +42,7 @@ class BasePage:
         :param locator:
         :return:
         """
-        print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        # print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
         # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
         if locator is None:
             # 如果传入元祖，那么给元祖做解包，分别传入到函数中
