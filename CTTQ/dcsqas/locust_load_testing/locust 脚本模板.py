@@ -42,12 +42,12 @@ class WebSiteUser(HttpUser):
     def teardown(self):
         print("locust teardown")
 
-    # 类似于 between(3, 5)
+    # 类似于 between(3, 5) ,指的是：每个用户执行两个任务的间隔时间
     min_wait = 3000  # 单位 毫秒
-    max_wait = 5000
+    max_wait = 5000  # 默认1000毫秒
 
     # 被测系统的host（接口url）
-    host = '*.*.*.*'
+    host = '*.*.*.*:port'
 
     # 指定要执行哪个任务集
     tasks = [UserBehave]

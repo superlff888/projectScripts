@@ -16,7 +16,7 @@ class BasePage:
     是某些操作的底层
     """
 
-    def __init__(self, base_driver: WebDriver = None, url=None):
+    def __init__(self, base_driver: WebDriver = None, url: str = None):
         self._BASE_URL = url  # 类变量要大写；私有化属性
 
         if base_driver is None:

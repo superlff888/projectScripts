@@ -3,6 +3,7 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from selenium.common.exceptions import *
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from CTTQ.dcsqas.page_object.base_page import BasePage
@@ -27,7 +28,10 @@ class HomePage(BasePage):
         try:
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by_send))  # 等待输入框可点击
             self.fond(by_send).send_keys(text)
+
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(by_click))  # 等待检索框可点击
+
+            # WebDriverWait(self.driver, 20).until(text == "华为")  # 等待检索框可点击
             self.fond(by_click).click()
             self.driver.implicitly_wait(2)
         except NoSuchElementException:
@@ -46,7 +50,8 @@ class HomePage(BasePage):
         try:
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
             self.fond(close_bn).click()
-            return self.search
+            self.fond(close_bn)
+            return self.search, self.fond, self.driver
         except ElementClickInterceptedException:
             WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
             return self.miss(close_bn)
