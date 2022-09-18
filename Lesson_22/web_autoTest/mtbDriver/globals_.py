@@ -44,6 +44,6 @@ def test_hasattr1():
 
 
 def test_c():
-    # gc = importlib.import_module(".web_autoTest.demo_import_module.demo_importlib", "Lesson_22")  # 相对导入
-    gc = importlib.import_module("Lesson_22.web_autoTest.demo_import_module.demo_importlib", "")  # 绝对导入（路径：工程下第一个包开始）
+    gc = importlib.import_module(".web_autoTest.demo_import_module.demo_importlib", "Lesson_22")  # 相对导入
+    # gc = importlib.import_module("Lesson_22.web_autoTest.demo_import_module.demo_importlib", "")  # 绝对导入（路径：工程下第一个包开始）
     getattr(gc, "demo")()
