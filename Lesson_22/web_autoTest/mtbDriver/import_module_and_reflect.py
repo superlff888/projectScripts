@@ -38,10 +38,15 @@ def b():
 
 
 def test_c():
-
-    gc = importlib.import_module(".web_autoTest.demo_import_module.demo_importlib", "Lesson_22")  # 相对导入
-    # gc = importlib.import_module("Lesson_22.web_autoTest.demo_import_module.demo_importlib", "")  # 绝对导入（路径：工程下第一个包开始）
+    # < import_module > 只能导入包和模块，不能导入模块中的类和方法
+    # gc = importlib.import_module(".web_autoTest.demo_import_module.demo_importlib", "Lesson_22")  # 相对导入
+    # gc_class = importlib.import_module(".web_autoTest.demo_import_module.demo_importlib", "Lesson_22")  # 相对导入
+    gc = importlib.import_module("Lesson_22.web_autoTest.demo_import_module.demo_importlib")  # 绝对导入（路径：工程下第一个包开始）
+    gc_class = importlib.import_module("Lesson_22.web_autoTest.demo_import_module.demo_importlib")  # 绝对导入（路径：工程下第一个包开始）
     getattr(gc, "demo")()
+
+    c_demo = getattr(gc_class, "Demo_class")
+    getattr(c_demo(), "demo_c")()  # 类方法添加staticmethod静态方法装饰器后，就不用实例化的，直接c_demo.demo_c
 
 
 # if __name__ == "__main__":

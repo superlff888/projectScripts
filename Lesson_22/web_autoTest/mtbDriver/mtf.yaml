@@ -1,7 +1,7 @@
 test_xxx:  # 用例名称 method_name
   - print: ["调用python内置函数，这里是内置函数print的参数，测试步骤驱动1"] # step
   - re.search: ['.*','ab']
-  - save: [tmp]
+  - save: [tmp]  # 保存上一步的结果
   - print: [$tmp]  # 原理： a = 1; print(eval("a"))
 
 test_888:
