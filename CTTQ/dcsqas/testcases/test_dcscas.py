@@ -26,7 +26,7 @@ class TestCas:
                         "//div[@class='el-input-group__append']/button[@class='el-button el-button--default']")])
         self._driver.implicitly_wait(1)
         self.fond((By.XPATH, "//input[@placeholder='请输入商品名、品牌、CAS号、货号']")).clear()  # 清空单元格
-
+        self.lg.closed()
         # 获取商品名列表
         pytest.assume(1 == 1)
 

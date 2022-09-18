@@ -4,6 +4,7 @@
 # =============================================================
 from time import sleep
 
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
@@ -30,7 +31,4 @@ class TestCas:
         text = self.driver.find_element(By.XPATH, "/html/body/section/div/header/div[2]/div[1]/span").text
         print(self.driver.find_element(By.XPATH, "/html/body/section/div/header/div[2]/div[1]/span"))
         print(f"获取的元素text:{text}")
-
-
-
 

@@ -53,3 +53,4 @@ class WebSiteUser(HttpUser):
     tasks = [UserBehave]
     # task_set = task(UserBehave)
     # task_set = UserBehave
+

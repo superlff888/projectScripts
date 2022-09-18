@@ -20,10 +20,11 @@ class UserBehave(TaskSet):
         self.lg = Login(url="https://ainewqas.cttq.com/cvue/SunnyShop-WebPC")
         self.lg.win_max()
         self.searched, self.fond, self.driver_ = self.lg.login([(By.ID, "login-workcode"), "8106139",
-                                                  (By.ID, "login-password"), "cttq.1234", (By.ID, "login-btn")]) \
+                                                                (By.ID, "login-password"), "cttq.1234",
+                                                                (By.ID, "login-btn")]) \
             .miss((By.XPATH, "//div[@class='el-dialog__body']/div[3]"))  # 关闭提示框
 
-    @task  # 添加task装饰器，性能测试才会执行该任务；也可以task(3)按百分比指定权重，比如线程为9，那么该任务权重为 9*（3/N）
+    @task(1)  # 添加task装饰器，性能测试才会执行该任务；也可以task(3)按百分比指定权重，比如线程为9，那么该任务权重为 9*（3/N）
     def search(self):
         self.searched([(By.XPATH, "//input[@placeholder='请输入商品名、品牌、CAS号、货号']"), "华为",
                        (By.XPATH,
