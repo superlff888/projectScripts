@@ -26,6 +26,11 @@ def test_b():
     return globals()["tmp"]  # 返回全局变量
 
 
+def test_g():
+    # print(f"\n全局：{globals().get('tmp')}")
+    print(f"\n全局：{globals()['tmp']}")
+
+
 def test_b1():
     got_back_result = test_b()  # 获得上一步返回的全局变量
     print(got_back_result)  # 打印上一步返回的全局变量
