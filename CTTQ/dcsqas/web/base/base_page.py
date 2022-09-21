@@ -125,14 +125,18 @@ class BasePage:
             list_a.append(text)
         return list_a
 
-    def get_text(self, by):
+    def get_text(self, by: tuple):
         return self.driver.find_element(by).text
+
+    def implicitly_time(self, timeout):
+        self.driver.implicitly_wait(timeout)
 
     def below_s4(self, ag_name, element_or_locator):
         """返回指定元素下方的元素 https://blog.csdn.net/qq_18298049/article/details/117194464"""
         self.driver.find_element(with_tag_name(ag_name).below(element_or_locator))
 
-    def WebDriverWait_until_clickable(self, timeout, ele):
+    def WebDriverWait_until_clickable(self, timeout: int, ele: tuple):
+        """ele is a tuple"""
         WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(ele))
         # except NoSuchElementException:
         #     return self.search(obj)

@@ -9,7 +9,7 @@ from CTTQ.dcsqas.web.base.base_page import BasePage
 
 
 class Identity_card(BasePage):
-    def ID_card_identification(self, value, by):
+    def ID_card_identification(self, value, by: tuple):
         """*by"""
         self.send_file(value, by)  # 上传图片
 
