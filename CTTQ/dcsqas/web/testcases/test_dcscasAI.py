@@ -20,6 +20,7 @@ class TestCas(unittest.TestCase):
                                                     (By.ID, "login-btn")])
         self.lg.implicitly_time(3)
 
+    @pytest.mark.parametrize
     def test_IDci(self, obj: tuple, value, by_card: tuple, by_text: tuple):
         self.gmv.identity_card(obj).ID_card_identification(value, by_card)
         self.lg.WebDriverWait_until_clickable(10, (By.ID, "target"))
