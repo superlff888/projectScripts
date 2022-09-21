@@ -4,16 +4,15 @@
 # =============================================================
 
 from CTTQ.dcsqas.web.base.base_page import BasePage
+from CTTQ.dcsqas.web.gateCenterAI.machine_vision import Identity_card, VerificationCode
 
 
 class GateAIServer_machineVision(BasePage):
     """机器视觉"""
     def gateAIServer_machineVision(self, obj):
         """
-        obj  列表或元组
-        by_*  列表或元组
-        by   列表或元组
-        locator   列表或元组
+        by   定位方式
+        locator   元素
         """
         by, locator = obj
         self.clicked(by, locator)
@@ -22,13 +21,13 @@ class GateAIServer_machineVision(BasePage):
         """身份证"""
         by, locator = obj
         self.clicked(by, locator)
-        return
+        return Identity_card(self.driver)
 
     def verificationCode(self, obj):
         """验证码"""
         by, locator = obj
         self.clicked(by, locator)
-        return
+        return VerificationCode(self.driver)
 
     def pedestrian_detection(self, obj):
         """行人检测"""
@@ -47,9 +46,9 @@ class GateAIServer_machineVision(BasePage):
         pass
 
 
-class Phonetic_language:
+class Phonetic_language(BasePage):
     """语音语言"""
-    def Keyword_extraction(self, obj):
+    def keyword_extraction(self, obj):
         """关键词提取"""
         pass
 
@@ -81,12 +80,17 @@ class Phonetic_language:
         """语音合成"""
         pass
 
-    def phonetic_language(self):
+    def phonetic_language(self, obj):
         """语音语言"""
-        pass
+        """
+        by   定位方式
+        locator   元素
+        """
+        by, locator = obj
+        self.clicked(by, locator)
 
 
-class GateAIServer300:
+class GateAIServer300(BasePage):
 
     def gateAIServer300(self, obj):
         pass
@@ -104,7 +108,7 @@ class GateAIServer300:
         pass
 
 
-class GateAIServer400:
+class GateAIServer400(BasePage):
 
     def gateAIServer400(self, obj):
         pass
@@ -122,7 +126,7 @@ class GateAIServer400:
         pass
 
 
-class GateAIServer500:
+class GateAIServer500(BasePage):
 
     def gateAIServer500(self, obj):
         pass
@@ -146,6 +150,6 @@ class GateAIServer500:
         pass
 
 
-class GateAILink:
+class GateAILink(BasePage):
     def gateAILink(self, obj):
         pass
