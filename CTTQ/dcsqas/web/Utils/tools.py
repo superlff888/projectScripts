@@ -5,6 +5,8 @@
 import base64
 import importlib
 import io
+import os
+
 from PIL import Image
 
 

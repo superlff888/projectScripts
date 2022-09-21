@@ -16,7 +16,8 @@ class TestCas:
         self.lg = Login(url="https://ainewqas.cttq.com/cvue/SunnyShop-WebPC")
         self.lg.win_max()
         self.searched, self.fond, self._driver = self.lg.login([(By.ID, "login-workcode"), "8106139",
-                                       (By.ID, "login-password"), "cttq.1234", (By.ID, "login-btn")]) \
+                                                                (By.ID, "login-password"), "cttq.1234",
+                                                                (By.ID, "login-btn")]) \
             .miss((By.XPATH, "//div[@class='el-dialog__body']/div[3]"))  # 关闭提示框
 
     def test_search(self):

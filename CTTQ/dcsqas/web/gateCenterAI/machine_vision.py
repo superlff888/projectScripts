@@ -3,17 +3,21 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 """机器视觉"""
+from selenium.webdriver.common.by import By
+
 from CTTQ.dcsqas.web.base.base_page import BasePage
 
 
 class Identity_card(BasePage):
-    def ID_card_identification(self):
-        pass
+    def ID_card_identification(self, value, by):
+        """*by"""
+        self.send_file(value, by)  # 上传图片
 
 
 class VerificationCode(BasePage):
-    def verificationCode_identification(self):
-        pass
+    def verificationCode_identification(self, value, by):
+        """by is a tuple"""
+        self.send_file(value, by)  # 上传图片
 
 
 class Pedestrian_detection(BasePage):

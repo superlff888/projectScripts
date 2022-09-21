@@ -5,8 +5,11 @@
 
 
 import logging
+import os
+
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import with_tag_name
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -36,7 +39,7 @@ class BasePage:
                 print(f"url填写错误{e}")
                 logging.info(f"url填写错误{e}")
 
-    def clicked(self, by, locator):
+    def clicked(self, by, locator=None):
         """
         有可能传入 的是一个元祖(a, b)
         也有可能是传入两个参数
@@ -53,22 +56,43 @@ class BasePage:
             # 如果传入两个参数，则正常使用。
             return self.driver.find_element(by, locator).click()
 
-    def send(self, text, by, locator=None):
+    def send_file(self, value, by, locator=None):
         """
         有可能传入 的是一个元祖(a, b)
         也有可能是传入两个参数
-        :param by:
-        :param locator:
-        :return:
+        ::value: filename.jpg ;文本、文件绝对路径、图片绝对路径,推荐os.path.abspath("1.jpg")
+        ::param by:
+        ::param locator:
+        ::return:
         """
         # print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
         # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        path = os.path.abspath(value)
         if locator is None:
             # 如果传入元祖，那么给元祖做解包，分别传入到函数中
-            return self.driver.find_element(*by).send_keys(text)  # 解包
+            return self.driver.find_element(*by).send_keys(path)  # 解包
         else:
             # 如果传入两个参数，则正常使用。
-            return self.driver.find_element(by, locator).send_keys(text)
+            return self.driver.find_element(by, locator).send_keys(path)
+
+    def send(self, value, by, locator=None):
+        """
+        有可能传入 的是一个元祖(a, b)
+        也有可能是传入两个参数
+        ::value: filename.jpg ;文本、文件绝对路径、图片绝对路径,推荐os.path.abspath("1.jpg")
+        ::param by:
+        ::param locator:
+        ::return:
+        """
+        # print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+
+        if locator is None:
+            # 如果传入元祖，那么给元祖做解包，分别传入到函数中
+            return self.driver.find_element(*by).send_keys(value)  # 解包
+        else:
+            # 如果传入两个参数，则正常使用。
+            return self.driver.find_element(by, locator).send_keys(value)
 
     def fond(self, by, locator=None):  # 兼容元组
         """
@@ -86,6 +110,28 @@ class BasePage:
         else:
             # 如果传入两个参数，则正常使用。
             return self.driver.find_element(by, locator)
+
+    def closed(self):
+        self.driver.close()
+
+    def win_max(self):
+        self.driver.maximize_window()
+
+    def text_list(self, by):
+        """by is a list or tuple"""
+        ele = self.driver.find_elements(by)
+        list_a = []
+        for i in ele:
+            text = i.text
+            list_a.append(text)
+        return list_a
+
+    def get_text(self, by):
+        return self.driver.find_element(by).text
+
+    def below_s4(self, ag_name, element_or_locator):
+        """返回指定元素下方的元素 https://blog.csdn.net/qq_18298049/article/details/117194464"""
+        self.driver.find_element(with_tag_name(ag_name).below(element_or_locator))
 
     def WebDriverWait_until_clickable(self, timeout, ele):
         WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(ele))
@@ -113,21 +159,3 @@ class BasePage:
     #     except Exception:
     #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
     #         return self.miss(close_bn)
-
-    def closed(self):
-        self.driver.close()
-
-    def win_max(self):
-        self.driver.maximize_window()
-
-    def text_list(self, by):
-        ele = self.driver.find_elements(by)
-        list_a = []
-        for i in ele:
-            text = i.text
-            list_a.append(text)
-        return list_a
-
-    def below_s4(self, ag_name, element_or_locator):
-        """返回指定元素下方的元素 https://blog.csdn.net/qq_18298049/article/details/117194464"""
-        self.driver.find_element(with_tag_name(ag_name).below(element_or_locator))
