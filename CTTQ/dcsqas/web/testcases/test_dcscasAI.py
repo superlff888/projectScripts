@@ -27,6 +27,9 @@ class TestCas(unittest.TestCase):
         text = self.lg.get_text(by_text)
         self.assertIn(text, ("姓名", "身份证"))
 
+    def test_vc(self):
+        pass
+
 
 if __name__ == "__main__":
     os.system("pytest -sv test_dcscasAI.py")
