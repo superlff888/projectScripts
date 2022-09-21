@@ -3,15 +3,14 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from selenium.common.exceptions import *
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from CTTQ.dcsqas.page_object.base_page import BasePage
+from CTTQ.dcsqas.web.base.base_page import BasePage
 
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class HomePage(BasePage):
+class GateAI(BasePage):
 
     def search(self, obj):
         """
@@ -46,16 +45,16 @@ class HomePage(BasePage):
             print(f"抛出异常{e}")
             return self.search(obj)
 
-    def miss(self, close_bn):
-        try:
-            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-            self.fond(close_bn).click()
-            self.fond(close_bn)
-            return self.search, self.fond, self.driver
-        except ElementClickInterceptedException:
-            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-            return self.miss(close_bn)
-        except Exception:
-            WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-            return self.miss(close_bn)
+    # def miss(self, close_bn):
+    #     try:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         self.fond(close_bn).click()
+    #         self.fond(close_bn)
+    #         return self.search, self.fond, self.driver
+    #     except ElementClickInterceptedException:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         return self.miss(close_bn)
+    #     except Exception:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         return self.miss(close_bn)
 

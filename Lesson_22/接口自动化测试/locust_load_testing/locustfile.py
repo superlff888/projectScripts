@@ -3,15 +3,13 @@
 # @Author  : ╰☆H.俠ゞ
 # ========================================================
 import os
-from time import sleep
 
 from locust import HttpUser, between, task, TaskSet
-import pytest
 from selenium.webdriver.common.by import By
 import sys
 
 sys.path.append(f"D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量
-from CTTQ.dcsqas.page_object.login_dcs import Login
+from CTTQ.dcsqas.web.gateCenterAI.login_dcs import Login
 
 
 class UserBehave(TaskSet):
@@ -43,4 +41,4 @@ class WebSiteUser(HttpUser):
 
 
 if __name__ == "__main__":
-    os.system("locust")
+    os.system("locust")  # 命令行执行locust

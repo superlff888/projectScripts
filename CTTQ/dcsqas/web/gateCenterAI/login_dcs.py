@@ -2,15 +2,12 @@
 # @Time    : 2022/09/01 10:11
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from locust import task
-from selenium.webdriver.common.by import By
 
-from CTTQ.dcsqas.page_object.base_page import BasePage
-from CTTQ.dcsqas.page_object.homePage import HomePage
+from CTTQ.dcsqas.web.base.base_page import BasePage
+from CTTQ.dcsqas.web.gateCenterAI.gateAI import GateAI
 
 
 class Login(BasePage):
-    # _BASE_URL = "https://ainewqas.cttq.com/cvue/SunnyShop-WebPC"
 
     def login(self, obj):
         """
@@ -20,5 +17,5 @@ class Login(BasePage):
         self.fond(by_account).send_keys(text_account)
         self.fond(by_password).send_keys(text_password)
         self.fond(by_click).click()
-        return HomePage(self.driver)  # BasePage构造方法防止再次打开一个网页
+        return GateAI(self.driver)  # BasePage构造方法防止再次打开一个网页
 
