@@ -4,43 +4,44 @@
 # =============================================================
 
 """语音语言"""
+from CTTQ.dcsqas.web.base.base_page import BasePage
 
 
-class Keyword_extraction:
+class Keyword_extraction(BasePage):
     def keyword_extraction(self):
         pass
 
 
-class Text_summary:
+class Text_summary(BasePage):
     def text_summary(self):
         pass
 
 
-class Opinion_analysis:
+class Opinion_analysis(BasePage):
     def opinion_analysis(self):
         pass
 
 
-class Text_error_correction:
+class Text_error_correction(BasePage):
     def text_error_correction(self):
         pass
 
 
-class Similar_content:
+class Similar_content(BasePage):
     def similar_content(self):
         pass
 
 
-class Address_recognition:
+class Address_recognition(BasePage):
     def address_recognition(self):
         pass
 
 
-class Speech_recognition:
+class Speech_recognition(BasePage):
     def speech_recognition(self):
         pass
 
 
-class Speech_synthesis:
+class Speech_synthesis(BasePage):
     def speech_synthesis(self):
         pass

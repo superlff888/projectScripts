@@ -4,13 +4,17 @@
 # =============================================================
 
 from CTTQ.dcsqas.web.base.base_page import BasePage
-from CTTQ.dcsqas.web.gateCenterAI.machine_vision import Identity_card, VerificationCode
+from CTTQ.dcsqas.web.gateCenterAI.machine_vision import Identity_card, VerificationCode, Pedestrian_detection, \
+    Human_posture_estimation, Character_recognition_OCR, Image_style_transfer
+from CTTQ.dcsqas.web.gateCenterAI.phonetic_language import Keyword_extraction, Text_summary, Opinion_analysis, \
+    Text_error_correction, Similar_content, Address_recognition, Speech_recognition, Speech_synthesis
 
 
 class GateAIServer_machineVision(BasePage):
     """机器视觉"""
     def gateAIServer_machineVision(self, obj):
         """
+        机器视觉
         by   定位方式
         locator   元素
         """
@@ -31,54 +35,78 @@ class GateAIServer_machineVision(BasePage):
 
     def pedestrian_detection(self, obj):
         """行人检测"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Pedestrian_detection(self.driver)
 
-    def human_posture_estimation(self):
+    def human_posture_estimation(self, obj):
         """人体姿态估计"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Human_posture_estimation(self.driver)
 
-    def character_recognition_OCR(self):
+    def character_recognition_OCR(self, obj):
         """文字识别OCR"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Character_recognition_OCR(self.driver)
 
-    def image_style_transfer(self):
+    def image_style_transfer(self, obj):
         """图像风格迁移"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Image_style_transfer(self.driver)
 
 
 class Phonetic_language(BasePage):
     """语音语言"""
     def keyword_extraction(self, obj):
         """关键词提取"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Keyword_extraction(self.driver)
 
-    def text_summary(self):
+    def text_summary(self, obj):
         """文本摘要"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Text_summary(self.driver)
 
-    def opinion_analysis(self):
+    def opinion_analysis(self, obj):
         """舆情分析"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Opinion_analysis(self.driver)
 
-    def text_error_correction(self):
+    def text_error_correction(self, obj):
         """文本纠错"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Text_error_correction(self.driver)
 
-    def similar_content(self):
+    def similar_content(self, obj):
         """相似内容推荐"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Similar_content(self.driver)
 
-    def address_recognition(self):
+    def address_recognition(self, obj):
         """地址识别"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Address_recognition(self.driver)
 
-    def speech_recognition(self):
+    def speech_recognition(self, obj):
         """语音识别"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Speech_recognition(self.driver)
 
-    def speech_synthesis(self):
+    def speech_synthesis(self, obj):
         """语音合成"""
-        pass
+        by, locator = obj
+        self.clicked(by, locator)
+        return Speech_synthesis(self.driver)
 
     def phonetic_language(self, obj):
         """语音语言"""

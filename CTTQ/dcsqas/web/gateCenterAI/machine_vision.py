@@ -16,21 +16,21 @@ class VerificationCode(BasePage):
         pass
 
 
-class Pedestrian_detection:
+class Pedestrian_detection(BasePage):
     def pedestrian_detection(self):
         pass
 
 
-class Human_posture_estimation:
+class Human_posture_estimation(BasePage):
     def human_posture_estimation(self):
         pass
 
 
-class Character_recognition_OCR:
+class Character_recognition_OCR(BasePage):
     def character_recognition_OCR(self):
         pass
 
 
-class Image_style_transfer:
+class Image_style_transfer(BasePage):
     def image_style_transfer(self):
         pass
