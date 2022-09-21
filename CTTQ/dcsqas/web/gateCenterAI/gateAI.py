@@ -2,74 +2,93 @@
 # @Time    : 2022/09/01 10:24
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from selenium.common.exceptions import *
-from selenium.webdriver.support.wait import WebDriverWait
+
 from CTTQ.dcsqas.web.base.base_page import BasePage
 
 
-class GateAIServer100(BasePage):
-
-    def gateAIServer100(self, obj):
+class GateAIServer_machineVision(BasePage):
+    """机器视觉"""
+    def gateAIServer_machineVision(self, obj):
         """
         obj  列表或元组
         by_*  列表或元组
         by   列表或元组
         locator   列表或元组
         """
-        by_send, text, by_click = obj
+        by, locator = obj
+        self.clicked(by, locator)
 
-    def identity_card(self):
+    def identity_card(self, obj):
+        """身份证"""
+        by, locator = obj
+        self.clicked(by, locator)
+        return
+
+    def verificationCode(self, obj):
+        """验证码"""
+        by, locator = obj
+        self.clicked(by, locator)
+        return
+
+    def pedestrian_detection(self, obj):
+        """行人检测"""
         pass
 
-    def VerificationCode(self):
+    def human_posture_estimation(self):
+        """人体姿态估计"""
         pass
 
-    def gateAIServer103(self):
+    def character_recognition_OCR(self):
+        """文字识别OCR"""
         pass
 
-    def gateAIServer104(self):
-        pass
-
-    def gateAIServer105(self):
-        pass
-
-    def gateAIServer106(self):
+    def image_style_transfer(self):
+        """图像风格迁移"""
         pass
 
 
-class GateAIServer200:
-
-    def gateAIServer200(self):
+class Phonetic_language:
+    """语音语言"""
+    def Keyword_extraction(self, obj):
+        """关键词提取"""
         pass
 
-    def gateAIServer201(self):
+    def text_summary(self):
+        """文本摘要"""
         pass
 
-    def gateAIServer202(self):
+    def opinion_analysis(self):
+        """舆情分析"""
         pass
 
-    def gateAIServer203(self):
+    def text_error_correction(self):
+        """文本纠错"""
         pass
 
-    def gateAIServer204(self):
+    def similar_content(self):
+        """相似内容推荐"""
         pass
 
-    def gateAIServer205(self):
+    def address_recognition(self):
+        """地址识别"""
         pass
 
-    def gateAIServer206(self):
+    def speech_recognition(self):
+        """语音识别"""
         pass
 
-    def gateAIServer207(self):
+    def speech_synthesis(self):
+        """语音合成"""
         pass
 
-    def gateAIServer208(self):
+    def phonetic_language(self):
+        """语音语言"""
         pass
 
 
 class GateAIServer300:
 
-    def gateAIServer300(self):
+    def gateAIServer300(self, obj):
         pass
 
     def gateAIServer301(self):
@@ -87,7 +106,7 @@ class GateAIServer300:
 
 class GateAIServer400:
 
-    def gateAIServer400(self):
+    def gateAIServer400(self, obj):
         pass
 
     def gateAIServer401(self):
@@ -105,7 +124,7 @@ class GateAIServer400:
 
 class GateAIServer500:
 
-    def gateAIServer500(self):
+    def gateAIServer500(self, obj):
         pass
 
     def gateAIServer501(self):
@@ -128,5 +147,5 @@ class GateAIServer500:
 
 
 class GateAILink:
-    def gateAILink(self):
+    def gateAILink(self, obj):
         pass
