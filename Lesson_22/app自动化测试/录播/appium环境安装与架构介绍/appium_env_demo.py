@@ -8,6 +8,7 @@ from time import sleep
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
+
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
 desired_caps['platformVersion'] = '6.0'
