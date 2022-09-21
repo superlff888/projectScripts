@@ -8,6 +8,8 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.relative_locator import with_tag_name
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 
 
 class BasePage:
@@ -50,6 +52,33 @@ class BasePage:
         else:
             # 如果传入两个参数，则正常使用。
             return self.driver.find_element(by, locator)
+
+    def WebDriverWait_until_clickable(self, timeout, ele):
+        WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(ele))
+        # except NoSuchElementException:
+        #     return self.search(obj)
+        # except ElementClickInterceptedException:
+        #     return self.search(obj)
+        # except WebDriverException:
+        #     return self.search(obj)
+        # except ElementNotVisibleException:
+        #     return self.search(obj)
+        # except Exception as e:
+        #     print(f"抛出异常{e}")
+        #     return self.search(obj)
+
+    # def miss(self, close_bn):
+    #     try:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         self.fond(close_bn).click()
+    #         self.fond(close_bn)
+    #         return self.search, self.fond, self.driver
+    #     except ElementClickInterceptedException:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         return self.miss(close_bn)
+    #     except Exception:
+    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
+    #         return self.miss(close_bn)
 
     def closed(self):
         self.driver.close()
