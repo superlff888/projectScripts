@@ -36,6 +36,40 @@ class BasePage:
                 print(f"url填写错误{e}")
                 logging.info(f"url填写错误{e}")
 
+    def clicked(self, by, locator):
+        """
+        有可能传入 的是一个元祖(a, b)
+        也有可能是传入两个参数
+        :param by:
+        :param locator:
+        :return:
+        """
+        # print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        if locator is None:
+            # 如果传入元祖，那么给元祖做解包，分别传入到函数中
+            return self.driver.find_element(*by).click()  # 解包
+        else:
+            # 如果传入两个参数，则正常使用。
+            return self.driver.find_element(by, locator).click()
+
+    def send(self, text, by, locator=None):
+        """
+        有可能传入 的是一个元祖(a, b)
+        也有可能是传入两个参数
+        :param by:
+        :param locator:
+        :return:
+        """
+        # print(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        # logging.debug(f"元素的定位方式为{by}， 元素的定位表达式为{locator}")
+        if locator is None:
+            # 如果传入元祖，那么给元祖做解包，分别传入到函数中
+            return self.driver.find_element(*by).send_keys(text)  # 解包
+        else:
+            # 如果传入两个参数，则正常使用。
+            return self.driver.find_element(by, locator).send_keys(text)
+
     def fond(self, by, locator=None):  # 兼容元组
         """
         有可能传入 的是一个元祖(a, b)

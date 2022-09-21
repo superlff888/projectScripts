@@ -18,10 +18,10 @@ class GateAIServer100(BasePage):
         """
         by_send, text, by_click = obj
 
-    def gateAIServer101(self):
+    def identity_card(self):
         pass
 
-    def gateAIServer102(self):
+    def VerificationCode(self):
         pass
 
     def gateAIServer103(self):
@@ -85,7 +85,7 @@ class GateAIServer300:
         pass
 
 
-class gateAIServer400:
+class GateAIServer400:
 
     def gateAIServer400(self):
         pass
@@ -103,7 +103,7 @@ class gateAIServer400:
         pass
 
 
-class gateAIServer500:
+class GateAIServer500:
 
     def gateAIServer500(self):
         pass
@@ -127,6 +127,6 @@ class gateAIServer500:
         pass
 
 
-class gateAILink:
+class GateAILink:
     def gateAILink(self):
         pass

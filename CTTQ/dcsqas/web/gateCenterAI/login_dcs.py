@@ -4,7 +4,8 @@
 # =============================================================
 
 from CTTQ.dcsqas.web.base.base_page import BasePage
-from CTTQ.dcsqas.web.gateCenterAI.gateAI import GateAI
+from CTTQ.dcsqas.web.gateCenterAI.gateAI import GateAIServer100, GateAIServer200, GateAIServer300, GateAIServer400, \
+    GateAIServer500, GateAILink
 
 
 class Login(BasePage):
@@ -17,5 +18,5 @@ class Login(BasePage):
         self.fond(by_account).send_keys(text_account)
         self.fond(by_password).send_keys(text_password)
         self.fond(by_click).click()
-        return GateAI(self.driver)  # BasePage构造方法防止再次打开一个网页
-
+        return GateAIServer100(
+            self.driver), GateAIServer200(), GateAIServer300(), GateAIServer400(), GateAIServer500(), GateAILink()  # BasePage构造方法防止再次打开一个网页
