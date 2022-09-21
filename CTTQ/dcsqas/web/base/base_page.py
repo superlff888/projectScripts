@@ -9,7 +9,6 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import with_tag_name
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -60,8 +59,8 @@ class BasePage:
         """
         有可能传入 的是一个元祖(a, b)
         也有可能是传入两个参数
-        ::value: filename.jpg ;文本、文件绝对路径、图片绝对路径,推荐os.path.abspath("1.jpg")
-        ::param by:
+        ::value: like 'filename.jpg' ; use by <文本、文件绝对路径、图片绝对路径,推荐os.path.abspath("1.jpg")>
+        ::param by: this is a tuple
         ::param locator:
         ::return:
         """
