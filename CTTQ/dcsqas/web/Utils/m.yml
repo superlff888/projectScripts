@@ -1,0 +1,136 @@
+
+# [[By.ID, ""], '身份证.png', [By.ID, ""], 10, [By.ID, ""], [By.ID, ""]]
+ID:
+  -
+    -
+      - By.ID
+      - u56
+    - 身份证.png
+    -
+      - By.ID
+      - u58
+    - 10
+    -
+      - By.ID
+      - u66
+    -
+      - By.ID
+      - u88
+vc:
+  -
+    -
+      - By.ID
+      - u56
+    - 身份证.png
+    -
+      - By.ID
+      - u88
+    - 10
+    -
+      - By.ID
+      - u66
+    -
+      - By.ID
+      - u66
+# [[url,[[By.ID, "login-workcode"], "8102784",  [By.ID, "login-password"], "cttq.1234"， [By.ID, "login-btn"]]]]
+login:
+    -
+      - url
+      -
+        -
+          - By.ID
+          - ogin-workcode
+        - 8102784
+        -
+          - By.ID
+          - login-password
+        - cttq.1234
+        -
+          - By.ID
+          - login-btn
+ke:
+  -
+    -
+      - By.ID
+      - u56
+    - 关键词提取.png
+    -
+      - By.ID
+      - u88
+    -
+      - By.ID
+      - u88
+    - 10
+    -
+      - By.ID
+      - u66
+    -
+      - By.ID
+      - u66
+summary:
+  -
+    -
+      - By.ID
+      - u56
+    - 文本摘要.png
+    -
+      - By.ID
+      - u88
+    -
+      - By.ID
+      - u88
+    - 10
+    -
+      - By.ID
+      - u66
+    -
+      - By.ID
+      - u66
+# obj: tuple, value_title, by_title: tuple, by_content: tuple, value_content, by_c: tuple, timeout, ele: tuple, by_text: tuple)
+oa:
+  -
+    -
+      - By.ID
+      - u56
+    - 舆情分析title
+    -
+      - By.ID
+      - u88
+    -
+      - By.ID
+      - u99
+    - 舆情分析content
+    -
+      - By.ID
+      - u88
+    - 10
+    -
+      - By.ID
+      - u66
+    -
+      - By.ID
+      - u66
+# obj, value_t1, by_t1, value_t2, by_t2, by_c, timeout, ele, by_text
+sc:
+  -
+    -
+      - By.ID
+      - u1
+    - 相似内容推荐t1
+    -
+      - By.ID
+      - u56
+    - 相似内容推荐t2
+    -
+      - By.ID
+      - u88
+    -
+      - By.ID
+      - u99
+    - 10
+    -
+      - By.ID
+      - u88
+    -
+      - By.ID
+      - u66

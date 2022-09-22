@@ -60,59 +60,59 @@ class GateAIServer_machineVision(BasePage):
 
 class Phonetic_language(BasePage):
     """语音语言"""
-    def keyword_extraction(self, obj):
+    def keyword_extraction(self, obj: tuple):
         """关键词提取"""
         by, locator = obj
         self.clicked(by, locator)
         return Keyword_extraction(self.driver)
 
-    def text_summary(self, obj):
+    def text_summary(self, obj: tuple):
         """文本摘要"""
         by, locator = obj
         self.clicked(by, locator)
         return Text_summary(self.driver)
 
-    def opinion_analysis(self, obj):
+    def opinion_analysis(self, obj: tuple):
         """舆情分析"""
         by, locator = obj
         self.clicked(by, locator)
         return Opinion_analysis(self.driver)
 
-    def text_error_correction(self, obj):
+    def text_error_correction(self, obj: tuple):
         """文本纠错"""
         by, locator = obj
         self.clicked(by, locator)
         return Text_error_correction(self.driver)
 
-    def similar_content(self, obj):
+    def similar_content(self, obj: tuple):
         """相似内容推荐"""
         by, locator = obj
         self.clicked(by, locator)
         return Similar_content(self.driver)
 
-    def address_recognition(self, obj):
+    def address_recognition(self, obj: tuple):
         """地址识别"""
         by, locator = obj
         self.clicked(by, locator)
         return Address_recognition(self.driver)
 
-    def speech_recognition(self, obj):
+    def speech_recognition(self, obj: tuple):
         """语音识别"""
         by, locator = obj
         self.clicked(by, locator)
         return Speech_recognition(self.driver)
 
-    def speech_synthesis(self, obj):
+    def speech_synthesis(self, obj: tuple):
         """语音合成"""
         by, locator = obj
         self.clicked(by, locator)
         return Speech_synthesis(self.driver)
 
-    def phonetic_language(self, obj):
+    def phonetic_language(self, obj: tuple):
         """语音语言"""
-        """
-        by   定位方式
-        locator   元素
+        """ 
+        by   定位方式 ID XPATH CSS 等等
+        locator   定位方式对应的值，如“id”值 u39_state2 , “xpath”值 //*[@id="u39_state2"]
         """
         by, locator = obj
         self.clicked(by, locator)
@@ -179,5 +179,14 @@ class GateAIServer500(BasePage):
 
 
 class GateAILink(BasePage):
-    def gateAILink(self, obj):
+    def fast_api(self, obj: tuple):
+        pass
+
+    def modeling_framework(self):
+        pass
+
+    def open_community(self):
+        pass
+
+    def recommendations(self):
         pass

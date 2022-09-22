@@ -7,6 +7,7 @@ import importlib
 import io
 import os
 
+import yaml
 from PIL import Image
 
 
@@ -50,5 +51,14 @@ def base64_to_image(path, base64_str):
         png.write(img_b64_decoded)
 
 
+def yaml_parse(stream_file):
+    with open(stream_file, encoding='utf-8') as f:
+        list_ = yaml.load(f)
+    return list_
+
 # a = image_to_base64(r"C:\Users\HouseLee\Desktop\验证码3.png", "base64", "b64encode")
 # base64_to_image("1.jpg", a)
+
+
+print(yaml_parse("./m.yml")["sc"])
+

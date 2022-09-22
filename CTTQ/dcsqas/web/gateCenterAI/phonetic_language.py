@@ -8,7 +8,7 @@ from CTTQ.dcsqas.web.base.base_page import BasePage
 
 
 class Keyword_extraction(BasePage):
-    def keyword_extraction(self, value, by_s, by_c):
+    def keyword_extraction(self, value, by_s: tuple, by_c: tuple):
         self.send(value, by_s)
         self.clicked(by_c)
 
@@ -33,9 +33,9 @@ class Text_error_correction(BasePage):
 
 
 class Similar_content(BasePage):
-    def similar_content(self, value, by_t1, by_t2, by_c):
-        self.send(value, by_t1)
-        self.send(value, by_t2)
+    def similar_content(self, value_t1, by_t1, value_t2, by_t2, by_c):
+        self.send(value_t1, by_t1)
+        self.send(value_t2, by_t2)
         self.clicked(by_c)
 
 
