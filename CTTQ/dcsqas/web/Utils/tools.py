@@ -60,5 +60,5 @@ def yaml_parse(stream_file):
 # base64_to_image("1.jpg", a)
 
 
-print(yaml_parse("./m.yml")["sc"])
+# print(yaml_parse("./m.yml")["sc"])
 
