@@ -49,7 +49,7 @@ def tmp3(func):
 @tmp1
 def a_decorator(x, y, z=None):
     print("a")
-    print(f"{(x, y, z)}")
+    print(f"{x, y, z}")  # 打印一个元组
 
 
 @tmp2
