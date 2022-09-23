@@ -4,11 +4,11 @@
 # =============================================================
 
 """单例模式: 将实例保存在字典中，若类(内存地址)不在字典中，则会重新实例化放进字典中"""
-_instance = {}
+# _instance = {}
 
 
 def single(func):
-    # _instance = {}
+    _instance = {}
     def wrapper(*args, **kwargs):
         if func not in _instance:
             _instance[func] = func(*args, **kwargs)  # 将实例保存在字典中
@@ -17,3 +17,12 @@ def single(func):
         return _instance[func]
     return wrapper
 
+
+def singleOn(func):
+
+    _instance = {}
+    def wrapper(*args, **kwargs):
+        if func not in _instance:
+            _instance[func] = func(*args, **kwargs)
+        return _instance[func]
+    return wrapper
