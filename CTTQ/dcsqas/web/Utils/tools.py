@@ -10,6 +10,8 @@ import os
 import yaml
 from PIL import Image
 
+from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.装饰器_hogwarts import A
+
 
 def image_to_base64(img_url, module, name):
     """
@@ -62,3 +64,4 @@ def yaml_parse(stream_file):
 
 # print(yaml_parse("./m.yml")["sc"])
 
+print(f"导入：{id(A())}")
