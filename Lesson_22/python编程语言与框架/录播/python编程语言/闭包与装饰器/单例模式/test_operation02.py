@@ -3,6 +3,7 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.单例模式 import singleon
+from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.单例模式.singleon import single
 from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.单例模式.operation1 import Demo_x
 
 
@@ -21,7 +22,7 @@ class Test_operation:
         self.dm.demo_x2().demo_y2()
 
     def test_instance2(self):
-        print(singleon._instance)
+        print(single._instance)  # 属性私有化
 
 
 """
