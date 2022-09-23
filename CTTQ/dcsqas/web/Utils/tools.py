@@ -63,5 +63,3 @@ def yaml_parse(stream_file):
 
 
 # print(yaml_parse("./m.yml")["sc"])
-
-print(f"导入：{id(A())}")

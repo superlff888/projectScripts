@@ -12,8 +12,8 @@ from CTTQ.dcsqas.web.gateCenterAI.login_dcs import Login
 
 
 class TestCas(unittest.TestCase):
+    """机器视觉"""
 
-    # 机器视觉
     @pytest.mark.parametrize('url,obj', yaml_parse("./m.yml")["login"])
     def setup_class(self, url, obj):
         self.lg = Login(url=url)
@@ -21,6 +21,7 @@ class TestCas(unittest.TestCase):
         self.gmv, self.pl, self.gl = self.lg.login(obj)
         self.lg.implicitly_time(3)
 
+    # 身份证识别
     @pytest.mark.parametrize('obj, value, by_card, timeout, ele, by_text', yaml_parse("./m.yml")["ID"])
     def test_IDci(self, obj: tuple, value, by_card: tuple, timeout, ele: tuple, by_text: tuple):
         self.gmv.identity_card(obj).ID_card_identification(value, by_card)
@@ -28,6 +29,7 @@ class TestCas(unittest.TestCase):
         text = self.lg.get_text(by_text)
         self.assertIn(text, ("姓名", "身份证"))
 
+    # 验证码识别
     @pytest.mark.parametrize('obj, value, by_card, timeout, ele, by_text', yaml_parse("./m.yml")["vc"])
     def test_vc(self, obj: tuple, value, by_card: tuple, timeout, ele: tuple, by_text: tuple):
         self.gmv.verificationCode(obj).verificationCode_identification(value, by_card)
