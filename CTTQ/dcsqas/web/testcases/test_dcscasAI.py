@@ -49,7 +49,8 @@ class TestCas(unittest.TestCase):
     def test_ist(self):
         pass
 
-    # 语音语言
+    """语音语言"""
+    # 关键字提取
     @pytest.mark.parametrize('obj, value, by_key, by_c, timeout, ele, by_text', yaml_parse("./m.yml")["ke"])
     def test_ke(self, obj: tuple, value, by_key: tuple, by_c: tuple, timeout, ele: tuple, by_text: tuple):
         self.pl.keyword_extraction(obj).keyword_extraction(value, by_key, by_c)
@@ -57,6 +58,7 @@ class TestCas(unittest.TestCase):
         text = self.lg.get_text(by_text)
         self.assertIn(text, ("关键字1", "关键字2", ))
 
+    # 文本摘要
     @pytest.mark.parametrize('obj, value, by_summary, by_c, timeout, ele, by_text', yaml_parse("./m.yml")["summary"])
     def test_ts(self, obj: tuple, value, by_summary: tuple, by_c: tuple, timeout, ele: tuple, by_text: tuple):
         self.pl.text_summary(obj).text_summary(value, by_summary, by_c)
@@ -64,6 +66,7 @@ class TestCas(unittest.TestCase):
         text = self.lg.get_text(by_text)
         self.assertIn("文本摘要", text)
 
+    # 舆情分析
     @pytest.mark.parametrize('obj, value_title, by_title, by_content, value_content, by_c, timeout, ele, by_text',
                              yaml_parse("./m.yml")["oa"])
     def test_oa(self, obj: tuple, value_title, by_title: tuple, by_content: tuple, value_content, by_c: tuple,
@@ -79,6 +82,7 @@ class TestCas(unittest.TestCase):
     #     text = self.lg.get_text(by_text)
     #     self.assertEqual("", text)
 
+    # 相似内容推荐
     @pytest.mark.parametrize('obj, value_t1, by_t1, value_t2, by_t2, by_c, timeout, ele, by_text',
                              yaml_parse("./m.yml")["sc"])
     def test_sc(self, obj: tuple, value_t1, by_t1: tuple, value_t2, by_t2: tuple, by_c: tuple,

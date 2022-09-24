@@ -1,0 +1,13 @@
+# -*- coding=utf-8 -*-
+# @Time    : 2022/09/24 14:48
+# @Author  : ╰☆H.俠ゞ
+# =============================================================
+
+ele:
+  - by: xpath
+    locator: '//*[@id]="u56"'
+    action: click
+
+  - by: xpath
+    locator: '//*[@id]="u88"'
+    action: click

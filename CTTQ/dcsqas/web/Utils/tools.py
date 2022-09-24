@@ -7,10 +7,9 @@ import importlib
 import io
 import os
 
+import allure
 import yaml
 from PIL import Image
-
-from Lesson_22.python编程语言与框架.录播.python编程语言.闭包与装饰器.装饰器_hogwarts import A
 
 
 def image_to_base64(img_url, module, name):
@@ -58,8 +57,17 @@ def yaml_parse(stream_file):
         list_ = yaml.load(f)
     return list_
 
+
 # a = image_to_base64(r"C:\Users\HouseLee\Desktop\验证码3.png", "base64", "b64encode")
 # base64_to_image("1.jpg", a)
 
 
-# print(yaml_parse("./m.yml")["sc"])
+def shotFromAssertError(func):
+    """装饰器功能: 断言错误，会将截图放在allure放到报告中"""
+    def wrapper(*args, ** kwargs):  # 接收被装饰函数的参数，self会在args元组的下标1位置
+        try:
+            func(*args, ** kwargs)
+        except AssertionError:
+            # 使用时，要将被装饰的函数的body参数放在最后
+            allure.attach(body=args[-1], attachment_type=allure.attachment_type.PNG)
+    return wrapper

@@ -128,6 +128,12 @@ class BasePage:
     def get_text(self, by: tuple):
         return self.driver.find_element(by).text
 
+    def saved_screenshot(self):
+        self.driver.save_screenshot("temp.png")
+        with open("temp.png", "rb") as f:
+            png = f.read()
+        return png
+
     def implicitly_time(self, timeout):
         self.driver.implicitly_wait(timeout)
 
@@ -150,15 +156,6 @@ class BasePage:
         #     print(f"抛出异常{e}")
         #     return self.search(obj)
 
-    # def miss(self, close_bn):
-    #     try:
-    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-    #         self.fond(close_bn).click()
-    #         self.fond(close_bn)
-    #         return self.search, self.fond, self.driver
-    #     except ElementClickInterceptedException:
-    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-    #         return self.miss(close_bn)
-    #     except Exception:
-    #         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(close_bn))
-    #         return self.miss(close_bn)
+
+
+
