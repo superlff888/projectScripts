@@ -7,3 +7,8 @@
 # print(list(map((lambda x: x ** 2), [1, 2, 3])))
 # print((lambda x, y: x * y)(2, 3))
 
+a = {"a": 1, "b": 2, "c": 3}
+
+
+for k, v in a.items():
+    print(f"k, v 为：{(k, v)[0]}")
