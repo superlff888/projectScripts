@@ -95,12 +95,36 @@ print("\n\n直接传参---------------------------------------------------")
 print((lambda a, b: a + b)(1, 2))
 
 # 带判断的lambda
-print((lambda a, b: a if a > b else b)(1000, 500))
+print(f"带判断的lambda: {(lambda a, b: a if a < b else b)(1000, 500)}")
+
+
+def lam(a, b):
+    if a < b:
+        return a
+    else:
+        return b
+
+
+print(lam(1000, 500))
 
 # 进阶：编写跳转表
 L = [lambda x: x ** 2, lambda x: x ** 3, lambda x: x ** 4]
 
 for f in L:  # f = lambda x: x ** 2
-    print(f(2))
+    print(f(2))  # 传入参数2
 
 print(L[0](3))
+
+# 结合高阶函数
+
+leaders = {4: "Yang Zhou", 2: "Elon Musk", 3: "Tim Cook", 1: "Warren Buffett"}
+print(leaders)
+print(leaders.items())  # 转化为items对象
+
+# 转化为dict
+leaders = dict(sorted(leaders.items(), key=lambda x: x[0]))  # 按照可迭代对象的key排序，列表中元组下标为0的元素
+print(leaders)
+
+# 默认参数
+
+print(f"默认2为参数： {(lambda x=2: x ** 2)()}")
