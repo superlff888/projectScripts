@@ -4,6 +4,7 @@
 # =============================================================
 
 """实战场景：利用装饰器实现黑名单"""
+import functools
 
 
 def tmp1(func):
@@ -38,6 +39,7 @@ def tmp2(func):
 
 def tmp3(func):
     print(func.__name__)
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):  # args以元组序列方式接收被装饰函数的所有参数
         print(args)  # 被装饰函数的参数组成的元组序列
         print(args[0])  # 被装饰的函数的第一个参数
