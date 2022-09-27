@@ -10,6 +10,7 @@ import functools
 def tmp1(func):
     print(func.__name__)
     # # wrapper是用于加强的函数
+    @functools.wraps(func)
     def wrapper(arg, kw, **kwargs):  # arg, kw用来接收被装饰函数的所有参数
         print(arg)
         print(kw)
@@ -24,6 +25,8 @@ def tmp1(func):
 
 def tmp2(func):
     print(func.__name__)
+
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):  # wrapper是用于加强的函数
         print(args)  # 被装饰函数的参数组成的元组序列
         print(args[0])  # 被装饰的函数的参数

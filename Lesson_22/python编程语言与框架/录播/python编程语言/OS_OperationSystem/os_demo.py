@@ -8,7 +8,7 @@ import os
 # help(os)  # 查看对应模块(os)的帮助文档
 # print(dir(os))  # 查看对应模块(os)的属性和方法
 import sys
-
+"""可以处理文件和目录这些我们日常手动需要做的操作"""
 """操作系统相关"""
 # # 1、获取系统名称
 # print(os.name)  # nt代码windows系统
@@ -21,7 +21,7 @@ import sys
 # os.system('cmd')  # linux
 # """目录之‘增删改查’"""
 # # 1、获取当前目录(目录不包含文件名，路径可以含文件名)
-# print(f'获取当前目录: {os.getcwd()}')
+print(f'获取当前目录: {os.getcwd()}')
 # # 2、切换目录
 # os.chdir('../sys_my/sys_import')
 # print(f'获取切换目录: {os.getcwd()}')  # 已经切到该目录下了 '../sys_my/sys_import'

@@ -128,3 +128,7 @@ print(leaders)
 # 默认参数
 
 print(f"默认2为参数： {(lambda x=2: x ** 2)()}")
+
+
+list_sort = []
+list_sort.sort()

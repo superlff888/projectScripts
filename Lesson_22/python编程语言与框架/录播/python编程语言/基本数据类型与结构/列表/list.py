@@ -69,5 +69,9 @@ list_.sort(reverse=False)
 print(list_)
 
 list_ = ["python", "java", "go", "r"]
-list_.sort(key=len)  # 传入一个函数，指明排序方法
+list_.sort(key=len)  # 传入一个键函数名，指明排序方法
 print(list_)
+
+list_sort = [("python零基础入门", 18), ("java零基础入门", 20), ("go零基础入门", 30), ("r零基础入门", 33)]
+list_sort.sort(key=lambda x: x[1])  # x相当于 列表中的元组类型的元素，隐型函数返回的是x[1]，联想len
+print(list_sort)

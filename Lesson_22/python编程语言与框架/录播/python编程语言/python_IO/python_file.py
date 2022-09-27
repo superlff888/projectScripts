@@ -32,7 +32,7 @@ python中提供了一个简单的方法：
     --with语句块可以将文件打开后，操作完毕，自动关闭这个文件，避免每次都要关闭文件的麻烦
     --文件操作代码应放在with语句块里
     --正常的文本读取使用'rt',即默认格式即可
-    --图片读取需要使用'rb'【即with open('data.txt','rb') as f:】,读取二进制格式
+    --图片读取需要使用'rb'【即with open('test.txt','rb') as f:】,读取二进制格式
 """
 
 with open('data.txt') as f:

@@ -88,7 +88,7 @@ try:                      # 此处为执行的语句,发生异常后，try中剩
     list1 = [1, 2, 3, 5]
     print(list1[1])         # 索引异常
     assert list1[1] == 3, f'index为1的元素预期为{list1[1]},实际为2'  # AssertionError: index为1的元素预期为2,实际为2
-    print(f.readlines())    # 文件读取(f = open('data.txt'))
+    print(f.readlines())    # 文件读取(f = open('test.txt'))
 # except ZeroDivisionError as e1:
 #     print(e1)
 # except IndexError as e2:     # 一般常用
