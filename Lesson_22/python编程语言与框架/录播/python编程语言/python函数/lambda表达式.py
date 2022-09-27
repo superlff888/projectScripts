@@ -130,5 +130,6 @@ print(leaders)
 print(f"默认2为参数： {(lambda x=2: x ** 2)()}")
 
 
-list_sort = []
-list_sort.sort()
+list_sort = [(4, 'Yang Zhou'), (2, 'Elon Musk'), (3, 'Tim Cook'), (1, 'Warren Buffett')]
+list_sort.sort(key=lambda x: x[0])
+print(list_sort)
