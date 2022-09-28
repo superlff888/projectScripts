@@ -29,7 +29,7 @@ class DbConnect(object):
                 相反：若a,b,c,d = ("host","user","password","port")，此时形参a = "host";
                 可不传，也可传入对个
     """
-    def __init__(cls, database, db_cof, charset=None):
+    def __init__(mcs, database, db_cof, charset=None):
         # 打开数据库连接
         # 解包后，相当于"host" = "172.17.6.205"；键和值一定要跟所在方法的形参和实参对应起来
         self.db = pymysql.connect(database=database,
@@ -39,20 +39,20 @@ class DbConnect(object):
 
         # 使用cursor()方法获取操作游标
         self.cursor = self.db.cursor()
-        print(f'cls.cursor为： {self.cursor}')
+        print(f'mcs.cursor为： {self.cursor}')
         print(f'dbinfo为： {db_cof}')
 
-    def select(cls, sql):
+    def select(mcs, sql):
         # SQL 查询语句
         # sql = "SELECT * FROM EMPLOYEE
         #        WHERE INCOME > %s" % (1000)
         self.cursor.execute(sql)
-        # results = cls.cursor.fetchall() # 获取所有sql结果中数据
-        # re = cls.cursor.fetchone() # 从sql结果（cls.cursor.execute(sql)）中获取第一条数据
-        re_m = self.cursor.fetchmany(3)  # 从sql结果（cls.cursor.execute(sql)）中获取指定条数数据
+        # results = mcs.cursor.fetchall() # 获取所有sql结果中数据
+        # re = mcs.cursor.fetchone() # 从sql结果（mcs.cursor.execute(sql)）中获取第一条数据
+        re_m = self.cursor.fetchmany(3)  # 从sql结果（mcs.cursor.execute(sql)）中获取指定条数数据
         return re_m
 
-    def execute(cls, sql):
+    def execute(mcs, sql):
         """
         可用flag进行区分fetchall()、fetchone()、fetchmany(3)
         :param sql:
@@ -68,7 +68,7 @@ class DbConnect(object):
             # 发生错误时回滚
             self.db.rollback()
 
-    def close(cls):
+    def close(mcs):
         # 关闭连接
         self.db.close()
 

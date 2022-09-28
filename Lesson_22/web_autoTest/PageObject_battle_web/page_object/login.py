@@ -15,8 +15,8 @@ class Login(BasePage):
     """
     是企业微信的公共业务的封装
     """
-    # baseurl是指每个页面的url
-    _BASE_URL = ""  # _ 私有属性可以被重写，肯定是可以被继承的，但是子类无法访问父类的私有属性;  __更私有;
+    # base_url是指每个页面的url
+    _BASE_URL = ""  # _ 私有属性可以被重写，肯定是可以被继承的，但是子类无法访问父类的保护属性;  __私有属性更不能访问;
     """如果将self.driver.get(self._BASE_URL)封装在基类中，则"""
     def login(self):
         # 打开index 页面
