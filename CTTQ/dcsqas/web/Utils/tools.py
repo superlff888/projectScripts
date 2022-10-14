@@ -30,7 +30,7 @@ def image_to_base64(img_url, module, name):
         b64_encode = b64encode(f.read())  # 读取文件内容，转换为base64二进制编码
         pre_b64_decode = b64_encode.decode()  # decode 用于解码 字节的编码
         b64_decode = f"data:image/png;base64,{pre_b64_decode}"  # 字面量拼接
-    return b64_decode
+    return b64_decode, pre_b64_decode
 
 
 # 打开图片

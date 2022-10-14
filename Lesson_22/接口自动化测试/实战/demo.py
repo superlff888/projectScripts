@@ -41,6 +41,13 @@ for key in d3:
 dict_a = {}
 print(type(dict_a))
 
+a = [1, 2, ["deep", 8], 3, 3]
+a.pop(0)
+print(a)
 
-
-
+from copy import copy
+d = copy(a)
+print(d)
+d.append(2)
+print(a)
+print(d)

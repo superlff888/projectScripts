@@ -1,0 +1,16 @@
+#test_a:
+#  - hello.a: []
+#  - hello.b: []
+#  - print: ["xxxx"]
+#  - re.search: ['.*', 'xxx']
+#  - save: [$(tmp)]
+#  - _assert: [$(1==1)]
+
+
+
+test_xxx:
+  - hello.a: []
+  - print: ["abcde"]
+  - re.search: ['.*', 'xxx']
+  - save: [tmp]
+  - print: [$(tmp)]

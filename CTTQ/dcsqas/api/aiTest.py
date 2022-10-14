@@ -2,33 +2,120 @@
 # @Time    : 2022/09/21 08:42
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
+import sys
 from pprint import pprint
+from time import sleep
 
-import requests
+from locust import HttpUser, TaskSet, task, events
+
+sys.path.append(f"D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量
+from CTTQ.dcsqas.web.Utils.tools import image_to_base64  # 添加环境变量后，才能找到CTTQ模块
+from gevent._semaphore import Semaphore
+
+all_locusts_spawned = Semaphore()
+all_locusts_spawned.acquire()
 
 
-class AI_dcs:
+def on_hatch_complete(**kwargs):
+    all_locusts_spawned.release()  # 创建钩子方法(释放)
+    sleep(1)
+    print(f"虚拟用户总数:{n}")
 
+
+# events.on_hatch_complete += on_hatch_complete
+# 挂载到locust钩子函数（所有的Locust示例产生完成时触发）
+events.spawning_complete.add_listener(on_hatch_complete)
+
+n = 0
+
+
+class AI_dcs(TaskSet):
+    header = {
+        "remoteuser": "AI",
+        "token": "991a537f-2b2e-4e0b-a6af-d408308273d8",
+        "Content-Type": "application/json;charset=UTF-8"
+    }
+
+    def initialize_user(self):
+        global n
+        n += 1
+        print(f"初始化第{n}个用户")
+
+    # 限制在所有用户准备完成前处于等待状态
+    def on_start(self):
+        self.initialize_user()  # 初始化用户(可使用locust设置用户个数)
+        all_locusts_spawned.wait()  # 集合点，每个任务
+        # print(f"虚拟用户总数{n}")
+
+    # @task  # 任务==事务（单接口/多接口）
     def nlp_summary(self):
-        header = {
-            "remoteuser": "8608858",
-            "token": "8608858",
-            "Content-Type": "application/json"
+        base64_1, pre_b64_decode = image_to_base64(r'E:\CTTQ\项目\AI天晴门户\上传图片\身份证.png', 'base64', 'b64encode')
+        # print(pre_b64_decode)
+        json = {
+            "imgName": "身份证.png",
+            "side": "face",
+            "imgBase64Code": pre_b64_decode
         }
 
+        with self.client.post(url="/idCardNormalize/app/IDcard/normalized",
+                              json=json, headers=self.header, catch_response=True) as response:
+            try:
+                if response.json()['msgCode'] == '700':
+                    response.success()
+                else:
+                    response.failure("请求失败！")
+            except Exception as e:
+                print(f"抛出异常：{e}")
+                print(f"response.text: {response.text}")
+                print(f"response: {response}")
+                print(f"response.content: {response.content}")
+                print(f"response.status_code: {response.status_code}")
+                print(f"response.raw: {response.raw}")
+
+        # # 用于demo
+        # globals()["tmp"] = res.json()["code"]
+        # assert globals()["tmp"] == 200
+
+    @task
+    # 获取全量资源
+    def all_resource(self):
+        with self.client.post(url="/resourceManage/all", headers=self.header, catch_response=True) as response:
+            try:
+                if response.json()['msgCode'] == "100":
+                    response.success()
+                else:
+                    response.failure("请求失败！")
+            except Exception as e:
+                raise e
+
+    @task
+    # 请求部分资源
+    def part_resource(self):
         payload = {
-            "text": "今年2月28日是“国际罕见病日”。目前，全世界已发现罕见病大约7000种，我国罕见病患者数量达2000多万人。“我省已经完成罕见病病例上报近2万例，涉及近100个病种。”郑州大学第一附属医院孙莹璞教授介绍。孙莹璞教授是首批国家罕见病质控中心专家委员会成员，负责河南省罕见病医疗质量控制和数据上报。曾经70万元一针的诺西那生钠注射液纳入医保，一批医院对罕见病开展科普义诊和免费检查，坚持对孕产妇和新生儿进行相关疾病筛查……在孙莹璞看来，近年来罕见病及其患者群受到前所未有的关注。罕见病药品往往价格昂贵，如何推动“天价药”落地，让更多患者看得上病用得起药，成为一轮轮医保谈判的重点。截至目前，国内共有60余种罕见病用药获批上市，已有40余种被纳入国家医保药品目录，涉及25种疾病。去年，共有7个罕见病药品谈判成功，平均降幅达65%。为推动医学在罕见病研究方面取得重大突破，中国罕见病联盟于2018年成立。其中，郑大一附院、河南中医药大学第一附属医院均为成员单位，郑大一附院还牵头成立了中国罕见病联盟河南协作组。这种多部门联合开展探索的治疗模式，正给罕见病家庭带来更多关爱，带给他们更多生的希望。河南省人民医院医学遗传研究所主任廖世秀告诉记者，超八成罕见病是遗传性疾病，一半以上患者在刚出生或幼年时发病，并且需要终生与疾病做斗争。从2017年起，我省连续6年把为适龄孕妇产前筛查、产前诊断和新生儿“两病”筛查纳入到民生实事重点免费项目，目的就是希望能尽早地发现罕见病患儿并帮助他们。据统计，去年我省通过免费产前诊断共确诊21-三体综合征等染色体病患儿1614例，通过新生儿“两病”筛查，共确诊苯丙酮尿症（PKU）185例、甲状腺功能低下症（CH）711例。不过，由于临床病例少、治疗经验少，再加上误诊率高、能用药少和用不起药等现实问题的存在，罕见病患者的生存状态，仍亟待得到社会更多的关心关爱。"
+            "code": "gateAI",
         }
+        with self.client.post(url="/resourceManage/code", params=payload, headers=self.header, catch_response=True) \
+                as response:
+            try:
+                if response.json()['msgCode'] == "100":
+                    response.success()
+                else:
+                    response.failure("请求失败！")
+            except Exception as e:
+                raise e
 
-        res = requests.post(url="http://172.16.0.224:6002/nlp/app/summary", json=payload, headers=header)
-        # pprint(res.json())
-        globals()["tmp"] = res.json()["code"]
-        assert globals()["tmp"] == 200
-
-    def demo(self):
-        print(f"\n获得上一步的返回值:\n {globals()['tmp']}")  # 上一个方法执行完才能获得全局变量
+    # def demo(self):
+    #     print(f"\n获得上一步的返回值:\n {globals()['tmp']}")  # 上一个方法执行完才能获得全局变量
 
 
-if __name__ == "__main__":
-    AI_dcs().nlp_summary()
-    AI_dcs().demo()
+class WebSite(HttpUser):
+    # 指定要执行哪个任务集
+    task_set = AI_dcs
+    # task_set = task(My_task_set)
+    tasks = [AI_dcs, ]
+    # 请求和请求之间最小的间隔时间
+    min_wait = 1000
+    # 请求和请求之间最大的间隔时间
+    max_waif = 2000
+    # host = "https://dcsqas.cttq.com:6002"
+    host = "http://172.17.6.116:6016"
