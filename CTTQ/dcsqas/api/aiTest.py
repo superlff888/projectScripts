@@ -3,9 +3,7 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 import sys
-from pprint import pprint
 from time import sleep
-
 from locust import HttpUser, TaskSet, task, events
 
 sys.path.append(f"D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量

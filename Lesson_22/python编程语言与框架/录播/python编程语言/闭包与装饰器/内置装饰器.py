@@ -23,7 +23,7 @@
 
 class classMethod:
     """
-    self 不等于 cls ，实例本身 不同于类本身
+    self 不等于 cls ，即 实例本身 不同于 类本身
     """
     CLASS_PARAM = 0
 
