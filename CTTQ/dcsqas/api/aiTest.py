@@ -65,12 +65,12 @@ class AI_dcs(TaskSet):
                 else:
                     response.failure("请求失败！")
             except Exception as e:
-                print(f"抛出异常：{e}")
                 print(f"response.text: {response.text}")
                 print(f"response: {response}")
                 print(f"response.content: {response.content}")
                 print(f"response.status_code: {response.status_code}")
                 print(f"response.raw: {response.raw}")
+                raise e
 
         # # 用于demo
         # globals()["tmp"] = res.json()["code"]
@@ -80,13 +80,10 @@ class AI_dcs(TaskSet):
     # 获取全量资源
     def all_resource(self):
         with self.client.post(url="/resourceManage/all", headers=self.header, catch_response=True) as response:
-            try:
-                if response.json()['msgCode'] == "100":
-                    response.success()
-                else:
-                    response.failure("请求失败！")
-            except Exception as e:
-                raise e
+            if response.json()['msgCode'] == "100":
+                response.success()
+            else:
+                response.failure("请求失败！")
 
     @task
     # 请求部分资源
@@ -96,13 +93,10 @@ class AI_dcs(TaskSet):
         }
         with self.client.post(url="/resourceManage/code", params=payload, headers=self.header, catch_response=True) \
                 as response:
-            try:
-                if response.json()['msgCode'] == "100":
-                    response.success()
-                else:
-                    response.failure("请求失败！")
-            except Exception as e:
-                raise e
+            if response.json()['msgCode'] == "100":
+                response.success()
+            else:
+                response.failure("请求失败！")
 
     # def demo(self):
     #     print(f"\n获得上一步的返回值:\n {globals()['tmp']}")  # 上一个方法执行完才能获得全局变量
