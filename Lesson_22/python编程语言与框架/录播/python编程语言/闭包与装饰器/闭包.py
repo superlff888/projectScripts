@@ -3,12 +3,11 @@
 # -*-coding=utf-8-*-
 # =============================================================
 
-# 闭包无法修改全局变量
 def stu_grade(grade: int):
     grad = '2'
     print(f"外函数的年纪：{grad}")
 
-    # 闭包无法修改外部函数stu_grade的局部变量，即装饰器中的原函数
+    # 闭包无法修改外部函数stu_grade的局部变量，即装饰器中的原函数；需要加unlocal才可以
     def output_stu_info(name: str, gender: int):
         grad = '1'  # 只是定义了与外部函数一样的同名函数而已；可以使用外部函数的局部变量，但是不能修改
         print(f"内函数的年纪：{grad}")
@@ -94,3 +93,4 @@ def func2():
 
 func1()
 func2()
+
