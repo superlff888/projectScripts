@@ -45,7 +45,7 @@ def now():
     print('\n5、date is 2015-3-25')
 
 
-isWrapper = now()  # 为啥可以传入参数2？看总结借明白了，wrapper(*args, **kw)可接收任意参数
+isWrapper = now()  # 为啥可以传入参数2？看总结就明白了，wrapper(*args, **kw)可接收任意参数
 print(isWrapper)  # <function Log.log.<locals>.decorator.<locals>.wrapper.<locals>.Called at 0x00000233FCE59550>
 isWrapper()()
 
