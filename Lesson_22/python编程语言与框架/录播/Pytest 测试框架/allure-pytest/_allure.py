@@ -2,6 +2,8 @@
 # @Author    : ╰☆H.俠ゞ
 # -*-coding=utf-8-*-
 # =============================================================
+import sys
+
 str_a = r"23\n456"
 print(str_a)
 print(r"23\n456")  # 不换行
@@ -20,3 +22,16 @@ print(type(a))
 a = lambda x: x**2
 print(a(3))
 print(a)
+
+
+
+xx= 100
+
+
+def te(xx):
+    print(xx)
+
+
+print(dir())
+
+

@@ -49,7 +49,7 @@ classMethod.class_method_1()
 demo = classMethod()
 demo.class_method_1()  # 实例对象可以调用类方法
 # demo.demo_method()  # 实例对象可以可调用普通方法
-
+print(demo.a)
 
 """
 【静态方法】
@@ -59,6 +59,9 @@ demo.class_method_1()  # 实例对象可以调用类方法
 调用：
 无需实例化，直接通过 类.方法名 调用，也可以通过 实例.方法名 调用
 """
+
+
+param_b = 100
 
 
 # 1. 定义
@@ -74,11 +77,12 @@ class MethodsDemo:
         print("静态方法", param1)  # 无法直接调用类变量
 
 
-# 2. 调用
-M = MethodsDemo()
-MethodsDemo.static_demo("a")  # 通过类名调用
-M.static_demo("b")  # 通过实例调用
-
+if __name__ == "__main__":
+    # 2. 调用
+    M = MethodsDemo()
+    MethodsDemo.static_demo("a")  # 通过类名调用
+    M.static_demo("b")  # 通过实例调用
+    M.static_demo(param_b)  # 通过实例调用
 
 """
 类方法实例案例
