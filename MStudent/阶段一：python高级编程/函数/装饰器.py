@@ -30,7 +30,7 @@ class Log:
                 return Called  # 根据业务return想要的"对象"，也可以返回func
             # print(f"{text}在内嵌函数decorator打印")
             print(f"\n2、返回并执行{func.__name__}")
-            return wrapper
+            return wrapper#(func)  # 接收被装饰函数
         print(f"{text}在log函数体内打印")
         print(f"\n1、执行调用log('execute')后，返回函数{decorator.__name__}")
         return decorator
@@ -49,14 +49,14 @@ def now():
 
 isWrapper = now()  # 为啥可以传入参数2？看总结就明白了，wrapper(*args, **kw)可接收任意参数
 print(isWrapper)  # <function Log.log.<locals>.decorator.<locals>.wrapper.<locals>.Called at 0x00000233FCE59550>
-isWrapper()()
+# isWrapper()()
 
 
 """
 【总结】装饰器特性:
 1、核心：[装饰器特性]被装饰函数可被自动传给装饰器函数“入参位置”或函数体; 被装饰函数被认为是装饰器函数的实参。
    注意：(1) [函数的参数化处理]被装饰函数是作为实参，既可以放到装饰器函数入参处，也可以放到装饰器函数体中;
-        (2) 第一层内嵌函数被认为是装饰器函数体,被装饰函数只能被第一层嵌套函数以实参的形式自动接收一次;
+        (2) 第一层内嵌函数被认为是装饰器函数体,被装饰函数只能被第一层嵌套函数以实参的形式自动接收一次(理解的有误差！)，要是返回内嵌函数执行结果呢？;
 2、被装饰函数只能被装饰器函数自动传递一次。
    “装饰器函数体”由于装饰器特性会自动接收“被装饰函数”这个参数，然后返回“下一层嵌套函数”(即wrapper())并自动执行。被装饰函数不会以参数形式二次传递给
    下一层内嵌函数；但是自被装饰函数传进装饰器函数后，也就是从接收被装饰函数的函数或函数体开始，里面每一层的内层函数体内可以使用被装饰函数，相当于函数基
