@@ -23,8 +23,8 @@
 #     获取csv数据
 #     :return: 返回数据的结构：[[1, 1, 2], [3, 6, 9], [100, 200, 300]]
 #     """
-#     with open('C:\\Users\\HouseLee\\Desktop\\demo.csv', 'r') as file:
-#         raw = csv.reader(file)
+#     with open('C:\\Users\\HouseLee\\Desktop\\demo.csv', 'r') as files:
+#         raw = csv.reader(files)
 #         data = []
 #         for line in raw:
 #             data.append(line)

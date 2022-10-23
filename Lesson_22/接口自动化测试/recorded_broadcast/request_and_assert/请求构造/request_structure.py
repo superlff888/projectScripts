@@ -52,7 +52,7 @@ class Test_demo:
     # 又的公司只校验name，有的公司只校验filename，有的公司只校验Content-Type
     def test_post_file(self):
         """Content-Type: multipart/form-data"""
-        file = {"file": open("report.xls", 'rb')}
+        file = {"files": open("report.xls", 'rb')}
         r = requests.post("https://httpbin.testing-studio.com/post", files=file)
         print(r.text)
         print(r.cookies)

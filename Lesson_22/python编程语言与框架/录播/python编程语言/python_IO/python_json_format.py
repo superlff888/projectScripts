@@ -23,7 +23,7 @@ json1_data = {
 }
 print(f"最初格式展示{json1_data}")
 print(f"json1_data数据类型是{type(json1_data)}")
-data = json.dumps(json1_data)  # 把【json（字典+列表）】转换成json格式的【字符串数据类型】
+data = json.dumps(json1_data)  # 把python数据类型转化为字符串
 print(f"转化格式为data={data}")
 print(f"data的数据类型是{type(data)}")
 json2_data = json.loads(data)  # 把字符串转换成json

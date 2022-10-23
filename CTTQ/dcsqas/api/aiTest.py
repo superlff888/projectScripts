@@ -45,7 +45,7 @@ class AI_dcs(TaskSet):
         all_locusts_spawned.wait()  # 集合点，每个任务
         # print(f"虚拟用户总数{n}")
 
-    # @task  # 任务==事务（单接口/多接口）
+    @task  # 任务==事务（单接口/多接口）
     def nlp_summary(self):
         base64_1, pre_b64_decode = image_to_base64(r'E:\CTTQ\项目\AI天晴门户\上传图片\身份证.png', 'base64', 'b64encode')
         # print(pre_b64_decode)

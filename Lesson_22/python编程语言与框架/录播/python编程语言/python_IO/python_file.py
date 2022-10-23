@@ -27,7 +27,7 @@ f.close()
 
 """
 python中提供了一个简单的方法：
-    with open(file) as 别名:
+    with open(files) as 别名:
         with语句块
     --with语句块可以将文件打开后，操作完毕，自动关闭这个文件，避免每次都要关闭文件的麻烦
     --文件操作代码应放在with语句块里
