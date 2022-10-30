@@ -26,3 +26,8 @@ class ReadConfig(configparser.ConfigParser):
 
 
 conf = ReadConfig()  # 需要时，将对象conf导入即可
+"""
+    conf = configparser.Configparser()  # 实例化
+    conf.read('config.ini', encoding='utf8')  # 打开配置文件，然后才可以调用get等方法获取想要的数据
+    conf.get(sections, options)  # 获取options数据
+"""
