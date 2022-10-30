@@ -30,10 +30,11 @@ def demo(name: int, age: dict) -> str:
     pass
 
 
+@overload
 def demo(name: int, age: list, weigh: int):  # 此处的weigh因为没有overload，所以只有int一种入参
     return f"hello {name},我{age}了,体重{weigh}"
 
 
-print(demo("10", "18", 19))
+print(demo(10, "18"))
 
 

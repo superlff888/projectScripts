@@ -16,6 +16,6 @@ def file_copy(path, data):
         f.write(data)
 
 
-file_copy("./test[复制].txt", file_read("./test.txt"))
+file_copy("./test[复制].txt", file_read("../test.txt"))
 
-os.rename("./test[复制].txt", "./test[复制1].txt")
+os.rename("./test[复制].txt", "../test[复制1].txt")

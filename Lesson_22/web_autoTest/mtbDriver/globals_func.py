@@ -13,6 +13,7 @@ import importlib
 
 def test_global_var():
     globals()["a"] = 100  # 先定义全局变量的key和value
+    print(globals())
     print(f"\n局部打印全局变量a的value值: {globals()['a']}")  # 打印全局变量a的value值
 
 

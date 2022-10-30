@@ -2,6 +2,7 @@
 # @Author    : H.侠
 # -*-coding=utf-8-*-
 # =============================================================
+import requests
 from requests.sessions import Session
 
 """
@@ -10,3 +11,4 @@ from requests.sessions import Session
 session = Session()
 sen = session.post(url='https://baidu.com', data=None)
 print(f'文本信息{sen.text}')
+session = requests.session()

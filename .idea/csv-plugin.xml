@@ -3,7 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\MStudent\阶段一：python高级编程\函数\文件处理\file\userTest.csv">
+        <entry key="\Lesson_22\python编程语言与框架\录播\Pytest 测试框架\Pytest_testBasic\demo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\MStudent\PyTestDemo\demo.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

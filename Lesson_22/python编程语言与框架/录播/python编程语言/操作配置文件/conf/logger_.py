@@ -2,8 +2,7 @@
 # @Author    : House Lee
 # -*-coding=utf-8-*-
 import logging
-from Lesson_22.python编程语言与框架.录播.python编程语言.编写配置文件.conf.read_config import conf
-
+from Lesson_22.python编程语言与框架.录播.python编程语言.操作配置文件.conf.read_config import conf
 
 logger_name = conf.get('logs', 'logger_name')  # 通过conf获取config.ini配置文件的options
 _level = conf.get('logs', 'level').upper()  # 支持大写，要用upper()做大写转化，这样的话配置文件就可以维护成大、小写
