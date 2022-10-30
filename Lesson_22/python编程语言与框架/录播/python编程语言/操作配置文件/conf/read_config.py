@@ -4,6 +4,7 @@
 # =============================================================
 
 import configparser
+import json
 
 """
 封装的原则：
@@ -31,3 +32,5 @@ conf = ReadConfig()  # 需要时，将对象conf导入即可
     conf.read('config.ini', encoding='utf8')  # 打开配置文件，然后才可以调用get等方法获取想要的数据
     conf.get(sections, options)  # 获取options数据
 """
+a = {"a": 1}
+str_a = json.dumps(a)
