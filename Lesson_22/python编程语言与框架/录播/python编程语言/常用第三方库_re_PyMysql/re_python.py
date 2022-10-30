@@ -16,8 +16,8 @@ a   12a1a1a
 #
 # print(re.match(r'^\d{3}\-\d{3,8}$', '010----12345'))
 
-print(re.match(r'\Aabc', 'abc123'))
-print(re.match('123\Z', '123123'))
+# print(re.match(r'\Aabc', 'abc123'))
+# print(re.match('123\Z', '123123'))
 
 '''
 强烈建议使用Python的r前缀，就不用考虑转义的问题了
@@ -45,7 +45,8 @@ print(re.match('123\Z', '123123'))
 分组
 '''
 
-# print(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345'))
+print(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345').group())
+print(re.findall(r'a(.+)b', 'ba123ba678ba11111111'))
 
 
 '''
