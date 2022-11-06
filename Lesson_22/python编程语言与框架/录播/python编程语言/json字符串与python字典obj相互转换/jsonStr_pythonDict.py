@@ -4,20 +4,20 @@
 # =============================================================
 import json
 
-env = {
-    "default": "dev",  # 通过env["default"]取值 【"dev": "127.0.0.1"】
-    "testing-studio":
-        {
-            "dev": "httpbin",
-            "test": "127.0.0.2"
-        }
-}
-
+# env = {
+#     "default": "dev",  # 通过env["default"]取值 【"dev": "127.0.0.1"】
+#     "testing-studio":
+#         {
+#             "dev": "httpbin",
+#             "test": "127.0.0.2"
+#         }
+# }
+env = {'default': 'dev', 'testing-studio': {'dev': 'httpbin', 'test': '127.0.0.2'}}
 print(f"env的type为：{type(env)}")
-
 # json.dumps是对python对象编码成json对象，可以把字典转成json字符串
-str_env = json.dumps(env)
+str_env = json.dumps(env, ensure_ascii=False)  # ensure_ascii=False显示中文
 print(f"str_env的type为：{type(str_env)}")
+print(f"str_env的type为：{str_env}")
 
 # json.loads是将json字符串解码成python对象,可以把json字符串转化为python字典
 env_dict = json.loads(str_env)
@@ -51,7 +51,7 @@ def write_in_json_forStr():
 
 def write_in_json_forDump():
     with open("data_env.json", "w") as f:  # 以写的模式打开一个文件data_str.json
-        json.dump(env, f)  # 将python对象env写入文件中
+        json.dump(env, f, ensure_ascii=False)  # 将python对象env写入文件中;ensure_ascii=False显示中文
 
 
 if __name__ == "__main__":

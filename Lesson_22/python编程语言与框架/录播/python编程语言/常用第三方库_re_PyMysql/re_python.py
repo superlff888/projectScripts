@@ -45,15 +45,24 @@ a   12a1a1a
 分组
 '''
 
-print(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345').group())
-print(re.findall(r'a(.+)b', 'ba123ba678ba11111111'))
+# print(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345').group())  # 返回匹配值
+# print(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345').groups())  # 以元组的形式将两组匹配到的值返回
+# print(len(re.match(r'^(\d{3})-(\d{3,8})$', '010-12345').groups()))
+# print(re.findall(r'a(.+)b', 'ba123ba678ba11111111')[0])
+# print(re.findall(r'a(.+)b', 'ba123ba678ba11111111b'))
 
 
 '''
-编译
+编译：编译成正则表达式对象
 '''
-# re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')
-#
-# print(re_telephone.match('010-12345').groups())
-#
+re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')  # re_telephone正则表达式对象
 # print(re_telephone.match('010-12345'))
+# print(re_telephone.match('010-12345').groups())
+# print(re.match(re_telephone, '010-12345'))
+# print(re.match(re_telephone, '010-12345').groups())
+# print(re.match(re_telephone, '010-12345'))
+
+
+url = "https://ke.qq.com/webcourse/index.html#cid=3451092&term_id=104315825&taid=12103557145995476&type=1024&vid=387702291472621478"
+pattern = r"[#|&]"  # 用 | 或者 & 进行分割
+print(re.split(pattern, url))
