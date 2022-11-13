@@ -8,6 +8,7 @@ from locust import HttpUser, TaskSet, task, events
 
 sys.path.append(f"D:\\Develop\\git_pub_repositories\\projectScripts")  # （运行程序时）添加path环境变量
 from CTTQ.dcsqas.web.Utils.tools import image_to_base64  # 添加环境变量后，才能找到CTTQ模块
+
 from gevent._semaphore import Semaphore
 
 all_locusts_spawned = Semaphore()
