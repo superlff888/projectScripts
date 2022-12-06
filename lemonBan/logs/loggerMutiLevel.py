@@ -21,6 +21,7 @@ class MyLogging:
         my_log.setLevel(level)
         # 创建一个日志输出渠道（输出到控制台）
         l_c = logging.StreamHandler()
+        # 要不要将手机的日志展示出来，就要看这里的配置了
         l_c.setLevel(level)
         # 创建一个日志输出渠道（输出到文件）
         l_f = logging.FileHandler(filename, encoding='utf-8')
