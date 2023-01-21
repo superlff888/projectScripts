@@ -10,8 +10,9 @@ import os
 
 from utils import get_project_path
 
+print(get_project_path())
 
-path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_path()为utils所在目录，并不是csvTest所在的路径
+path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_path()为当前文件所在‘目录’，并不是csvTest所在的路径
 print(path)  # join类似字符串拼接，union
 
 
@@ -49,4 +50,3 @@ def getCSVDict():
     return list_
 
 
-print(getCSV())

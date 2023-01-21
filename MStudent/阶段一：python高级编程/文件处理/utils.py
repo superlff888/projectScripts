@@ -9,6 +9,7 @@ import os
 
 
 def get_project_path():
-    """得到项目路径"""
+    """得到项目目录"""
     return os.path.dirname(__file__)
+
 
