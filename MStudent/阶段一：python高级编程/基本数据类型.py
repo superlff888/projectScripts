@@ -31,46 +31,48 @@
 #         print("密码错误")
 import random
 
-name = "testfan"
-# print(name)
-# print(name[:-1])
-# print(name[::-1])
-
-
-dict_a = {'age': 18, 'status': True, 'name': '极光'}
-
-for item in dict_a.items():
-    print(item[0], item[1])
-    print(item)
-print("====================================")
-for k, v in dict_a.items():
-    print(k, v)
-
-print("====================================")
-a = [k for k in dict_a.items()]
-print(a)
-
-a = [8, 1, 2, 1, 3]
-# a.insert(0, 1)
+# name = "testfan"
+# # print(name)
+# # print(name[:-1])
+# # print(name[::-1])
+#
+#
+# dict_a = {'age': 18, 'status': True, 'name': '极光'}
+#
+# for item in dict_a.items():
+#     print(item[0], item[1])
+#     print(item)
+# print("====================================")
+# for k, v in dict_a.items():
+#     print(k, v)
+#
+# print("====================================")
+# a = [k for k in dict_a.items()]
 # print(a)
-# print(a.remove(1))
+#
+# a = [8, 1, 2, 1, 3]
+# # a.insert(0, 1)
+# # print(a)
+# # print(a.remove(1))
+# # print(a)
+# a.sort(reverse=True)
 # print(a)
-a.sort(reverse=True)
-print(a)
-b = ["dcdsfc", "qwcd", "qwdvfbgh"]
-b.sort(key=len, reverse=True)  # 键函数
-print(b)
+# b = ["dcdsfc", "qwcd", "qwdvfbgh"]
+# b.sort(key=len, reverse=True)  # 键函数
+# print(b)
 
-
-# 字典推导式
+"""
+字典推导式
+"""
 
 dict_b = {'age': 18, 'status': True, 'name': '极光'}
 print(dict_b.items())
-print({k: v for k, v in dict_b.items()})
+print({k: v for k, v in dict_b.items()})  # 跟lambda表达式异曲同工
 
 items = [('age', 18), ('status', True), ('name', '极光')]
 b = {k: v for k, v in items}
 print(b)
+
 print(b.get("age"))
 print(b.keys())
 print(b.popitem())
