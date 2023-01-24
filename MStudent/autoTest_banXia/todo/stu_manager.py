@@ -1,0 +1,20 @@
+# -*- coding=utf-8 -*-
+# @Time    : 2023/01/24 09:49
+# @Author  : ╰☆H.俠ゞ
+# =============================================================
+from MStudent.autoTest_banXia.todo.stu_op import StuOp
+
+
+def run():
+    op = int(input('请输入你的操作：'))
+    if op == 3:
+        input('请输入id:')
+        kwargs = input('请输入修改信息：')
+        kwargs = eval(kwargs)
+        print(StuOp.update_stu(id, **kwargs))
+    if op == 1:
+        ID = input('请输入id:')
+        print(StuOp.del_stu(ID))
+
+
+run()

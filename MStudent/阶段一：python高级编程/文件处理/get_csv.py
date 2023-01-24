@@ -10,10 +10,10 @@ import os
 
 from utils import get_project_path
 
-print(get_project_path())
+# print(get_project_path())
 
 path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_path()为当前文件所在‘目录’，并不是csvTest所在的路径
-print(path)  # join类似字符串拼接，union
+# print(path)  # join类似字符串拼接，union
 
 
 # with open(path, mode="w") as f:  # path必须是预先创建的？
@@ -28,9 +28,9 @@ print(path)  # join类似字符串拼接，union
 #     for line in csv_file:
 #         print(line)
 
-def getCSV(path, isNext=True):
+def getCSV(Path, isNext=True):
     list_ = []
-    with open(path, encoding='utf-8') as f:
+    with open(Path, encoding='utf-8') as f:
         csv_file = csv.reader(f)  # 返回迭代器iterator
         if isNext:  # True表示csv有表头字段
             # 跳过第一行的用法，往往csv文件的第一行为字段名
@@ -45,8 +45,12 @@ def getCSVDict():
     with open(path, encoding='utf-8') as f:
         # 若csv有表头，则默认将csv表头字段定义为key;若没有表头，则可以自定义表头key
         csv_file = csv.DictReader(f)  # 视图对象【'csv.DictReader'】格式类似于 list[{},{}] ; 字典中的key为CSV第一行表头字段
+        print(csv_file)  # 视图对象
         for dic in csv_file:  # 按行读取，dict为： {'first_name': 'Baked', 'last_name': 'Beans'}
             list_.append(dic)  # 将读取的每一行放在列表中
     return list_
 
+
+print(getCSVDict())
+print(getCSV(path, isNext=True))
 
