@@ -37,7 +37,7 @@ class StuOp:
 
     @classmethod
     def update_stu(cls, id, **kwargs):
-        print(kwargs)
+        # print(kwargs)
         if id in cls.stu_dict:
             stu = cls.stu_dict[id]
             if 'name' in kwargs:  # name为kwargs的key
