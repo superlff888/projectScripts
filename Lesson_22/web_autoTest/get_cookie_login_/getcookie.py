@@ -40,6 +40,7 @@ class TestCookieLogin:
         with open(os.path.dirname(__file__) + "/cookie.yml", "w") as file:  # 获取当前文件的根目录，再做字符串拼接
             # 参数1：要写入的数据(Python对象); 参数2：要存放的文件流(这里放在了打开的文件中)
             yaml.safe_dump(cookie_list, file)  # 将 Python 对象序列化为 YAML流(文件)。 Python 对象，如 str、dict、set、list
+            # down到文件中
 
     # 通过driver.add_cookie(cookie)形式 植入cookie
     def test_add_cookie_login(self):

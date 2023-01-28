@@ -4,3 +4,15 @@
 # =============================================================
 
 
+import requests
+
+session = requests.session()
+
+
+def login():
+    url = r'http://82.156.74.26:9088/pinter/pinter/bank/api/login'
+    payload = {'userName': 'admin', 'password': '1234'}
+    res = session.post(url=url, data=payload)
+    print(res.json())
+
+
