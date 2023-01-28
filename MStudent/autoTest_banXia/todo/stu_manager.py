@@ -13,7 +13,6 @@ def run():
         kwargs = input('请输入修改信息：')
         kwargs = eval(kwargs)
         print(StuOp.update_stu(id, **kwargs))
-
     if op == 1:
         ID = input('请输入id:')
         print(StuOp.del_stu(ID))

@@ -3,6 +3,7 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from MStudent.autoTest_banXia.todo.file_test import FileOp
+from MStudent.autoTest_banXia.todo.students import Stu
 
 
 class StuOp:
@@ -60,6 +61,6 @@ class StuOp:
 
 if __name__ == '__main__':
     print(StuOp.queStu('1'))
-    # print(StuOp.add_stu(Stu('8', 'lff', '15715151010', '1310157578', '100')))
+    print(StuOp.add_stu(Stu('8', 'lff', '15715151010', '1310157578', '100')))
     # print(StuOp.del_stu('77'))
     print(StuOp.update_stu('1', name='lisa', score='88'))

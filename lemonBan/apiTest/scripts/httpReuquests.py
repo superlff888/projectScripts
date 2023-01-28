@@ -9,7 +9,6 @@ import requests
 
 # base_url = 'http://zwmsqas.cttq.com'
 
-
 # 新式
 from lemonBan.apiTest.lib.logs.loggerMy import MyLogging
 from lemonBan.logs.logMutiTest import logger
