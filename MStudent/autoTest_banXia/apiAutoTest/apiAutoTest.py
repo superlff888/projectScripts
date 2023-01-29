@@ -4,6 +4,8 @@
 # =============================================================
 import csv
 
+import pymysql
+import pytest
 import requests
 
 session = requests.session()
@@ -24,5 +26,11 @@ def query():
     print(res.text)
 
 
+def test_demo():
+    pytest.assume(1 == 2, "攀岩失败")
+
+
 login()
 query()
+
+
