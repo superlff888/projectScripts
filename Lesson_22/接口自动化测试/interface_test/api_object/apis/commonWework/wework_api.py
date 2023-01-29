@@ -24,7 +24,6 @@ class Wework(BaseApi):
 
     def get_token(self, corpid, corpsecret):
         # return： access_token的值
-
         # corpid = 'wwba697e4878807a9f'
         # corpsecret = '631qSHbvs5vyhpFQmp7a5BZDkxkfBEF3Ev3VEV-DJNw'
 
@@ -40,5 +39,5 @@ class Wework(BaseApi):
         # 发起get请求，获取token
         res = self.send_api(req)  # 实例化时自动调用send_api()方法
         # print(f"获取token：{res.json()}")
-        self.token = res.json()["access_token"]  # res有返回值,相当于对self.token重新赋值
+        self.token = res.json()["access_token"]
 

@@ -1,17 +1,7 @@
 # -*- coding=utf-8 -*-
-# @Time    : 2022/07/27 21:01
+# @Time    : 2023/01/28 22:26
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-
-
-"""
-author:码同学
-date:2022-10-26
-desc: 
-sample: 
-"""
-import pytest
-
 
 def pytest_collection_modifyitems(items):
     """
