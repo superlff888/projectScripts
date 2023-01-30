@@ -6,7 +6,7 @@
 """
 1、退出当前所有浏览器（在任务管理器中关闭谷歌浏览器进程）
 2、输入启动命令 chrome --remote-debugging-port=9222，通过命令启动浏览器（打开浏览器，指定端口号9222）
-    -- 只要不关闭该浏览器，就可以一致性在该浏览器页面执行自动化测试
+    -- 只要不关闭该浏览器，就可以一直在该浏览器页面执行自动化测试
 3、重启命令行和pycharm
 
 """
@@ -17,7 +17,7 @@ from selenium.webdriver.chrome.options import Options
 
 def options_demo():
     """
-    记录用户操作的cookie等信息，只要不关闭当前debug窗口，就一致可用
+    记录用户操作的cookie等信息，只要不关闭当前debug窗口，就一直可用
     """
     # 定义配置的实例对象
     option = Options()
