@@ -4,6 +4,7 @@
 # =============================================================
 import csv
 
+import allure
 import pymysql
 import pytest
 import requests
@@ -24,7 +25,6 @@ def query():
     param = {'userName': 'admin'}
     res = session.get(url=URL, params=param)
     print(res.text)
-
 
 # def test_demo():
 #     pytest.assume(1 == 2, "攀岩失败")

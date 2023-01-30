@@ -48,6 +48,7 @@ class DBConnection:
     def select(self, sql):
         print(self.cursor.execute(sql))
         print(self.cursor.fetchall())
+        self.conn.commit()
         self.cursor.close()
 
     # 关闭连接对象
