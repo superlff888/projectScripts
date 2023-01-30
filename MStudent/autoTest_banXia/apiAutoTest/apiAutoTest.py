@@ -26,11 +26,18 @@ def query():
     print(res.text)
 
 
-def test_demo():
-    pytest.assume(1 == 2, "攀岩失败")
+# def test_demo():
+#     pytest.assume(1 == 2, "攀岩失败")
 
 
-login()
-query()
+l = (1, 2, 3)
 
 
+def demo(a, *b):
+    b1, b2 = b
+    print(a, b1, b2)
+
+
+demo(1, 2, 3)
+
+print(b'[1, 2, 3]'.decode())

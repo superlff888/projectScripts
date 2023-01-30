@@ -21,11 +21,11 @@ def options_demo():
     """
     # 定义配置的实例对象
     option = Options()
-    # 实例属性修改为 debug模式启动的ip和端口，即debugger模式下打开浏览器
+    # 实例属性修改为 debug模式启动的ip和端口
     option.debugger_address = "localhost:9222"  # 127.0.0.1:9222
     # 实例化driver的时候，添加option配置
     driver = webdriver.Chrome(options=option)
-    driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+    driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")  # debugger模式下打开浏览器
 
 
 if __name__ == "__main__":
