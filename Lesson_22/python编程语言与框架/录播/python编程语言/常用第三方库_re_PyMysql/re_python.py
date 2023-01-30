@@ -56,11 +56,11 @@ a   12a1a1a
 编译：编译成正则表达式对象
 '''
 re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')  # re_telephone正则表达式对象
-# print(re_telephone.match('010-12345'))
-# print(re_telephone.match('010-12345').groups())
-# print(re.match(re_telephone, '010-12345'))
-# print(re.match(re_telephone, '010-12345').groups())
-# print(re.match(re_telephone, '010-12345'))
+print(re_telephone.match('010-12345'))
+print(re_telephone.match('010-12345').groups())
+print(re.match(re_telephone, '010-12345'))
+print(re.match(re_telephone, '010-12345').groups())
+print(re.match(re_telephone, '010-12345'))
 
 
 url = "https://ke.qq.com/webcourse/index.html#cid=3451092&term_id=104315825&taid=12103557145995476&type=1024&vid=387702291472621478"

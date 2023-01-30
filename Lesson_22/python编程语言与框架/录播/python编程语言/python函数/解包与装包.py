@@ -32,8 +32,8 @@ kwarg = {"x": 1, "y": 2, "z": 3, "w": 4}  # 注意：变量名要一致；因为
 func(**kwarg)  # 解包后，作为实参传给函数
 
 
-def func1(**kwargs):  # 作为形参时，**装包的作用
-    print(kwargs)
+def func1(**kwargs):  # 作为形参时，**装包的作用,把所有默认参数装包到kwargs
+    print(kwargs.get('a'))
 
 
 func1(a=1, b=2)
