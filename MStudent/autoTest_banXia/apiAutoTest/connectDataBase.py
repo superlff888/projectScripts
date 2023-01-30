@@ -61,7 +61,3 @@ class DBConnection:
 #     DB = DBConnection(host, user, password)
 #     DB.select(SQL)
 #     DB.close_DB()
-
-
-op = re.compile()
-op.match().group()
