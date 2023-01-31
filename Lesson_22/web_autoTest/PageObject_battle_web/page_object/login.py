@@ -20,7 +20,7 @@ class Login(BasePage):
     """如果将self.driver.get(self._BASE_URL)封装在基类中，则"""
     def login(self):
         # 打开index 页面
-        self.driver.get(self._BASE_URL)
+        self.driver.get(self._BASE_URL)  # 继承BasePage时，构造了self.driver
         cookie = yaml.safe_load(open("../data/cookie.yaml"))
         # 3. 植入cookie
         for c in cookie:

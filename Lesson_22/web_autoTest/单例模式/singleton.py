@@ -15,6 +15,11 @@ class Singleton(object):
 s = Singleton("Tom")
 
 
+"""
+ck15  测试框架4  单例 模式
+"""
+
+
 # Method Two：通过装饰器实现;
 # 被装饰的类为单例类，单例类只有一个实例
 def singleton_dec(cls):  # Decorator 装饰器

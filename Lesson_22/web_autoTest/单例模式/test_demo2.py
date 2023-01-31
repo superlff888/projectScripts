@@ -6,4 +6,4 @@ from Lesson_22.web_autoTest.单例模式.show_singleton import Demo2
 
 
 def testDemo2():
-    Demo2().
+    Demo2().get("www.baidu.com")  # 伪代码 ：self.driver.get()
