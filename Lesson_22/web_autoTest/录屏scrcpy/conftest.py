@@ -13,10 +13,12 @@ import signal
 import subprocess
 import sys
 
+import allure
 import pytest
+from selenium import webdriver
 
 
-@pytest.fixture(scope="module", autouse=True)  # 模块级别只调用一次
+@pytest.fixture(scope="module", autouse=True)  # 模块级别只调用一次；自动调用
 def record_video():
     """
     :shell : 为True时运行命令
@@ -29,6 +31,7 @@ def record_video():
     command = "scrcpy --record tmp.mp4"  # 需配置环境变量
 
     # 执行命令"scrcpy --record tmp.mp4"，自动开启录屏；需将scrcpy.exe所在目录添加到环境变量
+    # sys.path.append("scrcpy.exe绝对路径")  # 动态添加环境变量
     p = subprocess.Popen(args=command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     print(p)
     yield '成功录屏'
