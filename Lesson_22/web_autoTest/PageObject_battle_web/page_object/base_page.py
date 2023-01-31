@@ -16,6 +16,7 @@ from selenium import webdriver
 # 添加判断，避免driver 的重复实例化。定义一个base_driver 的形参
 # base_driver 代表，如果没有类在实例化的时候接收到参数，那么就实例化driver
 # 如果有接收到参数，那么就传递driver，保证driver 一直存在
+
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 

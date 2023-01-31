@@ -21,8 +21,8 @@ def on_hatch_complete(**kwargs):
     print(f"虚拟用户总数:{n}")
 
 
-# events.on_hatch_complete += on_hatch_complete
-# 挂载到locust钩子函数（所有的Locust示例产生完成时触发）
+events.on_hatch_complete += on_hatch_complete
+# 挂载到locust钩子函数（所有的Locust实例产生完成时触发）
 events.spawning_complete.add_listener(on_hatch_complete)
 
 n = 0
