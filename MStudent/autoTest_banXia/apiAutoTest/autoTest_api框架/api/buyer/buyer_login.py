@@ -3,15 +3,12 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from pprint import pprint
-
-import requests
-
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies, HttpRequest
 
 
 class BuyerLoginApi(HttpRequestCookies):
     def __init__(self):
-        super().__init__()  # 继承后，init构造方法中必须调用父类构造方法
+        super().__init__()  # 继承后，init构造方法中必须调用父类构造方法;间接继承父类实例属性需通过该表达式
         self.url = "http://www.mtxshop.com:7002/passport/login"
         self.method = "post"
         self.params = dict(username="mtx0327", password="fcea920f7412b5da7be0cf42b8c93759", captcha="1512",
