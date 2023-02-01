@@ -50,7 +50,7 @@ class Logging:
         return my_log
 
 
-logger = Logging('ERROR', '../../logs/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
+logger = Logging('ERROR', '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
 
 
 '''

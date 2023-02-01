@@ -6,6 +6,8 @@ from pprint import pprint
 
 import requests
 
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequest, httpRequestCookies
+
 
 class BuyerLoginApi:
     def __init__(self):
