@@ -40,7 +40,7 @@ class Logging:
         # ft = '%(asctime)s - %(name)s - "%(pathname)s:%(lineno)d" - %(funcName)s - %(levelname)s - %(message)s',
         # '%Y-%m-%d %H:%M:%S'
         ft = logging.Formatter(
-            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno)d" - %(funcName)s - %(levelname)s  %(message)s',
+            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(funcName)s - %(levelname)s  %(message)s',
             "%Y-%m-%d %H:%M:%S")
         # 设置渠道（控制台和文件）日志的输出格式
         l_c.setFormatter(ft)
