@@ -7,7 +7,6 @@ from urllib.parse import urljoin
 import requests
 
 
-# 新式
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import logger
 
 
@@ -35,6 +34,8 @@ class HttpRequest(object):
             if not kwargs.get("params"):
                 kwargs["params"] = None
             if kwargs.get("data") is None:
+                kwargs["data"] = None
+            if kwargs.get("json") is None:
                 kwargs["json"] = None
             if kwargs.get("cookies") is None:
                 kwargs["cookies"] = None
@@ -53,6 +54,8 @@ class HttpRequest(object):
             if not kwargs.get("params"):
                 kwargs["params"] = None
             if kwargs.get("data") is None:
+                kwargs["data"] = None
+            if kwargs.get("json") is None:
                 kwargs["json"] = None
             if kwargs.get("cookies") is None:
                 kwargs["cookies"] = None
@@ -78,6 +81,8 @@ class HttpRequestCookies:
     def request(self, method, url, **kwargs):
         """
         ::kwargs return a dict.
+
+        cookie可能方headers中，也可能放在request body中
         """
         # 统一将请求方法转化为小写字母
         method = method.lower()
@@ -86,6 +91,8 @@ class HttpRequestCookies:
             if not kwargs.get("params"):
                 kwargs["params"] = None
             if kwargs.get("data") is None:
+                kwargs["data"] = None
+            if kwargs.get("json") is None:
                 kwargs["json"] = None
             if kwargs.get("cookies") is None:
                 kwargs["cookies"] = None
@@ -95,7 +102,7 @@ class HttpRequestCookies:
                 kwargs["files"] = None
             if kwargs["params"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            if kwargs["data"]:
+            if kwargs["data"] is not None:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
             if kwargs["json"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["json"]}')
@@ -104,6 +111,8 @@ class HttpRequestCookies:
             if not kwargs.get("params"):
                 kwargs["params"] = None
             if kwargs.get("data") is None:
+                kwargs["data"] = None
+            if kwargs.get("json") is None:
                 kwargs["json"] = None
             if kwargs.get("cookies") is None:
                 kwargs["cookies"] = None

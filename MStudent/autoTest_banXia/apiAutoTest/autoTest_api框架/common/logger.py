@@ -23,6 +23,7 @@ class Logging:
         :param args:
         :param kwargs:
         """
+        level = level.upper()  # 改成大写
         # 创建自己的日志收集器
         my_log = logging.getLogger('my_log')  # 将返回的"my_log"赋值给my_log
         # 设置收集的日志的等级，这里设置为DEBUG（表示只收集DEBUG等级及以上的日志）
@@ -50,7 +51,7 @@ class Logging:
         return my_log
 
 
-logger = Logging('ERROR', '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
+logger = Logging('info', '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
 
 
 '''

@@ -21,12 +21,10 @@ class BuyerLoginApi:
         }
 
     def send(self):
-        session = requests.sessions.Session()
-        self.res = session.request(url=self.url, method=self.method, params=self.params)
+        self.res = httpRequestCookies.request(url=self.url, method=self.method, params=self.params)
         return self.res
 
 
 if __name__ == "__main__":
     b = BuyerLoginApi()
-    pprint(b.send().status_code)  # 状态码
-    pprint(b.send().json())  #
+    pprint(b.send().json())  # 状态码
