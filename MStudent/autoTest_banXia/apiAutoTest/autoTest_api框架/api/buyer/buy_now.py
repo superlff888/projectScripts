@@ -9,7 +9,7 @@ import requests
 from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
 from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
 
-
+# 可递归继承“爷爷”辈的方法(含init方法)和类属性
 class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis
 
     def __init__(self):
