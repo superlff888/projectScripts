@@ -21,6 +21,8 @@ from selenium import webdriver
 @pytest.fixture(scope="module", autouse=True)  # 模块级别只调用一次；自动调用
 def record_video():
     """
+    'the function used for record video'.
+
     :shell : 为True时运行命令
     :stdout : 标准信息输出
     :stderr : 错误信息输出
