@@ -15,7 +15,7 @@ class TestBuyNow:
         res = BuyerLoginApi().send()
         token = res.json()["access_token"]
         BaseBuyerApi.buyer_token = token
-        print(BuyNowApi.buyer_token)
+        # print(BuyNowApi.buyer_token)
         buy_now_api = BuyNowApi()
         res = buy_now_api.send()
         code = res.status_code
