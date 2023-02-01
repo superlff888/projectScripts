@@ -2,8 +2,8 @@
 # @Time    : 2023/01/24 09:49
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from MStudent.autoTest_banXia.todo.stu_op import StuOp
-from MStudent.autoTest_banXia.todo.students import Stu
+from MStudent.autoTest_banXia.todo_dev.stu_op import StuOp
+from MStudent.autoTest_banXia.todo_dev.students import Stu
 
 
 def run():

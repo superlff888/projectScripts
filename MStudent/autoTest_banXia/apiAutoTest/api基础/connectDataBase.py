@@ -34,6 +34,12 @@ import pymysql
 # # 关闭数据库连接
 # conn.close()
 
+
+"""
+封装
+
+"""
+
 SQL = 'select trade_sn from mtxshop_trade.es_order where order_id = 1'
 
 

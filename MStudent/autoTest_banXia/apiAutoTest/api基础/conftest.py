@@ -4,7 +4,7 @@
 # =============================================================
 import pytest
 
-from MStudent.autoTest_banXia.apiAutoTest.redisConn import RedisConn
+from autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
 
 
 def pytest_collection_modifyitems(items):

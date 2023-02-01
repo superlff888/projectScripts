@@ -5,12 +5,8 @@
 
 import pymysql
 
-'''
-pip install PyMySQL==0.9.3
-'''
-
 # 配置数据库相关信息
-dbinfo = {
+dbInfo = {
     "host": "172.17.6.205",
     "user": "root",
     "password": "FKaJMxKIjMw%cERy21",
@@ -38,27 +34,27 @@ class DbConnect(object):
         print(f'mcs.cursor为： {self.cursor}')
         print(f'dbinfo为： {db_cof}')
 
-    def select(self, sql):
+    def select(self, SQL):
         # SQL 查询语句
         # sql = "SELECT * FROM EMPLOYEE
         #        WHERE INCOME > %s" % (1000)
-        self.cursor.execute(sql)
+        self.cursor.execute(SQL)
         # results = mcs.cursor.fetchall() # 获取所有sql结果中数据
         # re = mcs.cursor.fetchone() # 从sql结果（mcs.cursor.execute(sql)）中获取第一条数据
         re_m = self.cursor.fetchmany(3)  # 从sql结果（mcs.cursor.execute(sql)）中获取指定条数数据
         return re_m
 
-    def execute(self, sql):
+    def execute(self, SQL):
         """
         可用flag进行区分fetchall()、fetchone()、fetchmany(3)
-        :param sql:
+        :param SQL:
         :return:
         """
         # SQL 删除、提交、修改语句
         # sql = "DELETE FROM EMPLOYEE WHERE AGE > %s" % (20)
         try:
-            b = self.cursor.execute(sql)  # 执行SQL语句
-            print(f'excute执行结果为： {b}')
+            b = self.cursor.execute(SQL)  # 执行SQL语句
+            print(f'execute执行结果为： {b}')
             self.db.commit()  # 提交修改
         except Exception:
             # 发生错误时回滚
@@ -70,13 +66,13 @@ class DbConnect(object):
 
 
 if __name__ == '__main__':
-    db = DbConnect("dt_qas", dbinfo, 'utf8')  # 注意：此处为 'utf8',防止因编码报错
+    db = DbConnect("dt_qas", dbInfo, 'utf8')  # 注意：此处为 'utf8',防止因编码报错
     print(db)
-    sql = "SELECT * FROM dt_cdm_salesdata_dept where dept01_cd = '00001903' and sale_date = '20210516';"
+    sql = r"SELECT * FROM dt_cdm_salesdata_dept where dept01_cd = '00001903' and sale_date = '20210516';"
     a = db.select(sql)
     print(f'a: {a}')  # list of dict
     print(f'获取数据行数： {len(a)}')
-    print(dbinfo)
+    print(dbInfo)
     print(f"===================格式化后： {'aaa'}{'bbb'}============================")  # 字符串拼接
     db.execute(sql)
     db.close()

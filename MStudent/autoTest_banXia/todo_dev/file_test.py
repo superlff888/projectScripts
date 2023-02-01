@@ -2,13 +2,13 @@
 # @Time    : 2023/01/23 20:25
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from MStudent.autoTest_banXia.todo.students import Stu
+from MStudent.autoTest_banXia.todo_dev.students import Stu
 
 
 class FileOp:
 
     def __init__(self):
-        self.file = r'D:\Develop\git_pub_repositories\projectScripts\MStudent\autoTest_banXia\todo\data.txt'
+        self.file = r'/autoTest_banXia/todo_dev\data.txt'
 
     # 读取
     def read(self):  # 根据业务要求，处理成字典格式的中间数据  stu_dict = {id: stu}

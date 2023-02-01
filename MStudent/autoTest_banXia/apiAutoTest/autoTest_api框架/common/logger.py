@@ -4,10 +4,11 @@
 import logging
 
 
-class MyLogging:
+class Logging:
+
     """
-    class新创建实例时，会调用__new__，它主要控制一个新实例的创建,即控制类实例创建的规则（__init__方法可以看作运用该规则初始化一个实例）
-    __new__必须要有返回值,返回的是当前类的实例; __new__方法正是创建'这个类实例'的方法
+    class新创建实例时，会调用__new__，它主要控制一个新实例的创建,即控制类实例创建的规则（__init__方法可以看作运用该规则初始化一个实例），
+    __new__必须要有返回值,返回的是当前类的实例; __new__方法正是创建'这个类实例'的方法，
     __new__至少要有一个参数cls，代表当前类，此参数在实例化时由Python解释器自动识别
 
     """
@@ -25,7 +26,7 @@ class MyLogging:
         # 创建自己的日志收集器
         my_log = logging.getLogger('my_log')  # 将返回的"my_log"赋值给my_log
         # 设置收集的日志的等级，这里设置为DEBUG（表示只收集DEBUG等级及以上的日志）
-        my_log.setLevel(level)  # 执行my_log.info(),不会打印日志收集，因为等级为debug
+        my_log.setLevel(level)  # 日志收集器的级别,级别不够，不会打印到控制台或文件中
         # 创建一个日志输出渠道（输出到控制台）
         l_c = logging.StreamHandler()
         # 设置‘输出到控制台的日志’的级别，该级别若低于收集器的级别，则控制台日志将不会被打印
@@ -49,7 +50,9 @@ class MyLogging:
         return my_log
 
 
-# logger = MyLogging('ERROR', '../../logs/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象，所以此时的logger就是my_log
+logger = Logging('ERROR', '../../logs/myLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
+
+
 '''
 解析实例化对象时代码运行过程：
  1、调用__new__方法，将参数传递给该方法，并返回一个对象，该对象被__new__方法赋予了level和filename以及格式化等“规则”

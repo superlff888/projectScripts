@@ -2,8 +2,8 @@
 # @Time    : 2023/01/23 21:09
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from MStudent.autoTest_banXia.todo.file_test import FileOp
-from MStudent.autoTest_banXia.todo.students import Stu
+from MStudent.autoTest_banXia.todo_dev.file_test import FileOp
+from MStudent.autoTest_banXia.todo_dev.students import Stu
 
 
 class StuOp:
