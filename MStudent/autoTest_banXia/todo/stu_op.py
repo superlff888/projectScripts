@@ -18,11 +18,11 @@ class StuOp:
             return '查询失败'
 
     @classmethod
-    def add_stu(cls, stu):
+    def add_stu(cls, stu):  # stu是Stu类实例对象（students.py）
         if stu.id in cls.stu_dict:
             return '不可重复新增'
         else:
-            cls.stu_dict[stu.id] = stu
+            cls.stu_dict[stu.id] = stu  # stu是一个带有id属性的对象； {id:stu}
             FileOp().write(cls.stu_dict)
             # print(cls.stu_dict)
             return '新增成功'

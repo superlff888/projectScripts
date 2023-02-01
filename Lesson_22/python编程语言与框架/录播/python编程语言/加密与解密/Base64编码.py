@@ -9,7 +9,7 @@ import json
 import requests
 
 string = '你好啊'
-# 编码： 字符串 -> 二进制 -> base64编码
+# 编码： 字符串 -> 二进制编码 -> base64编码
 b64_code = base64.b64encode(string.encode())
 print(b64_code)  # b'5L2g5aW95ZWK'
 

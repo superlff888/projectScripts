@@ -11,7 +11,7 @@ class FileOp:
         self.file = r'D:\Develop\git_pub_repositories\projectScripts\MStudent\autoTest_banXia\todo\data.txt'
 
     # 读取
-    def read(self):
+    def read(self):  # 根据业务要求，处理成字典格式的中间数据  stu_dict = {id: stu}
         stu_dict = {}
         with open(self.file, mode='r', encoding='utf-8') as f:
             # print(f.readlines())

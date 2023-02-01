@@ -8,7 +8,7 @@ class Person(object):
 
     def __del__(self):
         print("实例对象:%s" % self.name, id(self))
-        print("python解释器开始回收%s对象了" % self.name)
+        print("python解释器开始回收%s对象了" % self.name)  # 从内存清除掉
 
 
 # print("类对象", id(Person))
