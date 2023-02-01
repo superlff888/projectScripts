@@ -6,22 +6,19 @@ from pprint import pprint
 
 import requests
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequest, httpRequestCookies
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies, HttpRequest
 
 
-class BuyerLoginApi:
+class BuyerLoginApi(HttpRequestCookies):
     def __init__(self):
+        super().__init__()  # 继承后，init构造方法中必须调用父类构造方法
         self.url = "http://www.mtxshop.com:7002/passport/login"
         self.method = "post"
-        self.params = {
-            "username": "mtx0327",
-            "password": "fcea920f7412b5da7be0cf42b8c93759",
-            "captcha": "1512",
-            "uuid": "f6597380-4e24-11ed-984b-167610639c7"
-        }
+        self.params = dict(username="mtx0327", password="fcea920f7412b5da7be0cf42b8c93759", captcha="1512",
+                           uuid="f6597380-4e24-11ed-984b-167610639c7")
 
     def send(self):
-        self.res = httpRequestCookies.request(url=self.url, method=self.method, params=self.params)
+        self.res = self.request(url=self.url, method=self.method, params=self.params)
         return self.res
 
 

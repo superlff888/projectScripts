@@ -2,7 +2,12 @@
 # @Author    : House Lee
 # -*-coding=utf-8-*-
 import logging
+import os
 
+
+"""
+日志配置 https://zhuanlan.zhihu.com/p/454463040
+"""
 
 class Logging:
 
@@ -28,7 +33,7 @@ class Logging:
         my_log = logging.getLogger('my_log')  # 将返回的"my_log"赋值给my_log
         # 设置收集的日志的等级，这里设置为DEBUG（表示只收集DEBUG等级及以上的日志）
         my_log.setLevel(level)  # 日志收集器的级别,级别不够，不会打印到控制台或文件中
-        # 创建一个日志输出渠道（输出到控制台）
+        # 创建一个日志输出渠道（输出到控制台）处理器
         l_c = logging.StreamHandler()
         # 设置‘输出到控制台的日志’的级别，该级别若低于收集器的级别，则控制台日志将不会被打印
         l_c.setLevel(level)
@@ -51,7 +56,8 @@ class Logging:
         return my_log
 
 
-logger = Logging('info', '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
+# ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
+logger = Logging('info', os.path.dirname(__file__) + '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
 
 
 '''

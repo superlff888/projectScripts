@@ -2,6 +2,7 @@
 # @Author    : H.侠
 # -*-coding=utf-8-*-
 # =============================================================
+import os
 from urllib.parse import urljoin
 
 import requests
@@ -101,6 +102,11 @@ class HttpRequestCookies:
             if kwargs.get("files") is None:
                 kwargs["files"] = None
             if kwargs["params"]:
+                # 谁调用该类谁做主，比如BuyerLoginApi继承并调用该类的方法，那么就取最终调用者所在文件的相对位置
+                # print(os.path.abspath("../../logs/shopLog.log"))
+                print(f"当前执行文件所在目录的上上层目录下的logs：{os.path.abspath(os.path.dirname(__file__) + '../../logs/shopLog.log')}")
+                print(f"当前执行文件所在目录的上层目录的上层目录：{os.path.abspath('../../')}")
+                # print(os.path.abspath('\n'))
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
             if kwargs["data"] is not None:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
@@ -121,7 +127,7 @@ class HttpRequestCookies:
             if kwargs.get("files") is None:
                 kwargs["files"] = None
             if kwargs["params"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
+                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}', _srcfile=True)
             if kwargs["data"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
             return self.session.get(url, **kwargs)
@@ -131,5 +137,5 @@ class HttpRequestCookies:
         self.session.close()
 
 
-httpRequestCookies = HttpRequestCookies()
+# print(HttpRequestCookies())
 
