@@ -7,11 +7,11 @@ sample:
 """
 import csv
 import os
+from pprint import pprint
 
 import pandas as pd
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_filepath import get_project_path
-
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_filepath import get_project_dirname, get_project_abspath
 
 """
 凡是可作用于for循环的对象都是Iterable类型；
@@ -21,8 +21,8 @@ from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_filepath import g
 """
 
 # print(path)  # join类似字符串拼接，union
-path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_path()为当前文件所在‘目录’，并不是csvTest所在的路径
-
+path = get_project_abspath(os.path.join(get_project_dirname(), "../data", 'mtxshop_data.csv'))  # get_project_path()为当前文件所在‘目录’，并不是csvTest所在的路径
+print(path)
 
 # with open(path) as f:
 #     csv_file = csv.reader(f)  # list[]
@@ -32,9 +32,9 @@ path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_
 #     for line in csv_file:
 #         print(line)
 
-def getCSV(Path, isNext=True):
+def getCSV(path, isNext=True):
     list_ = []
-    with open(Path, encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         # The returned object is an iterator.  Each iteration returns a row of the CSV file
         csv_file = csv.reader(f)  # 返回迭代器iterator
         print(csv_file)
@@ -58,8 +58,8 @@ def getCSVDict():
     return list_
 
 
-print(getCSVDict())
-print(getCSV(path, isNext=True))
+pprint(getCSVDict())
+pprint(getCSV(path, isNext=True))
 
 
 """
