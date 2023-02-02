@@ -14,7 +14,7 @@ from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_log
 
 class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
 
-    def __init__(self):
+    def __init__(self, sku_id=600, num=1):
         # 间接继承父类的header  super().__init__() ；把父类的属性拿来为我所用，可以直接用，也可重新复制
         # 【继承】可以继承父类的类属性和方法(包括__init__构造方法)，但不能直接继承实例属性；同BuyerLoginApi().__init__()
         super().__init__()
@@ -24,8 +24,8 @@ class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
         self.res = None
         # 重写赋值父类的实例属性params
         self.params = {
-            "sku_id": 600,
-            "num": 1
+            "sku_id": sku_id,
+            "num": num
         }
 
     # 立即购买接口没有响应体内容
