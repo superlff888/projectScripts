@@ -7,6 +7,9 @@ sample:
 """
 import csv
 import os
+
+import pandas as pd
+
 from utils import get_project_path
 
 """
@@ -56,3 +59,28 @@ def getCSVDict():
 
 print(getCSVDict())
 print(getCSV(path, isNext=True))
+
+
+"""
+写入csv文件
+"""
+
+
+# 定义dialect
+class my_dialect(csv.Dialect):
+    lineterminator = '\n'
+    delimiter = '|'
+    quotechar = '"'
+    quoting = csv.QUOTE_MINIMAL
+
+
+def write_in_csv(filepath, mode='w'):
+    # 新建一个文件并按行写入
+    with open(filepath, mode) as f:
+        writer = csv.writer(f, dialect=my_dialect)
+        writer.writerow(('one', 'two', 'three'))
+        writer.writerow((1, 2, 3))
+        writer.writerow((4, 5, 6))
+
+
+
