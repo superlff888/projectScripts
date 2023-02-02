@@ -7,9 +7,15 @@ sample:
 """
 import csv
 import os
-
 from utils import get_project_path
 
+
+"""
+凡是可作用于for循环的对象都是Iterable类型；
+
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；
+
+"""
 # print(get_project_path())
 
 path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_path()为当前文件所在‘目录’，并不是csvTest所在的路径
