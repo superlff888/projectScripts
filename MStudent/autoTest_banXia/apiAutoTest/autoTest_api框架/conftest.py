@@ -4,7 +4,7 @@
 # =============================================================
 import pytest
 
-from autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
+# from autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
 
 
 # def pytest_collection_modifyitems1(items):
@@ -15,6 +15,8 @@ from autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
 #         item.name = item.name.encode("utf-8").decode("unicode_escape")
 #         item._nodeid = item.nodeid.split('::')[0] + '::' + item.nodeid.split('::')[1].encode("utf-8").decode(
 #             "unicode_escape")
+from MStudent.autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
 
 
 def pytest_collection_modifyitems(items):
@@ -32,3 +34,4 @@ def pytest_collection_modifyitems(items):
 def got_resConn():
     redis_conn = RedisConn('82.156.74.26', 'mtx')
     return redis_conn
+

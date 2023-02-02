@@ -6,10 +6,14 @@ from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import 
 
 
 class BaseBuyerApi(HttpRequestCookies):
+    """
+    不需要经过中间类BaseBuyerApi从登录类BuyerLoginApi中获取uid和token.
+    因此，该类后期不做维护……
+    """
 
     buyer_token = ''
 
     def __init__(self):
         super().__init__()
-        self.host = 'http://mtxshop.com:7002'
+        self.host = 'http://www.mtxshop.com:7002'
         self.header = {"Authorization": BaseBuyerApi.buyer_token}

@@ -22,7 +22,7 @@ path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_
 
 # with open(path) as f:
 #     csv_file = csv.reader(f)  # list[]
-#     # 返回迭代器的下一个项目;要和生成迭代器的 iter() 一起使用;迭代器与可迭代对象不是一个对象
+#     # 返回迭代器的下一个项目;要和生成迭代器的 iter() 一起使用;迭代器与可迭代对象不同
 #     headers = next(csv_file)
 #     # print(headers)
 #     for line in csv_file:
@@ -31,9 +31,11 @@ path = os.path.join(get_project_path(), "files", 'userTest.csv')  # get_project_
 def getCSV(Path, isNext=True):
     list_ = []
     with open(Path, encoding='utf-8') as f:
+        # The returned object is an iterator.  Each iteration returns a row of the CSV file
         csv_file = csv.reader(f)  # 返回迭代器iterator
+        print(csv_file)
         if isNext:  # True表示csv有表头字段
-            # 跳过第一行的用法，往往csv文件的第一行为字段名
+            # 跳过第一行的用法，往往csv文件的第一行为标题名
             next(csv_file)  # 接收迭代器参数，若不是迭代器,需要用iter()方法转化成迭代器；iter(iterable) -> iterator
             for line in csv_file:  # [['Baked', 'Beans'], ['Lovely', 'Spam'], ['Wonderful', 'Spam']]
                 list_.append(line)
@@ -45,6 +47,7 @@ def getCSVDict():
     with open(path, encoding='utf-8') as f:
         # 若csv有表头，则默认将csv表头字段定义为key;若没有表头，则可以自定义表头key
         csv_file = csv.DictReader(f)  # 视图对象【'csv.DictReader'】格式类似于 list[{},{}] ; 字典中的key为CSV第一行表头字段
+        # 迭代器 [{'first_name': 'Baked', 'last_name': 'Beans'}, {'first_name': 'Lovely', 'last_name': 'Spam'}, {'first_name': 'Wonderful', 'last_name': 'Spam'}]
         print(csv_file)  # 视图对象
         for dic in csv_file:  # 按行读取，dict为： {'first_name': 'Baked', 'last_name': 'Beans'}
             list_.append(dic)  # 将读取的每一行放在列表中

@@ -134,7 +134,7 @@ DateFormat.json_format_class().out_date()  # 相当于DateFormat().out_date()
 """
 
 
-# static 使用场景
+# staticmethod 使用场景
 class Jinx(object):
     pass
 

@@ -15,7 +15,7 @@ import redis
 """
 
 
-@pytest.fixture()
+# @pytest.fixture()
 class RedisConn:
     # redis 取出的结果默认是字节，通过设定 decode_responses=True 改成字符串
     def __init__(self, host, password, decode_responses=False, port=6379):
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # 获取连接对象
     redis_conn = RedisConn('82.156.74.26', 'mtx')
     # 商城项目; 数据类型为字符串
-    bContent = redis_conn.get('{BUY_NOW_ORIGIN_DATA_PREFIX}_2429')
+    bContent = redis_conn.get('{BUY_NOW_ORIGIN_DATA_PREFIX}_24216')
     # 从redis缓存中将Java序列化Value转换为二进制(bytes)python对象
     resList = javaobj.loads(bContent)
     obj = resList[0]  # java对象

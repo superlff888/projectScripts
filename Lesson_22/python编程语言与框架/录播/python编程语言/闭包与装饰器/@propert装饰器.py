@@ -25,6 +25,6 @@ class Person(object):
 p = Person()
 p.age = 20
 print(p.age)
-p.age = 1
-print(p.age)
-del p.age
+# p.age = 1
+# print(p.age)
+# del p.age
