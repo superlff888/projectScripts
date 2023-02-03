@@ -8,6 +8,7 @@
 from pprint import pprint
 
 import requests
+# unittest 断言方式
 from hamcrest import *
 from jsonpath import jsonpath
 

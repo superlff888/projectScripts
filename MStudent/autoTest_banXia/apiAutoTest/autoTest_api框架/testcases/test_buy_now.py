@@ -2,11 +2,13 @@
 # @Time    : 2023/02/01 21:29
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
+import os
+
 import javaobj
 import pytest
 
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now import BuyNowApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.excel_loading import read_data
 
 
 class TestBuyNow:
@@ -20,14 +22,18 @@ class TestBuyNow:
                   --alluredir ../reports/shop --clean-alluredir
     """
 
-    def test_buy_now(self, got_resConn):
+    relative_path = './data/mtxshop_data.xlsx'
+    data, case_name = read_data(relative_path, "立即购买")  # 解包：数据，用例标题
+
+    @pytest.mark.parametrize("sku_id, num, except_code", data, ids=case_name)
+    def test_buy_now(self, sku_id: int, num: int, except_code, got_resConn):
         """BuyNowApi子类从BuyerLoginApi父类构造方法中间接继承了实例属性uid  super().__init__()"""
         # buyer_login_api = BuyerLoginApi()
         # res = buyer_login_api.send(buyer_login_api)
         # print(f"\n登录接口响应:uid = {res[0]}, token = {res[1]}")
         # uid = res[0]
 
-        buy_now_api = BuyNowApi()
+        buy_now_api = BuyNowApi(sku_id, num)
         uid = buy_now_api.uid  # 父类属性通过继承父类__init__构造方法,简介继承父类实例属性
         res = buy_now_api.send()
         code = res.status_code
@@ -46,6 +52,6 @@ class TestBuyNow:
         # print(skuId)  # 获取'skuId'属性值
         # print(num)  # 获取'num'属性值
 
-        pytest.assume(code == 200)
+        pytest.assume(code == except_code)
         pytest.assume(skuId == p_sku_id)
         pytest.assume(num == p_num)

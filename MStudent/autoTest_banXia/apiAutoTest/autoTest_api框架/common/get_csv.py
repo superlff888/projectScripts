@@ -9,9 +9,7 @@ import csv
 import os
 from pprint import pprint
 
-import pandas as pd
-
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_filepath import get_project_dirname, get_project_abspath
+from autoTest_banXia.apiAutoTest.autoTest_api框架.get_filepath import get_project_dirname, get_project_abspath
 
 """
 凡是可作用于for循环的对象都是Iterable类型；
