@@ -74,10 +74,18 @@ class HttpRequestCookies:
     """
     :类作用 :记录cookies信息，提供于下一个请求
     """
+    session = requests.sessions.Session()
 
     def __init__(self):
         # 创建一个session对象，先用session发起登陆请求 ，然后复用该session
-        self.session = requests.sessions.Session()
+        self.method = None
+        self.url = None
+        self.params = None
+        self.data = None
+        self.json = None
+        self.cookies = None
+        self.headers = None
+        self.files = None
 
     def request(self, method, url, **kwargs):
         """
@@ -90,17 +98,17 @@ class HttpRequestCookies:
         # 判断请求方法
         if method == 'post':
             if not kwargs.get("params"):
-                kwargs["params"] = None
-            if kwargs.get("data") is None:
-                kwargs["data"] = None
-            if kwargs.get("json") is None:
-                kwargs["json"] = None
-            if kwargs.get("cookies") is None:
-                kwargs["cookies"] = None
-            if kwargs.get("headers") is None:
-                kwargs["headers"] = None
-            if kwargs.get("files") is None:
-                kwargs["files"] = None
+                kwargs["params"] = self.params
+            if not kwargs.get("data"):
+                kwargs["data"] = self.data
+            if not kwargs.get("json"):
+                kwargs["json"] = self.json
+            if not kwargs.get("cookies"):
+                kwargs["cookies"] = self.cookies
+            if not kwargs.get("headers"):
+                kwargs["headers"] = self.headers
+            if not kwargs.get("files"):
+                kwargs["files"] = self.files
             if kwargs["params"]:
                 # 谁调用该类谁做主，比如BuyerLoginApi继承并调用该类的方法，那么就取最终调用者所在文件的相对位置
                 # print(os.path.abspath("../../logs/shopLog.log"))
@@ -108,24 +116,24 @@ class HttpRequestCookies:
                 print(f"当前执行文件所在目录的上层目录的上层目录：{os.path.abspath('../../')}")
                 # print(os.path.abspath('\n'))
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            if kwargs["data"] is not None:
+            if kwargs["data"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
             if kwargs["json"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["json"]}')
             return self.session.post(url, **kwargs)
         if method == 'get':
             if not kwargs.get("params"):
-                kwargs["params"] = None
+                kwargs["params"] = self.params
             if kwargs.get("data") is None:
-                kwargs["data"] = None
+                kwargs["data"] = self.data
             if kwargs.get("json") is None:
-                kwargs["json"] = None
+                kwargs["json"] = self.json
             if kwargs.get("cookies") is None:
-                kwargs["cookies"] = None
+                kwargs["cookies"] = self.cookies
             if kwargs.get("headers") is None:
-                kwargs["headers"] = None
+                kwargs["headers"] = self.headers
             if kwargs.get("files") is None:
-                kwargs["files"] = None
+                kwargs["files"] = self.files
             if kwargs["params"]:
                 logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}', _srcfile=True)
             if kwargs["data"]:

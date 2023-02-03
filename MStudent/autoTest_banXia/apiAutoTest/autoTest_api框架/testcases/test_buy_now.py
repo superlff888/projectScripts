@@ -49,8 +49,6 @@ class TestBuyNow:
         # print(dir(obj))  # dir(obj)返回参数(java对象)的属性、方法列表
         skuId = obj.__getattribute__("skuId")
         num = obj.__getattribute__("num")
-        # print(skuId)  # 获取'skuId'属性值
-        # print(num)  # 获取'num'属性值
 
         pytest.assume(code == except_code)
         pytest.assume(skuId == p_sku_id)

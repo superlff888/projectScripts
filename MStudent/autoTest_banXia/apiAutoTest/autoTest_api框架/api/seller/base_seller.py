@@ -10,5 +10,5 @@ class BaseSeller(HttpRequestCookies):
 
     def __init__(self):
         super().__init__()
-        self.host = 'http://www.mtxshop.com:7002'
-        self.header = self.header = {"Authorization": BaseSeller.seller_token}
+        self.host = 'http://www.mtxshop.com:7003'
+        self.header = {"Authorization": BaseSeller.seller_token}
