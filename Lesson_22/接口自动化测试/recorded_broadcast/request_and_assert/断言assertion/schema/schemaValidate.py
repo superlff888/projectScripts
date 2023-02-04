@@ -4,7 +4,6 @@
 # =============================================================
 
 from jsonschema import validate, ValidationError, SchemaError
-
 from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.loggerMy import logger
 
 """
@@ -15,7 +14,7 @@ from Lesson_22.接口自动化测试.interface_test.api_object.apis.utils.logger
 def schema_validate_max(arg, schema=None):
     """不仅支持单形参，还支持元组和字典等序列"""
     if schema is None:  # if not schema:
-        "scheme为None时，传参为 obj实例 和 标准schema组成的元组等序列"
+        "scheme为None时，传参为python obj实例 和 标准schema组成的元组等序列"
         try:
             validate(*arg)  # arg = obj + schema
         except ValidationError as err:

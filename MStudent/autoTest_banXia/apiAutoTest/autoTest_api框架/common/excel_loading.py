@@ -12,7 +12,7 @@ from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME, get
 def read_data(filepath, sheet_name):
     """
     :: DIR_NAME项目所在路径，常量
-    :: filepath:  相对路径
+    :: filepath:  相对路径（入参为项目下的路径，参照setting.py路径），如：./data/*.*
     ::keep_default_na:  读取文件会出现单元格 N/A,获取不到有效值；设置False获取空字符串
     ::engine:  指定引擎
 

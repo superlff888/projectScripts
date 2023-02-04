@@ -10,7 +10,7 @@ import pystache  # 用两个花括号识别变量，可以对变量自动识别�
 from Lesson_22.接口自动化测试.recorded_broadcast.request_and_assert.请求构造_复杂数据解析masache.utils import read_json
 
 """
-mastache可以极大的简化代码，只需要替换{{}}里面的数据即可
+mastache 可以极大的简化代码，只需要替换{{}}里面的数据即可
 
 """
 
@@ -21,9 +21,10 @@ class TestDemo:
         print(j)
 
     def test_emp(self):
-        # template参数是string类型,所以应先将json转化为字符串
+        # template参数是string类型,所以应先将python对象dict转化为字符串
         create_emp = read_json("./create_emp.json")  # json文件跟当前py文件在同一文件夹下
+        print(type(create_emp))
         str_emp = str(create_emp)
-        print(str_emp)
+        # print(str_emp)
         j = pystache.render(str_emp, **{"name": "lee", "title": "study hard"})  # 返回给定模板字符串，即template参数
         pprint(j)

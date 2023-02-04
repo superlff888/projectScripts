@@ -4,23 +4,29 @@
 # =============================================================
 from pprint import pprint
 
-import requests
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-
-
 # 可递归继承“爷爷”辈的类方法(含init方法)和类属性 HttpRequestCookies
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
 class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
 
-    def __init__(self, sku_id, num):
+    """类属性一般为常量，不经常发生变换，故适合维护在配置文件中"""
+    PATH = conf_parser_obj.configParser(["buy_now", "path"])
+    METHOD = conf_parser_obj.configParser(["buy_now", "method"])
+    HEADER = conf_parser_obj.configParser(["buy_now", "header"])
+
+    def __init__(self, sku_id=600, num=1):
         # 间接继承父类的header  super().__init__() ；把父类的属性拿来为我所用，可以直接用，也可重新复制
         # 【继承】可以继承父类的类属性和方法(包括__init__构造方法)，但不能直接继承实例属性；同BuyerLoginApi().__init__()
         super().__init__()
-        self.header = {"Authorization": self.token}  # super().__init__() 已经拿到了header属性，不需要重复写
-        self.url = f"{self.host}/trade/carts/buy"
-        self.method = "post"
+        # 只能用父类实例对象调用property属性,@property装饰器保护机制，相当于父类的私有属性
+        self.uid, self.token = BuyerLoginApi().send_uid_token  # 每个人间的token和uid都不相同，所以不可通过两次实例化获得uid和token
+        self.header = {"Authorization": self.token}  # 子类无法直接调用property属性
+        # self.header = {"Authorization": BuyerLoginApi.send(BuyerLoginApi())}  # 子类无法直接调用property属性
+        self.url = f"{self.HOST}" + f"{self.PATH}"
+        self.method = self.METHOD
+        # self.header = self.HEADER
         self.res = None
         # 重写赋值父类的实例属性params
         self.params = {
@@ -30,15 +36,14 @@ class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
 
     # 立即购买接口没有响应体内容
     def send(self):
-        self.res = self.request(url=self.url, method=self.method, params=self.params, headers=self.header_pro)
+        """该方法的参数化移交给init构造方法了"""
+        self.res = self.request(url=self.url, method=self.method, params=self.params, headers=self.header)
         return self.res
 
 
 if __name__ == '__main__':
-    buyer_login_api = BuyerLoginApi()
-    res = buyer_login_api.send(buyer_login_api)
-    print(f"\n登录接口响应:uid = {res[0]}, token = {res[1]}")
-    buy_now_api = BuyNowApi(600, 1)
-    print(f"BuyNowApi请求头header_pro： {buy_now_api.header_pro}")
-    print(BuyNowApi(600, 1).send().status_code)
+    buy_now_api = BuyNowApi()  # sku_id=600, num=1
+    print(f"BuyNowApi请求头header: {buy_now_api.header}")
+    print(f"BuyNowApi响应状态码: {buy_now_api.send().status_code}")
+
 

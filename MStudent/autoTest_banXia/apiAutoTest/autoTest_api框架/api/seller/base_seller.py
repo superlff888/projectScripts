@@ -5,10 +5,10 @@
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
 
 
-class BaseSeller(HttpRequestCookies):
+class BaseSellerApi(HttpRequestCookies):
     seller_token = ''
 
     def __init__(self):
         super().__init__()
         self.host = 'http://www.mtxshop.com:7003'
-        self.header = {"Authorization": BaseSeller.seller_token}
+        self.header = {"Authorization": BaseSellerApi.seller_token}

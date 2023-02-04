@@ -19,3 +19,4 @@ def test_genson():
     _schema = json.load(open("./demo_schema.json"))
     # 不推荐用validate做断言，因为json实例不符合schema标准时程序会抛出异常,从而导致断言为None,即异常后的断言程序就不走了
     assert validate({"a": 1, "b": "aaa", "c": "", "d": None}, _schema)
+    

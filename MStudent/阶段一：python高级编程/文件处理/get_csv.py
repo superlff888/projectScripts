@@ -10,7 +10,7 @@ import os
 
 import pandas as pd
 
-from utils import get_project_path
+from get_project_path import get_project_path
 
 """
 凡是可作用于for循环的对象都是Iterable类型；

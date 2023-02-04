@@ -5,6 +5,10 @@
 
 import configparser
 import os
+from functools import singledispatchmethod
+
+from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
+from autoTest_banXia.apiAutoTest.autoTest_api框架.utils.overload import methodispatch
 
 """
 封装的原则：
@@ -13,56 +17,76 @@ import os
     在各个方法中都要用到的数据，抽离出来作为实实例属性
 封装前，读配置文件数据三部曲：
     conf = configparser.Configparser()  # 实例化
-    conf.read('config.ini', encoding='utf8')  # 打开配置文件，然后才可以调用get等方法获取想要的数据
-    conf.get(sections, options)  # 获取options数据
+    conf.read('config.ini', encoding='utf8')  # 实例化配置文件解析器，打开配置文件，然后才可以调用get等方法获取想要的数据
+    conf.get(section, option)  # 获取options数据
 """
 ##
 """
     conf = configparser.Configparser()  # 实例化
     conf.read('config.ini', encoding='utf8')  # 打开配置文件，然后才可以调用get等方法获取想要的数据
-    conf.get(sections, options)  # 获取options数据
+    conf.get(section, option)  # 获取options数据
 """
 
 
 class ReadConfig(configparser.ConfigParser):
-    config_dic = {}
-    config_opt_dic = {}
+    section = {}
+    option = {}
 
     def __init__(self, filepath, encoding='utf8'):
         """
-        读取配置文件的内容到配置文件解析器对象.
+        ::filepath : 相对路径（入参为项目下的路径，参照setting.py路径），如：./conf/*.*
 
+        [function] self.read(DIR_NAME+filepath, encoding) 读取配置文件的内容到配置文件解析器对象,通过解析器调用所属方法，操作配置文件
 
         """
         # 执行完此步骤，就可调用父类的成员属性，相当于把父类的__init__方法和成员属性继承过来了；
-        # 之后用子类实例化一个对象后, 这个对象可以'点'出父类对象的成员属性/方法, 当然也可以'点'出自己类对象的成员属性/方法
-        super().__init__()  # （括号中不需要传值self）需要配置父类成员属性，做初始化设置，所以要继承__init__方法
+        super().__init__()
         # 通过子类实例对象（self，即conf）调用父类的read方法（继承），加载配置文件(可进一步做参数化)
-        self.con_par = self.read(filepath, encoding)
+        self.value = None
+        self.con_par = self.read(DIR_NAME + filepath, encoding)
 
-    def configParser(self, sector, item):
-        # global value
-        value = None
+    @singledispatchmethod
+    def configParser(self, args):
+        raise NotImplementedError("Cannot negate a")
+
+    @configParser.register
+    def _(self, args: list):
+        sector, item = args
         try:
-            value = self.config_dic[sector][item]
+            self.value = self.section[sector][item]
         except Exception as e:  # KeyError: 'logging'  字典中没有该key
-            print(Exception(f"KeyError: 字典中没有该键:{e},可添加到该字典中"))
-            value = self.get(sector, item)
-            self.config_opt_dic[item] = value
-            self.config_dic[sector] = self.config_opt_dic
+            # print(Exception(f"KeyError: 字典中没有该键:{e},可添加到该字典中"))
+            self.value = self.get(sector, item)
+            self.option[item] = self.value
+            self.section[sector] = self.option
         finally:
-            return value
+            return self.value
 
+    @configParser.register
+    def _(self, args: tuple) -> dict:
+        sector, item = args
+        try:
+            # 可能会调两次该方法；第二次调用时字典中就有值了，因而没有KeyError
+            self.value = self.section[sector][item]
+        except Exception as e:  # KeyError: 'logging'  字典中没有该key
+            # print(Exception(f"KeyError: 字典中没有该键:{e},可添加到该字典中"))
+            value = self.get(sector, item)
+            self.option[item] = value
+            self.section[sector] = self.option
+        finally:
+            return self.section
+
+
+conf_parser_obj = ReadConfig("./conf/setting.ini")
 
 if __name__ == '__main__':
-    conf_parser_obj = ReadConfig(os.path.abspath("../conf/setting.ini"))
-    print(conf_parser_obj.configParser('logging', 'level'))
-    print(conf_parser_obj.config_dic)
-    print(conf_parser_obj.config_dic["logging"])
-    print(conf_parser_obj.configParser('logging', 'level'))
+    conf_parser_obj = ReadConfig("./conf/setting.ini")
+    print(conf_parser_obj.configParser(('logging', 'level')))
+    print(conf_parser_obj.configParser(['logging', 'level']))
+    print(conf_parser_obj.configParser(['logging', 'level']))
+    print(conf_parser_obj.configParser(['logging', 'level']))
+
 
 """
 读取ini配置文件信息
 """
-
-

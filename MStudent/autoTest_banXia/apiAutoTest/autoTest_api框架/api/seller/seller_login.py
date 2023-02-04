@@ -4,10 +4,10 @@
 # =============================================================
 from pprint import pprint
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSeller
+from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
 
 
-class SellerLoginApi(BaseSeller):
+class SellerLoginApi(BaseSellerApi):
     """
     类实例化一定不能放在init构造方法中，否则会形成递归，造成会导致递归超过最大深度(1000)或内存泄漏等情况
     """
@@ -15,6 +15,19 @@ class SellerLoginApi(BaseSeller):
     def __init__(self):
         super().__init__()  # 继承后，init构造方法中必须调用父类构造方法; 间接继承父类实例属性需通过该表达式
         self.url = f'{self.host}' + "/seller/login"
-        self.method = "post"
-        self.params = dict(username="mtx0327", password="fcea920f7412b5da7be0cf42b8c93759", captcha="1512",
-                           uuid="f6597380-4e24-11ed-984b-167610639c7")
+        self.method = "get"
+        self.params = {'username': 'leeseller', 'password': 'e10adc3949ba59abbe56e057f20f883e', 'captcha': 1512,
+                       'uuid': 'b281d2e0-a2e0-11ed-8996-69acd4b6dd14'}
+
+    def send(self):
+        self.res = self.request(url=self.url, method=self.method, params=self.params)
+        return self.res
+
+
+if __name__ == '__main__':
+    s = SellerLoginApi()
+    # res = s.requested(method="GET", url="http://www.mtxshop.com:7003/seller/login",
+    #                   params={'username': 'leeseller', 'password': 'e10adc3949ba59abbe56e057f20f883e', 'captcha': 1512,
+    #                           'uuid': 'b281d2e0-a2e0-11ed-8996-69acd4b6dd14'})
+    res = s.send()
+    pprint(res.json())

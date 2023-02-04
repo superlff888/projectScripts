@@ -45,13 +45,13 @@ class ConfigParser:
     config_dic = {}
 
     @classmethod
-    def get_config(cls, sector, item):
+    def get_config(cls, path, sector, item):
         value = None
         try:
             value = cls.config_dic[sector][item]
         except KeyError:
             rcf = ReadConfig(path)
-            rcf.read('settings.ini', encoding='utf8')  # 注意setting.ini配置文件的路径
+            rcf.read(path, encoding='utf8')  # 注意setting.ini配置文件的路径
             value = rcf.get(sector, item)
             cls.config_dic = value
         finally:
@@ -60,5 +60,5 @@ class ConfigParser:
 
 if __name__ == '__main__':
     con = ConfigParser()
-    res = con.get_config('logging', 'level')
+    res = con.get_config('config.ini', 'mysqld', 'port')
     print(res)
