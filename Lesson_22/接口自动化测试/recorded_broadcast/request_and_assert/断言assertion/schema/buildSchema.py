@@ -20,7 +20,7 @@ def buildSchema(obj):
     """
     builder = SchemaBuilder()
     builder.add_object(obj)
-    pprint(type(builder.to_schema()))
+    # pprint(type(builder.to_schema()))
 
     # dump可将python对象序列化为json，并依据open方法的可写mode自动将json写入流文件
     json.dump(builder.to_schema(), open("./demo_schema.json", "w", encoding="utf-8"))

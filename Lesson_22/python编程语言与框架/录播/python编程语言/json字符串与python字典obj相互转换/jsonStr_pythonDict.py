@@ -26,7 +26,7 @@ print(f"env_dict的type为：{type(env_dict)}")
 
 
 def read_out_json_forLoads():
-    with open("./data.json") as f:
+    with open("./data.json") as f:  # f为流文件， f.read() 为字符串
         print(f"{type(f)}")  # <class '_io.TextIOWrapper'>
         # 通过read()读出流文件中str，然后执行loads()加载
         datas = json.loads(f.read())  # loads()方法接收的是一个实例 【a `str``, ``bytes`` or ``bytearray`` instance】
@@ -50,7 +50,7 @@ def write_in_json_forStr():
 
 
 def write_in_json_forDump():
-    with open("data_env.json", "w") as f:  # 以写的模式打开一个文件data_str.json
+    with open("data_env.json", "w") as f:  # 以写的模式打开一个文件data_str.json,即f为文件流
         json.dump(env, f, ensure_ascii=False)  # 将python对象env写入文件中;ensure_ascii=False显示中文
 
 

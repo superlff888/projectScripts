@@ -4,11 +4,9 @@
 # =============================================================
 
 import configparser
-import os
 from functools import singledispatchmethod
 
 from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
-from autoTest_banXia.apiAutoTest.autoTest_api框架.utils.overload import methodispatch
 
 """
 封装的原则：
