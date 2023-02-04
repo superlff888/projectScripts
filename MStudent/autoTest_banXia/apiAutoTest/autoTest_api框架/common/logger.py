@@ -4,14 +4,20 @@
 import logging
 import os
 
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
 
 """
 日志配置 https://zhuanlan.zhihu.com/p/454463040
 """
 
+
 class Logging:
 
     """
+    ::filename 相对路径
+
+
     class新创建实例时，会调用__new__，它主要控制一个新实例的创建,即控制类实例创建的规则（__init__方法可以看作运用该规则初始化一个实例），
     __new__必须要有返回值,返回的是当前类的实例; __new__方法正是创建'这个类实例'的方法，
     __new__至少要有一个参数cls，代表当前类，此参数在实例化时由Python解释器自动识别
@@ -38,12 +44,10 @@ class Logging:
         # 设置‘输出到控制台的日志’的级别，该级别若低于收集器的级别，则控制台日志将不会被打印
         l_c.setLevel(level)
         # 创建一个日志输出渠道（输出到文件）处理器
-        l_f = logging.FileHandler(filename, encoding='utf-8')
+        l_f = logging.FileHandler(DIR_NAME + filename, encoding='utf-8')
         # 设置‘输出到文件的日志’的级别 ； 该级别若低于收集器的级别，则日志将不会被打印到文件中
         l_f.setLevel(level)
         # 设置日志输出的格式
-        # ft = '%(asctime)s - %(name)s - "%(pathname)s:%(lineno)d" - %(funcName)s - %(levelname)s - %(message)s',
-        # '%Y-%m-%d %H:%M:%S'
         ft = logging.Formatter(
             '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(funcName)s - %(levelname)s  %(message)s',
             "%Y-%m-%d %H:%M:%S")
@@ -56,8 +60,10 @@ class Logging:
         return my_log
 
 
-# ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
-logger = Logging('info', os.path.dirname(__file__) + '../../logs/shopLog.log')  # 按照__new__(cls)方法定义的规则初始化一个类对象
+# LEVEL = conf_parser_obj.configParser(["logging", "level"])
+# PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
+#
+# logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
 
 
 '''
@@ -65,7 +71,7 @@ logger = Logging('info', os.path.dirname(__file__) + '../../logs/shopLog.log')  
  1、调用__new__方法，将参数传递给该方法，并返回一个对象，该对象被__new__方法赋予了level和filename以及格式化等“规则”
  
 '''
-# print(logger)
+
 
 """
 【区别】

@@ -16,3 +16,4 @@ class GetDirname:
 getter = GetDirname()
 
 DIR_NAME = os.path.dirname(__file__)  # __file__  该setting文件固定所在目录，即当前项目所在路径
+# print(DIR_NAME)

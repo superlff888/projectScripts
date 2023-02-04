@@ -82,7 +82,7 @@ if __name__ == '__main__':
     print(conf_parser_obj.configParser(('logging', 'level')))
     print(conf_parser_obj.configParser(['logging', 'level']))
     print(conf_parser_obj.configParser(['logging', 'level']))
-    print(conf_parser_obj.configParser(['logging', 'level']))
+    print(conf_parser_obj.configParser(['logging', 'path']))
 
 
 """

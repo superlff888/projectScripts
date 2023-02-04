@@ -6,10 +6,6 @@ from pprint import pprint
 
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies, HttpRequest
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.singleton import singleton
-
-
-# @singleton
 class BuyerLoginApi(HttpRequestCookies):
     """
     类实例化一定不能放在init构造方法中，否则会形成递归，造成会导致递归超过最大深度(1000)或内存泄漏等情况
@@ -57,7 +53,7 @@ class BuyerLoginApi(HttpRequestCookies):
         """该方法的参数化移交给init构造方法了"""
         res = self.request(url=self.url, method=self.method, params=self.params)  #
         # return self.res.json().get("uid"), self.res.json().get("access_token")
-        return res.json()
+        return res
 
     # 该方法不适用于属性构造
     # @classmethod
@@ -68,7 +64,9 @@ class BuyerLoginApi(HttpRequestCookies):
 
 if __name__ == "__main__":
     b = BuyerLoginApi()
-    # print(b.send_token)
+    # print(dir(b))
+    # print(b.__getattribute__("url"))
+    print(b.url)
     # print(b.send_uid)
-    print(b.header)
-    # print(BuyerLoginApi().send_token)
+    print(b.send_token)
+    print(b.send())

@@ -7,8 +7,8 @@ from urllib.parse import urljoin
 
 import requests
 
-
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import logger
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import Logging
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
 class HttpRequest(object):
@@ -23,6 +23,7 @@ class HttpRequest(object):
         Ⅱ举例 url = os.path.join(base_url, '/web/userLoginDetail/login')
 
     """
+
     @staticmethod
     def request(method, url, **kwargs):
         """
@@ -44,12 +45,12 @@ class HttpRequest(object):
                 kwargs["headers"] = None
             if kwargs.get("files") is None:
                 kwargs["files"] = None
-            if kwargs["params"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            if kwargs["data"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
-            if kwargs["json"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["json"]}')
+            # if kwargs["params"]:
+            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
+            # if kwargs["data"]:
+            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
+            # if kwargs["json"]:
+            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["json"]}')
             return requests.post(url, **kwargs)
         if method == 'get':
             if not kwargs.get("params"):
@@ -64,17 +65,23 @@ class HttpRequest(object):
                 kwargs["headers"] = None
             if kwargs.get("files") is None:
                 kwargs["files"] = None
-            if kwargs["params"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            if kwargs["data"]:
-                logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
-            return requests.get(url, **kwargs)
+            # if kwargs["params"]:
+            #     HttpRequest.logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
+            # if kwargs["data"]:
+            #     HttpRequest.logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
+            # return requests.get(url, **kwargs)
 
 class HttpRequestCookies:
     """
     :类作用 :记录cookies信息，提供于下一个请求
     """
+    # PATH_LOG = conf_parser_obj.configParser(["logging", "filepath"])
+    # LEVEL = conf_parser_obj.configParser(["logging", "level"])
+    # # ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
     session = requests.sessions.Session()
+    # LEVEL = conf_parser_obj.configParser(["logging", "level"])
+    # PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
+    # logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
 
     def __init__(self):
         # 创建一个session对象，先用session发起登陆请求 ，然后复用该session
@@ -94,7 +101,7 @@ class HttpRequestCookies:
         cookie可能方headers中，也可能放在request body中
         """
         # 统一将请求方法转化为小写字母
-        # kwargs["method"].lower()
+        # kwargs["method"].lower()  # self.session.request(**kwargs) 已经封装了
 
         if kwargs["method"] is None:
             kwargs["method"] = self.method
@@ -114,34 +121,15 @@ class HttpRequestCookies:
             kwargs["files"] = self.files
         # if kwargs["params"]:
         #     # 谁调用该类谁做主，比如BuyerLoginApi继承并调用该类的方法，那么就取最终调用者所在文件的相对位置
-        #     # print(os.path.abspath("../../logs/shopLog.log"))
         #     # print(f"当前执行文件所在目录的上上层目录下的logs：{os.path.abspath(os.path.dirname(__file__) + '../../logs/shopLog.log')}")
         #     # print(f"当前执行文件所在目录的上层目录的上层目录：{os.path.abspath('../../')}")
-        #     # print(os.path.abspath('\n'))
-        #     logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["params"]}')
+        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["params"]}')
         # if kwargs["data"]:
-        #     logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["data"]}')
+        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["data"]}')
         # if kwargs["json"]:
-        #     logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["json"]}')
+        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["json"]}')
+
         return self.session.request(**kwargs)
-        # if method == 'get':
-        #     if not kwargs.get("params"):
-        #         kwargs["params"] = self.params
-        #     if kwargs.get("data") is None:
-        #         kwargs["data"] = self.data
-        #     if kwargs.get("json") is None:
-        #         kwargs["json"] = self.json
-        #     if kwargs.get("cookies") is None:
-        #         kwargs["cookies"] = self.cookies
-        #     if kwargs.get("headers") is None:
-        #         kwargs["headers"] = self.headers
-        #     if kwargs.get("files") is None:
-        #         kwargs["files"] = self.files
-        #     if kwargs["params"]:
-        #         logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-        #     if kwargs["data"]:
-        #         logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
-        #     return self.session.get(**kwargs)
 
     # 用完需要关掉（浏览器/session）
     def close(self):

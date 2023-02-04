@@ -17,13 +17,12 @@ class TestBuyNow:
     ../reports/shop  测试用例包下py文件的相对路径
 
 
-    [pytest]
+    [pytest
         addopts = -sv
                   --alluredir ../reports/shop --clean-alluredir
     """
 
-    relative_path = './data/mtxshop_data.xlsx'
-    data, case_name = read_data(relative_path, "立即购买")  # 解包：数据，用例标题
+    data, case_name = read_data()  # 解包：数据，用例标题
 
     @pytest.mark.parametrize("sku_id, num, except_code", data, ids=case_name)
     def test_buy_now(self, sku_id: int, num: int, except_code, got_resConn):
@@ -35,12 +34,11 @@ class TestBuyNow:
 
         buy_now_api = BuyNowApi(sku_id, num)
         uid = buy_now_api.uid  # 父类属性通过继承父类__init__构造方法,简介继承父类实例属性
-        res = buy_now_api.send()
-        code = res.status_code
-
         p_sku_id = buy_now_api.params.get("sku_id")
         p_num = buy_now_api.params.get("num")
-
+        res = buy_now_api.send()
+        code = res.status_code
+        # redis
         bContent = got_resConn.get('{BUY_NOW_ORIGIN_DATA_PREFIX}_' + str(uid))  # 强转为字符换，然后字符转拼接
         # 从redis缓存中将Java序列化Value转换为二进制(bytes)python对象
         resList = javaobj.loads(bContent)
@@ -49,7 +47,7 @@ class TestBuyNow:
         # print(dir(obj))  # dir(obj)返回参数(java对象)的属性、方法列表
         skuId = obj.__getattribute__("skuId")
         num = obj.__getattribute__("num")
-
+        # 断言
         pytest.assume(code == except_code)
         pytest.assume(skuId == p_sku_id)
         pytest.assume(num == p_num)

@@ -6,10 +6,11 @@ import os
 
 import pandas
 
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME, getter
 
 
-def read_data(filepath, sheet_name):
+def read_data():
     """
     :: DIR_NAME项目所在路径，常量
     :: filepath:  相对路径（入参为项目下的路径，参照setting.py路径），如：./data/*.*
@@ -18,6 +19,9 @@ def read_data(filepath, sheet_name):
 
     希望获取的数据格式  "[[],[],[],[],[],[]]"
     """
+
+    filepath = conf_parser_obj.configParser(["excel", "relative_path"])  # 参数配置ini文件
+    sheet_name = conf_parser_obj.configParser(["excel", "sheet_name"])
 
     # getter.DIR_NAME 也替换为 DIR_NAME
     pandrxl = pandas.read_excel(getter.DIR_NAME + filepath, sheet_name=sheet_name, keep_default_na=False, engine='openpyxl')
@@ -45,5 +49,5 @@ def read_data(filepath, sheet_name):
 
 
 if __name__ == '__main__':
-    relative_path = './data/mtxshop_data.xlsx'
-    print(read_data(relative_path, "立即购买")[1])
+    # relative_path = './data/mtxshop_data.xlsx'
+    print(read_data()[1])
