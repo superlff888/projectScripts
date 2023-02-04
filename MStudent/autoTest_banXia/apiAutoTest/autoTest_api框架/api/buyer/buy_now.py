@@ -6,7 +6,6 @@ from pprint import pprint
 
 # 可递归继承“爷爷”辈的类方法(含init方法)和类属性 HttpRequestCookies
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import Logging
 from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
@@ -15,9 +14,9 @@ class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
     """类属性一般为常量，不经常发生变换，故适合维护在配置文件中"""
     PATH = conf_parser_obj.configParser(["buy_now", "path"])
     METHOD = conf_parser_obj.configParser(["buy_now", "method"])
-    LEVEL = conf_parser_obj.configParser(["logging", "level"])
-    PATH1 = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
-    logger = Logging(LEVEL, PATH1)  # './logs/shopLog.log'
+    # LEVEL = conf_parser_obj.configParser(["logging", "level"])
+    # PATH1 = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
+    # logger = Logging(LEVEL, PATH1)  # './logs/shopLog.log'
 
     def __init__(self, sku_id=600, num=1):
         # 间接继承父类的header  super().__init__() ；把父类的属性拿来为我所用，可以直接用，也可重新复制
@@ -39,7 +38,7 @@ class BuyNowApi(BuyerLoginApi):  # 业务成功将订单信息存入redis
     # 立即购买接口没有响应体内容
     def send(self):
         """该方法的参数化移交给init构造方法了"""
-        self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {self.params}')
+        # self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {self.params}')
         self.res = self.request(url=self.url, method=self.method, params=self.params, headers=self.header)
         return self.res
 

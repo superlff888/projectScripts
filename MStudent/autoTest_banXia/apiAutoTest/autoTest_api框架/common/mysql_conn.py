@@ -35,6 +35,7 @@ class DbConnect(object):
         print(f'dbinfo为： {db_cof}')
 
     def select(self, SQL):
+        """ 可用flag进行区分fetchall()、fetchone()、fetchmany(3)"""
         # SQL 查询语句
         # sql = "SELECT * FROM EMPLOYEE
         #        WHERE INCOME > %s" % (1000)
@@ -42,11 +43,11 @@ class DbConnect(object):
         # results = mcs.cursor.fetchall() # 获取所有sql结果中数据
         # re = mcs.cursor.fetchone() # 从sql结果（mcs.cursor.execute(sql)）中获取第一条数据
         re_m = self.cursor.fetchmany(3)  # 从sql结果（mcs.cursor.execute(sql)）中获取指定条数数据
+        self.db.commit()  # 若不提交事务，下次查询就没有数据
         return re_m
 
     def execute(self, SQL):
         """
-        可用flag进行区分fetchall()、fetchone()、fetchmany(3)
         :param SQL:
         :return:
         """

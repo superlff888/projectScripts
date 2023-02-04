@@ -60,9 +60,9 @@ class Logging:
         return my_log
 
 
+# ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
 # LEVEL = conf_parser_obj.configParser(["logging", "level"])
 # PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
-#
 # logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
 
 

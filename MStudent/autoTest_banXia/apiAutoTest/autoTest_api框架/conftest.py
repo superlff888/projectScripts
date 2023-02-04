@@ -3,8 +3,7 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 import pytest
-
-# from autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
+from autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
 
 
 # def pytest_collection_modifyitems1(items):
@@ -15,8 +14,6 @@ import pytest
 #         item.name = item.name.encode("utf-8").decode("unicode_escape")
 #         item._nodeid = item.nodeid.split('::')[0] + '::' + item.nodeid.split('::')[1].encode("utf-8").decode(
 #             "unicode_escape")
-from MStudent.autoTest_banXia.apiAutoTest.api基础.redisConn import RedisConn
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
 
 
 def pytest_collection_modifyitems(items):

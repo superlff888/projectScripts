@@ -75,13 +75,12 @@ class HttpRequestCookies:
     """
     :类作用 :记录cookies信息，提供于下一个请求
     """
-    # PATH_LOG = conf_parser_obj.configParser(["logging", "filepath"])
-    # LEVEL = conf_parser_obj.configParser(["logging", "level"])
-    # # ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
     session = requests.sessions.Session()
-    # LEVEL = conf_parser_obj.configParser(["logging", "level"])
-    # PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
-    # logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
+    # # ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
+    PATH_LOG = conf_parser_obj.configParser(["logging", "filepath"])
+    LEVEL = conf_parser_obj.configParser(["logging", "level"])
+    PATH1 = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
+    logger = Logging(LEVEL, PATH1)  # './logs/shopLog.log'
 
     def __init__(self):
         # 创建一个session对象，先用session发起登陆请求 ，然后复用该session
@@ -128,8 +127,18 @@ class HttpRequestCookies:
         #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["data"]}')
         # if kwargs["json"]:
         #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["json"]}')
-
-        return self.session.request(**kwargs)
+        # 收集日志  遍历字典收集左右key和value
+        for k, v in kwargs.items():
+            self.logger.info(f"接口请求中{k}是：{v}")
+        # 获取响应数据   -->  响应状态码和响应文本
+        try:
+            self.res = self.session.request(**kwargs)
+            self.logger.info(f"接口的响应状态码: {self.res.status_code}")
+            self.logger.info(f"接口的响应文本: {self.res.text}")
+        except Exception as e:
+            self.logger.exception("接口发送错误!")
+            raise e
+        return self.res
 
     # 用完需要关掉（浏览器/session）
     def close(self):
