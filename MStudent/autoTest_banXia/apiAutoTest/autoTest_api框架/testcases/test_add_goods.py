@@ -5,9 +5,10 @@
 import allure
 import pytest
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.add_goods import AddGoodsApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.add_goods import AddGoodsApi
 
-@pytest.mark.usefixtures("get_token_seller")
+
+@pytest.mark.usefixtures("卖家接口token验证")
 @allure.feature("卖家接口")
 class TestAddGoods:
 

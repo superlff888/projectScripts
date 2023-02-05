@@ -3,7 +3,6 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 import javaobj
-import pytest
 import redis
 
 """

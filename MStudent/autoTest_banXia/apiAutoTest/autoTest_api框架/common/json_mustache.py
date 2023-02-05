@@ -6,7 +6,7 @@ import os
 from pprint import pprint
 import pystache  # 用两个花括号识别变量，可以对变量自动识别和替换
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_json import get_json
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_json import get_json
 
 """
 mustache 可以极大的简化代码，只需要替换{{}}里面的数据即可

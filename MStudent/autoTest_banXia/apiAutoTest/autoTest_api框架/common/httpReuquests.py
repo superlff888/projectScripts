@@ -7,8 +7,7 @@ from urllib.parse import urljoin
 
 import requests
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import logger
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import logger
 
 
 class HttpRequest(object):

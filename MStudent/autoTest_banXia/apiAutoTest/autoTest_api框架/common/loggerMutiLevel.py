@@ -69,4 +69,3 @@ class MyLogging:
         #     self._critical = self.createLogger('CRITICAL', 'critical.log')
 
 
-

@@ -4,7 +4,8 @@
 # =============================================================
 import pytest
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
+
 
 class BaseSellerApi(HttpRequestCookies):
     """作为所有功能类的父类"""

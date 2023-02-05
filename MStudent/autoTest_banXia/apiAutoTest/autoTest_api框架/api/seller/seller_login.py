@@ -3,7 +3,9 @@
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
 from pprint import pprint
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
+
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
+
 
 class SellerLoginApi(BaseSellerApi):
     """

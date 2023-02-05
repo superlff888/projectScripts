@@ -4,13 +4,13 @@
 # =============================================================
 import pytest
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.manager_login import ManagerLoginApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.manager_login import ManagerLoginApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
+# from autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
 
 
 # def pytest_collection_modifyitems1(items):
@@ -21,6 +21,13 @@ from autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import Redi
 #         item.name = item.name.encode("utf-8").decode("unicode_escape")
 #         item._nodeid = item.nodeid.split('::')[0] + '::' + item.nodeid.split('::')[1].encode("utf-8").decode(
 #             "unicode_escape")
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.manager_login import ManagerLoginApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
 
 
 def pytest_collection_modifyitems(items):
@@ -34,7 +41,7 @@ def pytest_collection_modifyitems(items):
 
 
 # 获取redisConn连接对象
-@pytest.fixture(scope="function", name="Initialize-a-new-Redis-client")
+@pytest.fixture(scope="function", name="Initialize_a_new_Redis_client")
 def got_resConn():
     redis_conn = RedisConn('82.156.74.26', 'mtx')
     return redis_conn
@@ -52,7 +59,7 @@ def get_token_buyer():
     BaseBuyerApi.buyer_uid = uid
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session", name="卖家接口token验证")
 def get_token_seller():
     """作用对象：测试用例"""
     sl = SellerLoginApi()

@@ -6,8 +6,8 @@ import os
 
 import pandas
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
-from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME, getter
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import getter
 
 
 def read_data():

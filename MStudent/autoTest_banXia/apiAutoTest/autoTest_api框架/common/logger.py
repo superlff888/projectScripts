@@ -4,8 +4,8 @@
 import logging
 import os
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
-from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
 
 """
 日志配置 https://zhuanlan.zhihu.com/p/454463040

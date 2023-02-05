@@ -4,8 +4,8 @@
 # =============================================================
 from pprint import pprint
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
 class ManagerLoginApi(BaseManagerApi):

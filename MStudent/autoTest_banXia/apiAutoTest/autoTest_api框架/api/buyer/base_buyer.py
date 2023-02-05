@@ -2,8 +2,8 @@
 # @Time    : 2023/02/01 14:23
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies, HttpRequest
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
 class BaseBuyerApi(HttpRequestCookies):

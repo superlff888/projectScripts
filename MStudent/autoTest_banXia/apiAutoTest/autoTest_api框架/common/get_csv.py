@@ -9,8 +9,7 @@ import csv
 import os
 from pprint import pprint
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common import logger
-from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
 
 """
 凡是可作用于for循环的对象都是Iterable类型；

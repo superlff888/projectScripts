@@ -6,7 +6,7 @@
 import configparser
 from functools import singledispatchmethod
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
 
 """
 封装的原则：
@@ -48,7 +48,7 @@ class ReadConfig(configparser.ConfigParser):
         raise NotImplementedError("Cannot negate a")
 
     @configParser.register
-    def _(self, args: list):
+    def _(self, args: list) -> str:
         sector, item = args
         try:
             self.value = self.section[sector][item]

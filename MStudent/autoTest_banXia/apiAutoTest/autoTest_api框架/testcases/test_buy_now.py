@@ -9,7 +9,8 @@ import javaobj
 import pytest
 
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now import BuyNowApi
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_excel import read_data
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_excel import read_data
+
 
 @pytest.mark.usefixtures("买家token验证")
 @allure.feature("买家接口")  # 模块
