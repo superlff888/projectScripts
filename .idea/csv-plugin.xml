@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MStudent\autoTest_banXia\apiAutoTest\autoTest_api框架\reports\html\data\suites.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MStudent\阶段一：python高级编程\接口\soap协议\phone.csv">
           <value>
             <Attribute>

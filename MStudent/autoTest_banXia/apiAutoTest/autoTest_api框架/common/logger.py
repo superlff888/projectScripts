@@ -36,11 +36,12 @@ class Logging:
         """
         level = level.upper()  # 改成大写
         # 创建自己的日志收集器
-        my_log = logging.getLogger('my_log')  # 将返回的"my_log"赋值给my_log
+        my_log = logging.getLogger('apiAutoTest')  # 将返回的"my_log"赋值给my_log
         # 设置收集的日志的等级，这里设置为DEBUG（表示只收集DEBUG等级及以上的日志）
         my_log.setLevel(level)  # 日志收集器的级别,级别不够，不会打印到控制台或文件中
         # 创建一个日志输出渠道（输出到控制台）处理器
         l_c = logging.StreamHandler()
+        logging.basicConfig()
         # 设置‘输出到控制台的日志’的级别，该级别若低于收集器的级别，则控制台日志将不会被打印
         l_c.setLevel(level)
         # 创建一个日志输出渠道（输出到文件）处理器
@@ -49,7 +50,7 @@ class Logging:
         l_f.setLevel(level)
         # 设置日志输出的格式
         ft = logging.Formatter(
-            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(funcName)s - %(levelname)s  %(message)s',
+            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(filename)s - %(funcName)s - %(levelname)s  [%(message)s]',  #
             "%Y-%m-%d %H:%M:%S")
         # 设置渠道（控制台和文件）日志的输出格式
         l_c.setFormatter(ft)
@@ -61,9 +62,9 @@ class Logging:
 
 
 # ../表示上一层目录，如当前文件所在目录为common，上层目录为autoTest_api框架，上上层目录为apiAutoTest
-# LEVEL = conf_parser_obj.configParser(["logging", "level"])
-# PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
-# logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
+LEVEL = conf_parser_obj.configParser(["logging", "level"])
+PATH = conf_parser_obj.configParser(["logging", "filepath"])  # ini配置文件中options中key不能维护成path
+logger = Logging(LEVEL, PATH)  # './logs/shopLog.log'
 
 
 '''

@@ -25,11 +25,11 @@ def read_data():
 
     # getter.DIR_NAME 也替换为 DIR_NAME
     pandrxl = pandas.read_excel(getter.DIR_NAME + filepath, sheet_name=sheet_name, keep_default_na=False, engine='openpyxl')
-    print(pandrxl)
+    # print(pandrxl)
     # 获取单元格数据
-    print(pandrxl.iloc[1, 2])
+    # print(pandrxl.iloc[1, 2])
     # 获取总行和总列
-    print(pandrxl.shape)
+    # print(pandrxl.shape)
     lines = pandrxl.shape[0]  # 总行数
     cols = pandrxl.shape[1]  # 总行数
     # 数据解析不包含表头，所以数据是从第二行计算的
@@ -38,8 +38,7 @@ def read_data():
     for l in range(lines):  # 行
         line_list = []
         for c in range(cols):  # 列
-            if c > 0:  #
-                line_list.append(pandrxl.iloc[l, c])
+            line_list.append(pandrxl.iloc[l, c])
             if c == 0:  # 获取第一列的用例名称
                 case_name.append(pandrxl.iloc[l, c])
 
@@ -50,4 +49,4 @@ def read_data():
 
 if __name__ == '__main__':
     # relative_path = './data/mtxshop_data.xlsx'
-    print(read_data()[1])
+    print(read_data())
