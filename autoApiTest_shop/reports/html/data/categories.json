@@ -7,52 +7,52 @@
       "name" : "IndexError: list index out of range",
       "children" : [ {
         "name" : "产品id不存在",
-        "uid" : "56abce60712b3776",
+        "uid" : "b4e39630911fc8b5",
         "parentUid" : "cbf21ee610ffd376e0ce643a364ade80",
         "status" : "broken",
         "time" : {
-          "start" : 1675697605840,
-          "stop" : 1675697606043,
-          "duration" : 203
+          "start" : 1675697825497,
+          "stop" : 1675697825687,
+          "duration" : 190
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "'产品id不存在'", "500", "1", "6626655" ]
       }, {
         "name" : "num超过库存",
-        "uid" : "ef9aa45ec28de5bc",
+        "uid" : "f413498858b3f16f",
         "parentUid" : "cbf21ee610ffd376e0ce643a364ade80",
         "status" : "broken",
         "time" : {
-          "start" : 1675697606133,
-          "stop" : 1675697606353,
-          "duration" : 220
+          "start" : 1675697825766,
+          "stop" : 1675697826017,
+          "duration" : 251
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "'num超过库存'", "500", "999999999", "3673" ]
       }, {
         "name" : "num为0",
-        "uid" : "967e7860a83589b",
+        "uid" : "c54b35ca03d28394",
         "parentUid" : "cbf21ee610ffd376e0ce643a364ade80",
         "status" : "broken",
         "time" : {
-          "start" : 1675697606396,
-          "stop" : 1675697606600,
-          "duration" : 204
+          "start" : 1675697826067,
+          "stop" : 1675697826277,
+          "duration" : 210
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "'num为0'", "400", "0", "3673" ]
       }, {
         "name" : "num为负数",
-        "uid" : "7a23b56944c88a53",
+        "uid" : "f70fed4e17f4d417",
         "parentUid" : "cbf21ee610ffd376e0ce643a364ade80",
         "status" : "broken",
         "time" : {
-          "start" : 1675697606615,
-          "stop" : 1675697606834,
-          "duration" : 219
+          "start" : 1675697826306,
+          "stop" : 1675697826527,
+          "duration" : 221
         },
         "flaky" : false,
         "newFailed" : false,

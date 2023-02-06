@@ -8,6 +8,7 @@ import pytest
 
 from common.file_load import get_yml, write_in_yml
 
+
 if __name__ == '__main__':
     """
     1、pytest执行后，会自动扫描pytest.ini文件,根据配置的信息执行用例
@@ -17,7 +18,7 @@ if __name__ == '__main__':
     """
 
     # 获取命令行传递的外部参数
-    # 通过终端命令执行 python run.py pro,返回['run.py', 'pro'],即['py文件名', '文件参数']
+    # 通过终端命令执行 python run.py `pro`,返回['run.py', 'pro'],即['py文件名', '参数']
     args = sys.argv
     print(args)
     # 默认指向 测试环境
