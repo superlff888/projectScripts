@@ -15,7 +15,7 @@ class BaseManagerApi(HttpRequestCookies):
 
     def __init__(self):
         super().__init__()
-        self.host = conf_parser_obj.configParser(["base_manager", "host"])
+        self.host = conf_parser_obj.configParser(["base_manager", "host_base_manager"])
         self.headers = {"Authorization": BaseManagerApi.manager_token}
 
 

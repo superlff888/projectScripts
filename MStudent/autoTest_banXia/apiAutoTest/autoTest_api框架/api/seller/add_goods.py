@@ -13,6 +13,7 @@ class AddGoodsApi(BaseSellerApi):
 
     def __init__(self):
         super().__init__()
+        self.desc = '卖家添加商品'
         self.url = f'{self.host}' + "/seller/goods"
         self.method = 'post'
         self.json = get_json("/data/goods_seller.json")

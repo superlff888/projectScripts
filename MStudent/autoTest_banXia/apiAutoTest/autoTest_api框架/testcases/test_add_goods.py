@@ -8,7 +8,7 @@ import pytest
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.add_goods import AddGoodsApi
 
 
-@pytest.mark.usefixtures("卖家接口token验证")
+@pytest.mark.usefixtures("get_token")
 @allure.feature("卖家接口")
 class TestAddGoods:
 

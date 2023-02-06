@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MStudent\autoTest_banXia\apiAutoTest\autoTest_api框架\data\mtxshop_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MStudent\autoTest_banXia\apiAutoTest\autoTest_api框架\reports\html\data\suites.csv">
           <value>
             <Attribute>

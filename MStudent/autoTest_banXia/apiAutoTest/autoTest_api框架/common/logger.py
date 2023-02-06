@@ -50,7 +50,7 @@ class Logging:
         l_f.setLevel(level)
         # 设置日志输出的格式
         ft = logging.Formatter(
-            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(filename)s - %(funcName)s - %(levelname)s  [%(message)s]',  #
+            '%(asctime)s   %(name)s - "%(pathname)s:%(lineno) d" - %(filename)s - %(funcName)s - %(levelname)s  接口请求中~',  # %(message)s
             "%Y-%m-%d %H:%M:%S")
         # 设置渠道（控制台和文件）日志的输出格式
         l_c.setFormatter(ft)

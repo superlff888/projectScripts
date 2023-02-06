@@ -14,8 +14,8 @@ class AuditApi(BaseManagerApi):
     def __init__(self):
         super().__init__()
         self.desc = '商品审核'
-        self.method = conf_parser_obj.configParser(["audit", "method"])
-        self.path = conf_parser_obj.configParser(["audit", "path"])
+        self.method = conf_parser_obj.configParser(["audit", "method_audit"])
+        self.path = conf_parser_obj.configParser(["audit", "path_audit"])
         self.url = f"{self.host}" + f"{self.path}"
         self.json = {
                     "goods_ids": [19812, 19815],

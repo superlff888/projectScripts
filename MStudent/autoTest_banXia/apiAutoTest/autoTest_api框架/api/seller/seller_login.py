@@ -14,6 +14,7 @@ class SellerLoginApi(BaseSellerApi):
 
     def __init__(self):
         super().__init__()  # 继承后，init构造方法中必须调用父类构造方法; 间接继承父类实例属性需通过该表达式
+        self.desc = '卖家登录接口'
         self.url = f"{self.host}" + "/seller/login"
         self.method = "get"
         self.params = {'username': 'leeseller', 'password': 'e10adc3949ba59abbe56e057f20f883e', 'captcha': 1512,
@@ -23,4 +24,5 @@ class SellerLoginApi(BaseSellerApi):
 if __name__ == '__main__':
     s = SellerLoginApi()
     res = s.request()  # 调用的底层httpRequestCookies方法
-    pprint(res.json())
+    token = res.json()["access_token"]
+    print(f"卖家登录接口返回的token为: {token}")

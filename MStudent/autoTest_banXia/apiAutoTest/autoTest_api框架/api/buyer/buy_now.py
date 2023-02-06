@@ -44,13 +44,13 @@ if __name__ == '__main__':
     token = res.json()["access_token"]
     uid = res.json()["uid"]
     print(f"买家登录接口返回的token为: {token}")
-    BaseBuyerApi.buyer_token = token
-    BaseBuyerApi.buyer_uid = uid
-    buy_now_api = BuyNowApi()  # sku_id=600, num=1
-    print(f"立即购买请求url: {buy_now_api.url}")
-    print(f"BuyNowApi请求method: {buy_now_api.method}")
-    print(f"BuyNowApi请求header: {buy_now_api.headers}")
-    print(f"BuyNowApi请求params: {buy_now_api.params}")
-    print(f"BuyNowApi响应状态码: {buy_now_api.request().status_code}")
+    # BaseBuyerApi.buyer_token = token
+    # BaseBuyerApi.buyer_uid = uid
+    # buy_now_api = BuyNowApi()  # sku_id=600, num=1
+    # print(f"立即购买请求url: {buy_now_api.url}")
+    # print(f"BuyNowApi请求method: {buy_now_api.method}")
+    # print(f"BuyNowApi请求header: {buy_now_api.headers}")
+    # print(f"BuyNowApi请求params: {buy_now_api.params}")
+    # print(f"BuyNowApi响应状态码: {buy_now_api.request().status_code}")
 
 

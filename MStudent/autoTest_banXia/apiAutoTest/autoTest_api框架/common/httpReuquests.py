@@ -130,15 +130,15 @@ class HttpRequestCookies:
         # if kwargs["json"]:
         #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["json"]}')
 
-        # 收集日志  遍历字典收集左右key和value
-        for k, v in kwargs.items():
-            if kwargs[k]:  # 仅打印不为空的参数
-                self.logger.info(f"{self.desc}接口请求中{k}是: {v} ")
+        # # 收集日志  遍历字典收集左右key和value
+        # for k, v in kwargs.items():
+        #     if kwargs[k]:  # 仅打印不为空的参数
+        #         self.logger.info(f"{self.desc}接口请求中{k}是: {v} ")
 
         # 获取响应数据   -->  响应状态码和响应文本
         try:
             self.res = self.session.request(**kwargs)  # **kwargs中关键字个数跟调用方有关
-            self.logger.info(f"{self.desc}接口的响应状态码: {self.res.status_code}")
+            self.logger.info(f"\t{self.desc}接口的响应状态码: {self.res.status_code}")
             # self.logger.info(f"接口的响应文本: {self.res.text}")
         except Exception as e:
             self.logger.exception("接口发送错误!")

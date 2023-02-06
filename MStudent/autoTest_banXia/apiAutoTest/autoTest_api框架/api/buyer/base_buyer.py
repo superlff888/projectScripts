@@ -16,6 +16,6 @@ class BaseBuyerApi(HttpRequestCookies):
 
     def __init__(self):
         super().__init__()
-        self.host = conf_parser_obj.configParser(["base_buyer", "host"])
+        self.host = conf_parser_obj.configParser(["base_buyer", "host_base_buyer"])
         self.headers = {"Authorization": BaseBuyerApi.buyer_token}
         self.uid = BaseBuyerApi.buyer_uid

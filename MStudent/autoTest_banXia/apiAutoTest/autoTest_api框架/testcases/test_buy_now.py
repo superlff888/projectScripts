@@ -12,25 +12,15 @@ from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now i
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_excel import read_data
 
 
-@pytest.mark.usefixtures("买家token验证")
+@pytest.mark.usefixtures("get_token")
 @allure.feature("买家接口")  # 模块
 class TestBuyNow:
-
-    """
-    ../reports/shop  测试用例包下py文件的相对路径
-
-
-    [pytest
-        addopts = _sv
-                  --alluredir ../reports/shop --clean_alluredir
-    """
-
-    data, case_name = read_data()  # 解包：数据，用例标题
+    data, case_name = read_data()  # 解包：(数据,用例标题)
 
     @allure.story("买家立即购买接口")  # 功能点
     @allure.title("{case_name}")  # 用例标题   allure报告中的title
     @pytest.mark.parametrize("case_name,sku_id, num, except_code", data, ids=case_name)
-    def test_buy_now(self, case_name, sku_id: int, num: int, except_code, Initialize_a_new_Redis_client):
+    def test_buy_now(self, case_name, sku_id, num, except_code, Initialize_a_new_Redis_client):
         """BuyNowApi子类从BaseBuyerApi父类构造方法中间接继承了实例属性uid  super().__init__()"""
 
         buy_now_api = BuyNowApi(sku_id, num)
@@ -39,15 +29,17 @@ class TestBuyNow:
         p_num = buy_now_api.params.get("num")
         res = buy_now_api.request()
         code = res.status_code
+
         # redis
         bContent = Initialize_a_new_Redis_client.get('{BUY_NOW_ORIGIN_DATA_PREFIX}_' + str(uid))  # 强转为字符换，然后字符转拼接
         # 从redis缓存中将Java序列化Value转换为二进制(bytes)python对象
         resList = javaobj.loads(bContent)
-        obj = resList[0]  # java对象
+        obj = resList[0]  # python的"java类"的对象
         # print(dir(obj))  # dir(obj)返回参数(java对象)的属性、方法列表
         skuId = obj.__getattribute__("skuId")  # 获取属性值
         num = obj.__getattribute__("num")  # 获取属性值
-        # 断言
+
+        # # 断言
         pytest.assume(code == except_code)
         pytest.assume(skuId == p_sku_id)
         pytest.assume(num == p_num)
