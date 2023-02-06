@@ -1,131 +1,131 @@
 [ {
-  "uid" : "72b024758dd26bfa",
+  "uid" : "56abce60712b3776",
+  "name" : "产品id不存在",
+  "time" : {
+    "start" : 1675697605840,
+    "stop" : 1675697606043,
+    "duration" : 203
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3be31931cfa3173f",
+  "name" : "正常购买",
+  "time" : {
+    "start" : 1675697606868,
+    "stop" : 1675697607136,
+    "duration" : 268
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "967e7860a83589b",
+  "name" : "num为0",
+  "time" : {
+    "start" : 1675697606396,
+    "stop" : 1675697606600,
+    "duration" : 204
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "79560b84829feaf4",
   "name" : "test_demo5",
   "time" : {
-    "start" : 1675664879897,
-    "stop" : 1675664879897,
+    "start" : 1675697607167,
+    "stop" : 1675697607167,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "trivial"
 }, {
-  "uid" : "52563b62851001eb",
-  "name" : "test_demo",
-  "time" : {
-    "start" : 1675664879882,
-    "stop" : 1675664879882,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "3e62021d829cf47a",
+  "uid" : "51d313ff5311adc1",
   "name" : "test_demo2",
   "time" : {
-    "start" : 1675664879888,
-    "stop" : 1675664879888,
+    "start" : 1675697607151,
+    "stop" : 1675697607151,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d48fff848bc032cb",
-  "name" : "num超过库存",
+  "uid" : "90a351d6dc9178a8",
+  "name" : "正常添加商品",
   "time" : {
-    "start" : 1675664878856,
-    "stop" : 1675664879072,
-    "duration" : 216
+    "start" : 1675697605429,
+    "stop" : 1675697605819,
+    "duration" : 390
   },
-  "status" : "broken",
+  "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "4eae4e719afefcfd",
+  "uid" : "61acdcc9cdba072e",
   "name" : "test_demo4",
   "time" : {
-    "start" : 1675664879895,
-    "stop" : 1675664879895,
+    "start" : 1675697607167,
+    "stop" : 1675697607167,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "minor"
 }, {
-  "uid" : "8945f5eb7b4c8b56",
+  "uid" : "1ae35072f63b134b",
   "name" : "创建交易成功",
   "time" : {
-    "start" : 1675664880025,
-    "stop" : 1675664880353,
-    "duration" : 328
+    "start" : 1675697607287,
+    "stop" : 1675697607632,
+    "duration" : 345
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "4c27bcc63089779e",
-  "name" : "产品id不存在",
+  "uid" : "7a23b56944c88a53",
+  "name" : "num为负数",
   "time" : {
-    "start" : 1675664878671,
-    "stop" : 1675664878846,
-    "duration" : 175
+    "start" : 1675697606615,
+    "stop" : 1675697606834,
+    "duration" : 219
   },
   "status" : "broken",
   "severity" : "normal"
 }, {
-  "uid" : "f9132ea94299f724",
-  "name" : "num为0",
+  "uid" : "71d1fe76b4e0923b",
+  "name" : "test_demo",
   "time" : {
-    "start" : 1675664879095,
-    "stop" : 1675664879301,
-    "duration" : 206
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "a26f0720b85b3173",
-  "name" : "test_demo3",
-  "time" : {
-    "start" : 1675664879891,
-    "stop" : 1675664879891,
+    "start" : 1675697607151,
+    "stop" : 1675697607151,
     "duration" : 0
   },
   "status" : "passed",
-  "severity" : "normal"
+  "severity" : "blocker"
 }, {
-  "uid" : "e8b3de949e9070ef",
-  "name" : "num为负数",
+  "uid" : "ef9aa45ec28de5bc",
+  "name" : "num超过库存",
   "time" : {
-    "start" : 1675664879315,
-    "stop" : 1675664879529,
-    "duration" : 214
+    "start" : 1675697606133,
+    "stop" : 1675697606353,
+    "duration" : 220
   },
   "status" : "broken",
   "severity" : "normal"
 }, {
-  "uid" : "6bf1c9cf72db5fc7",
-  "name" : "正常添加商品",
-  "time" : {
-    "start" : 1675664878297,
-    "stop" : 1675664878658,
-    "duration" : 361
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2655e8b380623e85",
-  "name" : "正常购买",
-  "time" : {
-    "start" : 1675664879561,
-    "stop" : 1675664879871,
-    "duration" : 310
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "88311f3e1812f4fa",
+  "uid" : "41a07ccace5c3bb1",
   "name" : "test_demo1",
   "time" : {
-    "start" : 1675664879885,
-    "stop" : 1675664879885,
+    "start" : 1675697607151,
+    "stop" : 1675697607151,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "critical"
+}, {
+  "uid" : "e0aaef40c979bbd4",
+  "name" : "test_demo3",
+  "time" : {
+    "start" : 1675697607151,
+    "stop" : 1675697607151,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
 } ]

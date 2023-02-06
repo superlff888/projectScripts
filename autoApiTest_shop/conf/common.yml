@@ -1,4 +1,6 @@
-buyer: http://www.mtxshop.com:7002
-manager: http://www.mtxshop.com:7004
-manager1: http://www.mtxshop.com:7005
-seller: http://www.mtxshop.com:7003
+buyerName: mtx0327
+buyerPassword: '1234567'
+managerName: admin
+managerPassword: abc111
+sellerName: leeseller
+sellerPassword: '123456'
