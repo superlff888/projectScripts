@@ -41,7 +41,7 @@ class DbConnect(object):
         # 使用cursor()方法创建游标对象，存储当前数据，后续的游标操作均在该结果中执行
         self.cursor = self.db.cursor()
 
-    def select(self, SQL) -> [dict, list]:
+    def select(self, SQL: str) -> [dict, list]:
         """ 可用flag进行区分fetchall()、fetchone()、fetchmany(3)"""
         b = self.cursor.execute(SQL)
         result = self.cursor.fetchall()  # 获取所有sql结果中数据

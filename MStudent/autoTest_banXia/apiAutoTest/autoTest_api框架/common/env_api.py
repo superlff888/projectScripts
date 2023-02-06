@@ -32,7 +32,6 @@ class Api:
                     }
         >>  确定需要被替换的部分字符串，维护在yml文件中的old字段下，将新环境维护在new字段下
         """
-
         # 字符串替换，string_obj.replace(__old,__new)
         data["url"] = str(data["url"]).replace(self.env_yml["testing-studio"][self.env_yml["default"]],
                                                self.env_yml["testing-studio"][self.env_yml["override"]])  # 先由dict强转json字符串，然后字符串替换,最后重新赋值于字典key

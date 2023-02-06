@@ -17,3 +17,4 @@ def get_yaml(filepath):
     with open(DIR_NAME+filepath, mode='r', encoding='utf-8') as f:
         content = yaml.load(f, Loader=yaml.FullLoader)
         return content
+

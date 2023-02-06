@@ -2,3 +2,8 @@
 buyerName: mtx0327
 # 不加引号就是字符串,加上引号就是整型
 buyerPassword: '1234567'
+managerName: admin
+managerPassword: abc111
+sellerName: leeseller
+sellerPassword: '123456'
+
