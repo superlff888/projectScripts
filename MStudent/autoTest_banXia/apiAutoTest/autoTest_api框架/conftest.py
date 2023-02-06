@@ -94,3 +94,6 @@ def get_token():
     BaseManagerApi.manager_token = res.json().get("access_token")
     # print(f"manager_token为: {BaseManagerApi.manager_token}")
 
+
+# if __name__ == '__main__':
+#     get_token()

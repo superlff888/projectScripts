@@ -24,9 +24,10 @@ if __name__ == '__main__':
 
     # 默认指向 测试环境
     env_file_path = r'/conf/env_test.yml'
-    # 传递环境名称 ["test", "pre", "pro"]
+    # 传递环境名称 in `["test", "pre", "pro"]`
     if len(args) > 1:
-        env_file_path = get_yml(f'/conf/env_{args[1]}.yml')  # 路径拼接
+        env_name = args[1]  # `"test" or "pre" or "pro"`
+        env_file_path = get_yml(f'/conf/env_{env_name}.yml')  # 路径拼接
     # 写入yml文件
     write_in_yml(f'/conf/common.yml', env_file_path["common"])
     write_in_yml(f'/conf/common.yml', env_file_path["http"])
@@ -35,4 +36,4 @@ if __name__ == '__main__':
 
     # pytest.main()  #
     # # 根据执行结果生成allure报告，并输出到./reports/html
-    # os.system("allure generate ./reports/shop -o ./reports/html --clean")  # ./ 当前run.py文件所在目录
+    # os.system("allure generate ./reports/shop -o ./reports/html --clean")  # `./ ` 当前run.py文件所在目录

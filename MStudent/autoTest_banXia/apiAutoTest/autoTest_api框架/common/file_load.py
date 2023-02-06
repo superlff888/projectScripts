@@ -56,7 +56,7 @@ def getCSV(path, isNext=True):
         with open(DIR_NAME+path, encoding='utf-8') as f:
             # The returned object is an iterator.  Each iteration returns a row of the CSV file
             csv_file = csv.reader(f)  # 返回迭代器iterator
-            print(csv_file)
+            # print(csv_file)
             if isNext:  # True表示csv有表头字段
                 # 跳过第一行的用法，往往csv文件的第一行为标题名
                 next(csv_file)  # 接收迭代器参数，若不是迭代器,需要用iter()方法转化成迭代器；iter(iterable) -> iterator

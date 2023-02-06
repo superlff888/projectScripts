@@ -6,7 +6,7 @@ from pprint import pprint
 
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_json import get_json
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.file_load import get_json
 
 
 class AddGoodsApi(BaseSellerApi):

@@ -23,6 +23,8 @@ class SellerLoginApi(BaseSellerApi):
 
 if __name__ == '__main__':
     s = SellerLoginApi()
+    print(s.url)
     res = s.request()  # 调用的底层httpRequestCookies方法
+    print(res.json())
     token = res.json()["access_token"]
     print(f"卖家登录接口返回的token为: {token}")
