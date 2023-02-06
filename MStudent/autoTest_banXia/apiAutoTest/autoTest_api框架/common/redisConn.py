@@ -52,8 +52,10 @@ if __name__ == '__main__':
     redis_conn = RedisConn('82.156.74.26', 'mtx')
     # 商城项目; 数据类型为字符串
     bContent = redis_conn.get('{BUY_NOW_ORIGIN_DATA_PREFIX}_24216')
+    print(bContent)
     # 从redis缓存中将Java序列化Value转换为二进制(bytes)python对象
     resList = javaobj.loads(bContent)
+    print(resList)
     obj = resList[0]  # java对象
     print(obj)
     print(dir(obj))  # dir()返回参数对象的属性、方法列表

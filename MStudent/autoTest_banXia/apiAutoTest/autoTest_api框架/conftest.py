@@ -11,6 +11,8 @@ from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_ma
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.manager_login import ManagerLoginApi
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.mysql_conn import DbConnect
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
 
 
@@ -41,8 +43,30 @@ def pytest_collection_modifyitems(items):
 # 获取redisConn连接对象
 @pytest.fixture(scope="function", name="Initialize_a_new_Redis_client")
 def got_resConn():
-    redis_conn = RedisConn('82.156.74.26', 'mtx')
+    account = conf_parser_obj.configParser(["redis", "account"])
+    psw = conf_parser_obj.configParser(["redis", "psw"])
+    redis_conn = RedisConn(account, psw)
     return redis_conn
+
+
+@pytest.fixture(scope="function", name="连接数据库")
+def db():
+    host = conf_parser_obj.configParser(["mysql", "host"])
+    port = int(conf_parser_obj.configParser(["mysql", "port"]))
+    user = conf_parser_obj.configParser(["mysql", "user"])
+    password = conf_parser_obj.configParser(["mysql", "password"])
+    database = conf_parser_obj.configParser(["mysql", "database"])
+    db_cof = {
+        "host": host,
+        "user": user,
+        "password": password,
+        "port": port
+    }
+    # 前置  创建数据库连接对象
+    db_conn = DbConnect(database, db_cof)
+    yield db_conn
+    # 后置  关闭数据库
+    db_conn.close()
 
 
 @pytest.fixture(scope="session")

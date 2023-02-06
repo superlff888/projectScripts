@@ -25,6 +25,7 @@ class TestBuyNow:
 
         buy_now_api = BuyNowApi(sku_id, num)
         uid = buy_now_api.uid  # 父类属性通过继承父类__init__构造方法,简介继承父类实例属性
+        print(uid)
         p_sku_id = buy_now_api.params.get("sku_id")
         p_num = buy_now_api.params.get("num")
         res = buy_now_api.request()
@@ -35,6 +36,7 @@ class TestBuyNow:
         # 从redis缓存中将Java序列化Value转换为二进制(bytes)python对象
         resList = javaobj.loads(bContent)
         obj = resList[0]  # python的"java类"的对象
+        print(obj)
         # print(dir(obj))  # dir(obj)返回参数(java对象)的属性、方法列表
         skuId = obj.__getattribute__("skuId")  # 获取属性值
         num = obj.__getattribute__("num")  # 获取属性值

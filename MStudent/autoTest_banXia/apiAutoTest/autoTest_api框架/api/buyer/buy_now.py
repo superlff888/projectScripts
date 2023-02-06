@@ -12,7 +12,7 @@ from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config 
 
 class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis
 
-    def __init__(self, sku_id=600, num=1):
+    def __init__(self, sku_id=13727, num=1):
         """类属性一般为常量，不经常发生变换，故适合维护在配置文件中"""
         self.PATH = conf_parser_obj.configParser(["buy_now", "path_buy"])
         self.METHOD = conf_parser_obj.configParser(["buy_now", "method_buy"])
@@ -47,6 +47,7 @@ if __name__ == '__main__':
     # BaseBuyerApi.buyer_token = token
     # BaseBuyerApi.buyer_uid = uid
     # buy_now_api = BuyNowApi()  # sku_id=600, num=1
+    # print(f"BuyNowApi响应状态码: {buy_now_api.request().status_code}")
     # print(f"立即购买请求url: {buy_now_api.url}")
     # print(f"BuyNowApi请求method: {buy_now_api.method}")
     # print(f"BuyNowApi请求header: {buy_now_api.headers}")
