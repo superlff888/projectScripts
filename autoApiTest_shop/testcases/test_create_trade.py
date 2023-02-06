@@ -5,9 +5,10 @@
 import allure
 import pytest
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now import BuyNowApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.create_trade import BuyerTradeApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.mysql_conn import DbConnect
+from api.buyer.buy_now import BuyNowApi
+from api.buyer.create_trade import BuyerTradeApi
+from common.mysql_conn import DbConnect
+
 
 @allure.feature("买家接口")
 class TestTrade:

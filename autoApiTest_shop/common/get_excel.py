@@ -6,8 +6,8 @@ import os
 
 import pandas
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import getter
+from common.file_load import conf_parser_obj
+from setting import DIR_NAME
 
 
 def read_data():
@@ -24,7 +24,7 @@ def read_data():
     sheet_name = conf_parser_obj.configParser(["excel", "sheet_name"])
 
     # getter.DIR_NAME 也替换为 DIR_NAME
-    pandrxl = pandas.read_excel(getter.DIR_NAME + filepath, sheet_name=sheet_name, keep_default_na=False, engine='openpyxl')
+    pandrxl = pandas.read_excel(DIR_NAME + filepath, sheet_name=sheet_name, keep_default_na=False, engine='openpyxl')
     # print(pandrxl)
     # 元组中获取总行和总列 (lines,columns)
     lines = pandrxl.shape[0]  # 总行数

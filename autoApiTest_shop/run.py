@@ -6,7 +6,7 @@ import os
 import sys
 import pytest
 
-from autoTest_banXia.apiAutoTest.autoTest_api框架.common.file_load import get_yml, write_in_yml
+from common.file_load import get_yml, write_in_yml
 
 if __name__ == '__main__':
     """
@@ -27,6 +27,7 @@ if __name__ == '__main__':
     if len(args) > 1:
         env_name = args[1]  # `"test" or "pre" or "pro"`
         env_file_path = f'/conf/env_{env_name}.yml'  # 路径拼接
+        del args[1]
     # 读取配置环境信息
     env_info = get_yml(env_file_path)
     # 写入yml文件
@@ -35,6 +36,6 @@ if __name__ == '__main__':
     write_in_yml(f'/conf/db.yml', env_info["db"])
     write_in_yml(f'/conf/redis.yml', env_info["redis"])
 
-    # pytest.main()  #
+    pytest.main()  #
     # # 根据执行结果生成allure报告，并输出到./reports/html
     # os.system("allure generate ./reports/shop -o ./reports/html --clean")  # `./ ` 当前run.py文件所在目录

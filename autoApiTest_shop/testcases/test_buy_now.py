@@ -8,8 +8,8 @@ import allure
 import javaobj
 import pytest
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now import BuyNowApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_excel import read_data
+from api.buyer.buy_now import BuyNowApi
+from common.get_excel import read_data
 
 
 @pytest.mark.usefixtures("get_token")

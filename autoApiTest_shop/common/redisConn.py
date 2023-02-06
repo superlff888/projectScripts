@@ -14,7 +14,6 @@ import redis
 """
 
 
-# @pytest.fixture()
 class RedisConn:
     # redis 取出的结果默认是字节，通过设定 decode_responses=True 改成字符串
     def __init__(self, host, password, decode_responses=False, port=6379):

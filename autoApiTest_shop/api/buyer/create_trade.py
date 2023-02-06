@@ -2,12 +2,10 @@
 # @Time    : 2023/02/06 11:28
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from pprint import pprint
-
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buy_now import BuyNowApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from api.buyer.base_buyer import BaseBuyerApi
+from api.buyer.buy_now import BuyNowApi
+from api.buyer.buyer_login import BuyerLoginApi
+from common.file_load import conf_parser_obj
 
 
 class BuyerTradeApi(BaseBuyerApi):

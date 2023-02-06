@@ -2,9 +2,7 @@
 # @Time    : 2023/02/01 10:56
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from pprint import pprint
-
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
+from api.seller.base_seller import BaseSellerApi
 
 
 class SellerLoginApi(BaseSellerApi):

@@ -5,7 +5,7 @@
 import allure
 import pytest
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.add_goods import AddGoodsApi
+from api.seller.add_goods import AddGoodsApi
 
 
 @pytest.mark.usefixtures("get_token")

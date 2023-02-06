@@ -1,3 +1,4 @@
+
 # @Time  : 2021/06/15 13:56
 # @Author    : H.侠
 # -*-coding=utf-8-*-
@@ -7,7 +8,7 @@ from urllib.parse import urljoin
 
 import requests
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.logger import logger
+from common.logger import logger
 
 
 class HttpRequest(object):

@@ -9,7 +9,8 @@ import json
 import pandas
 import yaml
 from functools import singledispatchmethod
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
+
+from setting import DIR_NAME
 
 
 def read_excel():

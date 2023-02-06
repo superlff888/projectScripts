@@ -4,9 +4,9 @@
 # =============================================================
 from pprint import pprint
 
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.encry_decry import md5
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from api.buyer.base_buyer import BaseBuyerApi
+from common.encry_decry import md5
+from common.file_load import conf_parser_obj
 
 
 class BuyerLoginApi(BaseBuyerApi):
@@ -29,35 +29,6 @@ class BuyerLoginApi(BaseBuyerApi):
         self.method = self.METHOD
         self.params = {'username': self.USERNAME, 'password': md5(self.PASSWORD), 'captcha': self.CAPTCHA,
                        'uuid': self.UUID}
-
-        # 此处不可BuyerLoginApi()实例对象调用send，会导致递归超过最大深度(1000),所以要用BuyerLoginApi类名调用send
-        # self.token = BuyerLoginApi.send(self)  # send可用@staticmethod装饰器装饰城静态方法，即普通函数这样就能用类名调用了,同时self需手动传递
-
-        # self.uid_cm = BuyerLoginApi().send_cm()[0]  # 类实例化一定不能放在init构造方法中，会造成递归
-
-    # @property  # 装饰成私有化实例属性，别的类无法通过调用获得返回值
-    # def send_token(self):  # 调用方式 self.send_token
-    #     """该方法的参数化移交给init构造方法了"""
-    #     self.res = self.request(url=self.url, method=self.method, params=self.params)  #
-    #     # return self.res.json().get("uid"), self.res.json().get("access_token")
-    #     return self.res.json().get('access_token')
-    #
-    # @property  # 将方法变成实例属性  调用方法: self.send_uid, 即实例对象.send_uid
-    # def send_uid_token(self):  # 加上装饰器后，就是实例属性
-    #     self.res = self.request(url=self.url, method=self.method, params=self.params)
-    #     return self.res.json().get("uid"), self.res.json().get("access_token")
-    #
-    # def send(self):  # 加上装饰器后，就是普通函数，调用时
-    #     """该方法的参数化移交给init构造方法了"""
-    #     res = self.request(url=self.url, method=self.method, params=self.params)  #
-    #     # return self.res.json().get("uid"), self.res.json().get("access_token")
-    #     return res
-
-    # 该方法不适用于属性构造
-    # @classmethod
-    # def send_cm(cls):
-    #     res = cls().request(url=cls().url, method=cls().method, params=cls().params)
-    #     return res.json().get("uid"), res.json().get("access_token")
 
 
 if __name__ == "__main__":

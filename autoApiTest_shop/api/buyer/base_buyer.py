@@ -2,8 +2,8 @@
 # @Time    : 2023/02/01 14:23
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from autoApiTest_shop.common.file_load import conf_parser_obj
-from autoApiTest_shop.common.httpReuquests import HttpRequestCookies
+from common.file_load import conf_parser_obj
+from common.httpReuquests import HttpRequestCookies
 
 
 class BaseBuyerApi(HttpRequestCookies):

@@ -4,17 +4,15 @@
 # =============================================================
 import pytest
 
-
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.manager_login import ManagerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.base_seller import BaseSellerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.seller.seller_login import SellerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.mysql_conn import DbConnect
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.redisConn import RedisConn
-
+from api.buyer.base_buyer import BaseBuyerApi
+from api.buyer.buyer_login import BuyerLoginApi
+from api.manager.base_manager import BaseManagerApi
+from api.manager.manager_login import ManagerLoginApi
+from api.seller.base_seller import BaseSellerApi
+from api.seller.seller_login import SellerLoginApi
+from common.file_load import conf_parser_obj
+from common.mysql_conn import DbConnect
+from common.redisConn import RedisConn
 
 """
 

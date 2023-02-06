@@ -5,9 +5,8 @@
 from pprint import pprint
 
 # 可递归继承“爷爷”辈的类方法(含init方法)和类属性 HttpRequestCookies
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.buyer_login import BuyerLoginApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from api.buyer.base_buyer import BaseBuyerApi
+from common.file_load import conf_parser_obj
 
 
 class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis

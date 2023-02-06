@@ -2,10 +2,8 @@
 # @Time    : 2023/02/05 17:33
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from pprint import pprint
-
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.manager.base_manager import BaseManagerApi
-from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
+from api.manager.base_manager import BaseManagerApi
+from common.file_load import conf_parser_obj
 
 
 class ManagerLoginApi(BaseManagerApi):
