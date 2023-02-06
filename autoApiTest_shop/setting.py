@@ -21,3 +21,7 @@ class GetDirname:
 
 
 getter = GetDirname()
+
+
+# if __name__ == '__main__':
+#     print(DIR_NAME)
