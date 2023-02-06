@@ -1,0 +1,131 @@
+[ {
+  "uid" : "e8b3de949e9070ef",
+  "name" : "num为负数",
+  "time" : {
+    "start" : 1675664879315,
+    "stop" : 1675664879529,
+    "duration" : 214
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4c27bcc63089779e",
+  "name" : "产品id不存在",
+  "time" : {
+    "start" : 1675664878671,
+    "stop" : 1675664878846,
+    "duration" : 175
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4eae4e719afefcfd",
+  "name" : "test_demo4",
+  "time" : {
+    "start" : 1675664879895,
+    "stop" : 1675664879895,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "minor"
+}, {
+  "uid" : "d48fff848bc032cb",
+  "name" : "num超过库存",
+  "time" : {
+    "start" : 1675664878856,
+    "stop" : 1675664879072,
+    "duration" : 216
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a26f0720b85b3173",
+  "name" : "test_demo3",
+  "time" : {
+    "start" : 1675664879891,
+    "stop" : 1675664879891,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "52563b62851001eb",
+  "name" : "test_demo",
+  "time" : {
+    "start" : 1675664879882,
+    "stop" : 1675664879882,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "3e62021d829cf47a",
+  "name" : "test_demo2",
+  "time" : {
+    "start" : 1675664879888,
+    "stop" : 1675664879888,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8945f5eb7b4c8b56",
+  "name" : "创建交易成功",
+  "time" : {
+    "start" : 1675664880025,
+    "stop" : 1675664880353,
+    "duration" : 328
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f9132ea94299f724",
+  "name" : "num为0",
+  "time" : {
+    "start" : 1675664879095,
+    "stop" : 1675664879301,
+    "duration" : 206
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "88311f3e1812f4fa",
+  "name" : "test_demo1",
+  "time" : {
+    "start" : 1675664879885,
+    "stop" : 1675664879885,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "6bf1c9cf72db5fc7",
+  "name" : "正常添加商品",
+  "time" : {
+    "start" : 1675664878297,
+    "stop" : 1675664878658,
+    "duration" : 361
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2655e8b380623e85",
+  "name" : "正常购买",
+  "time" : {
+    "start" : 1675664879561,
+    "stop" : 1675664879871,
+    "duration" : 310
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "72b024758dd26bfa",
+  "name" : "test_demo5",
+  "time" : {
+    "start" : 1675664879897,
+    "stop" : 1675664879897,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "trivial"
+} ]

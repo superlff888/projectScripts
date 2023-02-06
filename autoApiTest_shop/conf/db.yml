@@ -1,0 +1,7 @@
+mxtshop:
+  host: 82.156.74.26
+  port: 3306
+  user: root
+  password: Testfan#123
+  database: mtxshop_trade
+

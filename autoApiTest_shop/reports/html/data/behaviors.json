@@ -1,0 +1,202 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "卖家接口",
+    "children" : [ {
+      "name" : "卖家添加商品接口",
+      "children" : [ {
+        "name" : "正常添加商品",
+        "uid" : "6bf1c9cf72db5fc7",
+        "parentUid" : "38d2574b5049ed9332a9d0111c588fbf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664878297,
+          "stop" : 1675664878658,
+          "duration" : 361
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "38d2574b5049ed9332a9d0111c588fbf"
+    } ],
+    "uid" : "fc346a6df73c7cdfd75e26e2d604cfe6"
+  }, {
+    "name" : "买家接口",
+    "children" : [ {
+      "name" : "买家立即购买接口",
+      "children" : [ {
+        "name" : "产品id不存在",
+        "uid" : "4c27bcc63089779e",
+        "parentUid" : "d1146376e5ac4463e10759fc6acb500c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1675664878671,
+          "stop" : 1675664878846,
+          "duration" : 175
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'产品id不存在'", "500", "1", "6626655" ]
+      }, {
+        "name" : "num超过库存",
+        "uid" : "d48fff848bc032cb",
+        "parentUid" : "d1146376e5ac4463e10759fc6acb500c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1675664878856,
+          "stop" : 1675664879072,
+          "duration" : 216
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'num超过库存'", "500", "999999999", "3673" ]
+      }, {
+        "name" : "num为0",
+        "uid" : "f9132ea94299f724",
+        "parentUid" : "d1146376e5ac4463e10759fc6acb500c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1675664879095,
+          "stop" : 1675664879301,
+          "duration" : 206
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'num为0'", "400", "0", "3673" ]
+      }, {
+        "name" : "num为负数",
+        "uid" : "e8b3de949e9070ef",
+        "parentUid" : "d1146376e5ac4463e10759fc6acb500c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1675664879315,
+          "stop" : 1675664879529,
+          "duration" : 214
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'num为负数'", "400", "-1", "3673" ]
+      }, {
+        "name" : "正常购买",
+        "uid" : "2655e8b380623e85",
+        "parentUid" : "d1146376e5ac4463e10759fc6acb500c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879561,
+          "stop" : 1675664879871,
+          "duration" : 310
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'正常购买'", "200", "1", "600" ]
+      } ],
+      "uid" : "d1146376e5ac4463e10759fc6acb500c"
+    }, {
+      "name" : "测试功能点",
+      "children" : [ {
+        "name" : "test_demo",
+        "uid" : "52563b62851001eb",
+        "parentUid" : "0388576dd2fdc51d5637f2c5d116e600",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879882,
+          "stop" : 1675664879882,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_demo1",
+        "uid" : "88311f3e1812f4fa",
+        "parentUid" : "0388576dd2fdc51d5637f2c5d116e600",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879885,
+          "stop" : 1675664879885,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_demo3",
+        "uid" : "a26f0720b85b3173",
+        "parentUid" : "0388576dd2fdc51d5637f2c5d116e600",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879891,
+          "stop" : 1675664879891,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_demo5",
+        "uid" : "72b024758dd26bfa",
+        "parentUid" : "0388576dd2fdc51d5637f2c5d116e600",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879897,
+          "stop" : 1675664879897,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0388576dd2fdc51d5637f2c5d116e600"
+    }, {
+      "name" : "功能点",
+      "children" : [ {
+        "name" : "test_demo2",
+        "uid" : "3e62021d829cf47a",
+        "parentUid" : "8c39d52fafdf9d596e900a0cf617d0ba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879888,
+          "stop" : 1675664879888,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_demo4",
+        "uid" : "4eae4e719afefcfd",
+        "parentUid" : "8c39d52fafdf9d596e900a0cf617d0ba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664879895,
+          "stop" : 1675664879895,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8c39d52fafdf9d596e900a0cf617d0ba"
+    }, {
+      "name" : "创建交易接口",
+      "children" : [ {
+        "name" : "创建交易成功",
+        "uid" : "8945f5eb7b4c8b56",
+        "parentUid" : "c06e5376783f8bbe53a56e28207f05ba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1675664880025,
+          "stop" : 1675664880353,
+          "duration" : 328
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c06e5376783f8bbe53a56e28207f05ba"
+    } ],
+    "uid" : "71c424629e288e3f6097b6d26c6d3844"
+  } ]
+}

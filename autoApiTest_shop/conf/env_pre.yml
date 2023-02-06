@@ -9,7 +9,6 @@ http:
   buyer: http://www.mtxshop.com:7002
   seller: http://www.mtxshop.com:7003
   manager: http://www.mtxshop.com:7004
-  manager1: http://www.mtxshop.com:7005
 db:
   mxtshop:
     host: 82.156.74.26
@@ -22,3 +21,4 @@ redis:
     host: 82.156.74.26
     password: mtx
     port: 6379
+

@@ -1,0 +1,4 @@
+mxtshop:
+  host: 82.156.74.26
+  password: mtx
+  port: 6379

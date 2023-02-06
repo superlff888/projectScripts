@@ -1,0 +1,34 @@
+{
+	"brand_id": "",
+	"category_id": 493,
+	"category_name": "",
+	"goods_name": "电视机",
+	"sn": "910414",
+	"price": "2199",
+	"mktprice": "2999",
+	"cost": "109",
+	"weight": "10",
+	"goods_gallery_list": [{
+		"img_id": -1,
+		"original": "http://www.mtxshop.com:7000/statics/attachment/goods/2023/2/5/12/30301034.png",
+		"sort": 0
+	}],
+	"quantity": 100,
+	"goods_transfee_charge": 1,
+	"has_changed": 0,
+	"market_enable": 1,
+	"template_id": 0,
+	"exchange": {
+		"category_id": "",
+		"enable_exchange": 0,
+		"exchange_money": 0,
+		"exchange_point": 0
+	},
+	"shop_cat_id": 0,
+	"meta_description": "",
+	"meta_keywords": "",
+	"page_title": "",
+	"goods_params_list": [],
+	"sku_list": [],
+	"intro": ""
+}

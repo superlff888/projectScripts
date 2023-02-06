@@ -1,0 +1,20 @@
+2023-02-06 14:27:57 [httpReuquests.py:136 ] [ INFO] 买家登录接口请求中method是: post 
+2023-02-06 14:27:57 [httpReuquests.py:136 ] [ INFO] 买家登录接口请求中url是: http://www.mtxshop.com:7002/passport/login 
+2023-02-06 14:27:57 [httpReuquests.py:136 ] [ INFO] 买家登录接口请求中params是: {'username': 'mtx0327', 'password': 'fcea920f7412b5da7be0cf42b8c93759', 'captcha': '1512', 'uuid': 'f6597380-4e24-11ed-984b-167610639c7'} 
+2023-02-06 14:27:57 [httpReuquests.py:136 ] [ INFO] 买家登录接口请求中headers是: {'Authorization': ''} 
+2023-02-06 14:27:58 [httpReuquests.py:141 ] [ INFO] 	买家登录接口的响应状态码: 200
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家登录接口接口请求中method是: get 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家登录接口接口请求中url是: http://www.mtxshop.com:7003/seller/login 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家登录接口接口请求中params是: {'username': 'leeseller', 'password': 'e10adc3949ba59abbe56e057f20f883e', 'captcha': 1512, 'uuid': 'b281d2e0-a2e0-11ed-8996-69acd4b6dd14'} 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家登录接口接口请求中headers是: {'Authorization': '', 'Content-Type': 'application/json'} 
+2023-02-06 14:27:58 [httpReuquests.py:141 ] [ INFO] 	卖家登录接口接口的响应状态码: 200
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 管理员登录接口请求中method是: get 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 管理员登录接口请求中url是: http://www.mtxshop.com:7004/admin/systems/admin-users/login 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 管理员登录接口请求中params是: {'username': 'admin', 'password': '98afa509d7ac716e9a537688fe02f5cf', 'captcha': '1512', 'uuid': 'af8a52e0-a2e2-11ed-80b8-df8d6b9ee35f'} 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 管理员登录接口请求中headers是: {'Authorization': ''} 
+2023-02-06 14:27:58 [httpReuquests.py:141 ] [ INFO] 	管理员登录接口的响应状态码: 200
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家添加商品接口请求中method是: post 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家添加商品接口请求中url是: http://www.mtxshop.com:7003/seller/goods 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家添加商品接口请求中json是: {'brand_id': '', 'category_id': 493, 'category_name': '', 'goods_name': '电视机', 'sn': '910414', 'price': '2199', 'mktprice': '2999', 'cost': '109', 'weight': '10', 'goods_gallery_list': [{'img_id': -1, 'original': 'http://www.mtxshop.com:7000/statics/attachment/goods/2023/2/5/12/30301034.png', 'sort': 0}], 'quantity': 100, 'goods_transfee_charge': 1, 'has_changed': 0, 'market_enable': 1, 'template_id': 0, 'exchange': {'category_id': '', 'enable_exchange': 0, 'exchange_money': 0, 'exchange_point': 0}, 'shop_cat_id': 0, 'meta_description': '', 'meta_keywords': '', 'page_title': '', 'goods_params_list': [], 'sku_list': [], 'intro': ''} 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 卖家添加商品接口请求中headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc1NjY2MDc3LCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9.wod3RyS_h4e9jCk4r7uFi905h-W9vpGb9EwiH_mo1ndInFCqlKUfE-K6PyPAMcVrwK1DkA9PfScZ4VOpA_U7MA', 'Content-Type': 'application/json'} 
+2023-02-06 14:27:58 [httpReuquests.py:141 ] [ INFO] 	卖家添加商品接口的响应状态码: 200

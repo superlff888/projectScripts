@@ -1,0 +1,5 @@
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 立即购买接口请求中method是: post 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 立即购买接口请求中url是: http://www.mtxshop.com:7002/trade/carts/buy 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 立即购买接口请求中params是: {'sku_id': 6626655, 'num': 1} 
+2023-02-06 14:27:58 [httpReuquests.py:136 ] [ INFO] 立即购买接口请求中headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IueggeWQjOWtpuWVhuWfjiIsImNsZXJrSWQiOjQ3MywidXVpZCI6bnVsbCwidWlkIjoyNDIxNiwic2VsbGVySWQiOjU4MywiY2xlcmtOYW1lIjoibXR4MDMyNyIsImV4cCI6MTY3NTY2NjA3NywidXNlcm5hbWUiOiJtdHgwMzI3In0.Fsn275QVrg5pwdHKV_76rhsjbvl9uEDo4AX5qbViVUZcUF0Q7f2fn4_h8ofdQS7K2x1f6JCasLGlSUbBTnvTfQ'} 
+2023-02-06 14:27:58 [httpReuquests.py:141 ] [ INFO] 	立即购买接口的响应状态码: 500
