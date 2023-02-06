@@ -18,11 +18,6 @@ class AddGoodsApi(BaseSellerApi):
         self.method = 'post'
         self.json = get_json("/data/goods_seller.json")
 
-    # def send(self):  # 直接调用底层方法即可
-    #     global goods_id
-    #     goods_id = self.request(url=self.url, method=self.method, json=self.json, headers=self.headers).json()["goods_id"]
-    #     return goods_id
-
 
 if __name__ == '__main__':
     sl = SellerLoginApi()

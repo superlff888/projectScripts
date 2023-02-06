@@ -18,12 +18,6 @@ from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_
     conf.read('config.ini', encoding='utf8')  # 实例化配置文件解析器，打开配置文件，然后才可以调用get等方法获取想要的数据
     conf.get(section, option)  # 获取options数据
 """
-##
-"""
-    conf = configparser.Configparser()  # 实例化
-    conf.read('config.ini', encoding='utf8')  # 打开配置文件，然后才可以调用get等方法获取想要的数据
-    conf.get(section, option)  # 获取options数据
-"""
 
 
 class ReadConfig(configparser.ConfigParser):
@@ -34,7 +28,8 @@ class ReadConfig(configparser.ConfigParser):
         """
         ::filepath : 相对路径（入参为项目下的路径，参照setting.py路径），如：./conf/*.*
 
-        [function] self.read(DIR_NAME+filepath, encoding) 读取配置文件的内容到配置文件解析器对象,通过解析器调用所属方法，操作配置文件
+        [function] self.read(DIR_NAME+filepath, encoding) 读取配置文件的内容到配置文件解析器对象,
+        通过解析器调用所属方法，操作`.ini`或`.conf`配置文件
 
         """
         # 执行完此步骤，就可调用父类的成员属性，相当于把父类的__init__方法和成员属性继承过来了；
@@ -84,7 +79,3 @@ if __name__ == '__main__':
     print(conf_parser_obj.configParser(['logging', 'level']))
     print(conf_parser_obj.configParser(['logging', 'filepath']))
 
-
-"""
-读取ini配置文件信息
-"""

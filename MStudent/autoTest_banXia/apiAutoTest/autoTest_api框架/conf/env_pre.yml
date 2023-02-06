@@ -1,0 +1,24 @@
+common:
+  buyerName: mtx0327
+  buyerPassword: '1234567'
+  managerName: admin
+  managerPassword: abc111
+  sellerName: leeseller
+  sellerPassword: '123456'
+http:
+  buyer: http://www.mtxshop.com:7002
+  seller: http://www.mtxshop.com:7003
+  manager: http://www.mtxshop.com:7004
+db:
+  mxtshop:
+    host: 82.156.74.26
+    port: 3306
+    user: root
+    password: Testfan#123
+    database: mtxshop_trade
+redis:
+  mxtshop:
+    host: 82.156.74.26
+    password: mtx
+    port: 6379
+

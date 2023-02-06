@@ -1,6 +1,6 @@
 # 维护登录用户名，密码等相对比较固定的信息
-buyerName: mtx0327
 # 不加引号就是字符串,加上引号就是整型
+buyerName: mtx0327
 buyerPassword: '1234567'
 managerName: admin
 managerPassword: abc111

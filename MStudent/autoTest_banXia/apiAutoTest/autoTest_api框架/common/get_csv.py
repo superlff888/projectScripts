@@ -6,28 +6,16 @@ desc:
 sample: 
 """
 import csv
-import os
-from pprint import pprint
-
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.setting import DIR_NAME
 
-"""
-凡是可作用于for循环的对象都是Iterable类型；
-
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；
-
-"""
-
-# with open(path) as f:
-#     csv_file = csv.reader(f)  # list[]
-#     # 返回迭代器的下一个项目;要和生成迭代器的 iter() 一起使用;迭代器与可迭代对象不同
-#     headers = next(csv_file)
-#     # print(headers)
-#     for line in csv_file:
-#         print(line)
 
 def getCSV(path, isNext=True):
-    """path为文件数据绝对路径"""
+    """
+    ::path  文件数据相对路径
+    凡是可作用于for循环的对象都是Iterable类型；
+    凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；
+    """
+
     list_ = []
     try:
         with open(DIR_NAME+path, encoding='utf-8') as f:
@@ -57,10 +45,6 @@ def getCSVDict(path):
         return list_
     except Exception as e:
         raise e
-
-
-pprint(getCSVDict("../data/mtxshop_data.csv"))
-pprint(getCSV("./data/mtxshop_data.csv", isNext=True))
 
 
 """
