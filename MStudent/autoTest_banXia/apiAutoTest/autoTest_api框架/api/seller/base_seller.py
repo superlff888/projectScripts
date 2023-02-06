@@ -4,6 +4,7 @@
 # =============================================================
 import pytest
 
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.get_yaml import get_yaml
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.httpReuquests import HttpRequestCookies
 
 
@@ -17,6 +18,11 @@ class BaseSellerApi(HttpRequestCookies):
         # 获取父类属性
         super().__init__()
         # 部分属性重新赋值
-        self.host = 'http://www.mtxshop.com:7003'
+        # self.host = 'http://www.mtxshop.com:7003'
+        self.host = get_yaml("/conf/http.yml")["manager"]
         self.headers = {"Authorization": BaseSellerApi.seller_token, "Content-Type": "application/json"}
         self.uid = BaseSellerApi.seller_uid
+
+
+if __name__ == '__main__':
+    print(BaseSellerApi().host)

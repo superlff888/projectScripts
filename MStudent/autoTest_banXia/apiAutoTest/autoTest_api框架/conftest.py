@@ -49,7 +49,7 @@ def got_resConn():
     return redis_conn
 
 
-@pytest.fixture(scope="function", name="连接数据库")
+@pytest.fixture(scope="function")
 def db():
     host = conf_parser_obj.configParser(["mysql", "host"])
     port = int(conf_parser_obj.configParser(["mysql", "port"]))

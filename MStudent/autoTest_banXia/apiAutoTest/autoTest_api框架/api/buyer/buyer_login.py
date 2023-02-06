@@ -5,6 +5,7 @@
 from pprint import pprint
 
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.api.buyer.base_buyer import BaseBuyerApi
+from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.encry_decry import md5
 from MStudent.autoTest_banXia.apiAutoTest.autoTest_api框架.common.read_config import conf_parser_obj
 
 
@@ -26,7 +27,7 @@ class BuyerLoginApi(BaseBuyerApi):
         self.desc = '买家登录'  # 便于日志信息描述
         self.url = f"{self.host}" + f"{self.PATH}"
         self.method = self.METHOD
-        self.params = {'username': self.USERNAME, 'password': self.PASSWORD, 'captcha': self.CAPTCHA,
+        self.params = {'username': self.USERNAME, 'password': md5(self.PASSWORD), 'captcha': self.CAPTCHA,
                        'uuid': self.UUID}
 
         # 此处不可BuyerLoginApi()实例对象调用send，会导致递归超过最大深度(1000),所以要用BuyerLoginApi类名调用send
