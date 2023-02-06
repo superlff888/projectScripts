@@ -6,6 +6,7 @@ from pprint import pprint
 
 # 可递归继承“爷爷”辈的类方法(含init方法)和类属性 HttpRequestCookies
 from api.buyer.base_buyer import BaseBuyerApi
+from api.buyer.buyer_login import BuyerLoginApi
 from common.file_load import conf_parser_obj
 
 
