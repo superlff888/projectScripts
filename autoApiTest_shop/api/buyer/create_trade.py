@@ -13,7 +13,7 @@ class BuyerTradeApi(BaseBuyerApi):
     类实例化一定不能放在init构造方法中，否则会形成递归，造成会导致递归超过最大深度(1000)或内存泄漏等情况
 
     """
-
+    # 创建交易
     def __init__(self):  # path, method, params
         # 通过ini配置文件处理本接口的入参
         self.path = conf_parser_obj.configParser(["buyer_trade", "path_buyer_trade"])

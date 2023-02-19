@@ -10,6 +10,7 @@ from common.file_load import get_json
 
 
 class AddGoodsApi(BaseSellerApi):
+    """添加商品"""
 
     def __init__(self):
         super().__init__()

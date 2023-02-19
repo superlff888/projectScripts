@@ -3,9 +3,11 @@
 # @Author    : H.侠
 # -*-coding=utf-8-*-
 # =============================================================
+import json
 import os
 from urllib.parse import urljoin
 
+import jsonpath
 import requests
 
 from common.logger import logger
@@ -145,6 +147,26 @@ class HttpRequestCookies:
             self.logger.exception("接口发送错误!")
             raise e
         return self.res
+
+    # 定义接口响应数据jsonpath提取方法
+    def extract_json(self, express, index: int = 0):
+        """
+        :param  express  jsonpath表达式
+        :param  index  返回`result`列表下标，默认取第一个
+        """
+        text = self.res.text  # 获取接口响应文本，有可能返回的是空字符串
+        if text != '':
+            try:
+                res_dict = json.loads(text)  # 转换成python对象dict
+                if index < 0:  # 提取全部
+                    result = jsonpath.jsonpath(res_dict, express)
+                    return result
+                else:
+                    result = jsonpath.jsonpath(res_dict, express)[index]
+                    return result
+            except Exception as e:
+                self.logger.exception(f"通过jsonpath'{express}'从{text}提取时抛出异常……")
+                raise e
 
     # 用完需要关掉（浏览器/session）
     def close(self):

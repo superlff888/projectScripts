@@ -12,7 +12,7 @@ from common.file_load import conf_parser_obj
 
 class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis
 
-    def __init__(self, sku_id=13727, num=1):
+    def __init__(self, sku_id=20105, num=1):
         """类属性一般为常量，不经常发生变换，故适合维护在配置文件中"""
         self.PATH = conf_parser_obj.configParser(["buy_now", "path_buy"])
         self.METHOD = conf_parser_obj.configParser(["buy_now", "method_buy"])
