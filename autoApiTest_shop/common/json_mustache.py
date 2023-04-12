@@ -2,8 +2,6 @@
 # @Time    : 2022/03/26 13:35
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-import os
-from pprint import pprint
 import pystache  # 用两个花括号识别变量，可以对变量自动识别和替换
 
 from common.file_load import get_json

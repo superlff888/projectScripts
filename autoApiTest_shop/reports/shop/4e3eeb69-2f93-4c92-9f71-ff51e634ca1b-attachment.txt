@@ -1,0 +1,21 @@
+INFO     apiAutoTest:httpReuquests.py:65 卖家确认收款接口请求入参中的method是: post 
+INFO     apiAutoTest:httpReuquests.py:65 卖家确认收款接口请求入参中的url是: http://www.mtxshop.com:7003/seller/trade/orders/20230224000329/pay 
+INFO     apiAutoTest:httpReuquests.py:65 卖家确认收款接口请求入参中的data是: {'pay_price': 12.0} 
+INFO     apiAutoTest:httpReuquests.py:65 卖家确认收款接口请求入参中的headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc3MjE3NzYyLCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9._ofCBzO7-gQwDWQmRN1YEFZGaVwyvwDW5IgmCx1jPDS50O9X4319k9gS5fL4Xp45y4Ozkr_lE7uwccXExkox1g'} 
+INFO     apiAutoTest:httpReuquests.py:70 	卖家确认收款接口的响应状态码: 200
+INFO     apiAutoTest:httpReuquests.py:71 	卖家确认收款接口的响应文本:
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的method是: put 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的url是: http://www.mtxshop.com:7003/seller/goods/21838/under 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc3MjE3NzYyLCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9._ofCBzO7-gQwDWQmRN1YEFZGaVwyvwDW5IgmCx1jPDS50O9X4319k9gS5fL4Xp45y4Ozkr_lE7uwccXExkox1g'} 
+INFO     apiAutoTest:httpReuquests.py:70 	商品审核接口的响应状态码: 200
+INFO     apiAutoTest:httpReuquests.py:71 	商品审核接口的响应文本: 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的method是: put 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的url是: http://www.mtxshop.com:7003/seller/goods/21838/recycle 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc3MjE3NzYyLCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9._ofCBzO7-gQwDWQmRN1YEFZGaVwyvwDW5IgmCx1jPDS50O9X4319k9gS5fL4Xp45y4Ozkr_lE7uwccXExkox1g'} 
+INFO     apiAutoTest:httpReuquests.py:70 	商品审核接口的响应状态码: 200
+INFO     apiAutoTest:httpReuquests.py:71 	商品审核接口的响应文本: 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的method是: delete 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的url是: http://www.mtxshop.com:7003/seller/goods/21838 
+INFO     apiAutoTest:httpReuquests.py:65 商品审核接口请求入参中的headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc3MjE3NzYyLCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9._ofCBzO7-gQwDWQmRN1YEFZGaVwyvwDW5IgmCx1jPDS50O9X4319k9gS5fL4Xp45y4Ozkr_lE7uwccXExkox1g'} 
+INFO     apiAutoTest:httpReuquests.py:70 	商品审核接口的响应状态码: 200
+INFO     apiAutoTest:httpReuquests.py:71 	商品审核接口的响应文本:

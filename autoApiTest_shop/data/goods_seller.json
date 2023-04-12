@@ -1,19 +1,19 @@
 {
 	"brand_id": "",
-	"category_id": 493,
+	"category_id": 2,
 	"category_name": "",
-	"goods_name": "电视机",
-	"sn": "910414",
-	"price": "2199",
-	"mktprice": "2999",
-	"cost": "109",
-	"weight": "10",
+	"goods_name": "零食009",
+	"sn": "12",
+	"price": "12",
+	"mktprice": "12",
+	"cost": "12",
+	"weight": "12",
 	"goods_gallery_list": [{
 		"img_id": -1,
-		"original": "http://www.mtxshop.com:7000/statics/attachment/goods/2023/2/5/12/30301034.png",
+		"original": "http://www.mtxshop.com:7000/statics/attachment/goods/2022/11/13/14/36008400.jpeg",
 		"sort": 0
 	}],
-	"quantity": 100,
+	"quantity": 9999999,
 	"goods_transfee_charge": 1,
 	"has_changed": 0,
 	"market_enable": 1,
@@ -28,7 +28,114 @@
 	"meta_description": "",
 	"meta_keywords": "",
 	"page_title": "",
-	"goods_params_list": [],
-	"sku_list": [],
+	"goods_params_list": [{
+			"id": "",
+			"goods_id": "",
+			"param_id": 68,
+			"param_name": "生产许可证编号",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 69,
+			"param_name": "产品标准号",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 70,
+			"param_name": "厂名",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 71,
+			"param_name": "厂址",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 72,
+			"param_name": "厂家联系方式",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 73,
+			"param_name": "储藏方法",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		},
+		{
+			"id": "",
+			"goods_id": "",
+			"param_id": 74,
+			"param_name": "保质期",
+			"param_value": "",
+			"param_type": 1,
+			"options": "",
+			"required": 0,
+			"group_id": 8,
+			"is_index": 0,
+			"option_list": [
+				""
+			]
+		}
+	],
+	"sku_list": [
+
+	],
 	"intro": ""
 }

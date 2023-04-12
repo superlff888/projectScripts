@@ -2,20 +2,19 @@
 # @Time    : 2023/02/01 11:46
 # @Author  : ╰☆H.俠ゞ
 # =============================================================
-from pprint import pprint
 
 # 可递归继承“爷爷”辈的类方法(含init方法)和类属性 HttpRequestCookies
 from api.buyer.base_buyer import BaseBuyerApi
 from api.buyer.buyer_login import BuyerLoginApi
-from common.file_load import conf_parser_obj
+from common.file_load import get_yml
 
 
 class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis
 
     def __init__(self, sku_id=20105, num=1):
         """类属性一般为常量，不经常发生变换，故适合维护在配置文件中"""
-        self.PATH = conf_parser_obj.configParser(["buy_now", "path_buy"])
-        self.METHOD = conf_parser_obj.configParser(["buy_now", "method_buy"])
+        self.PATH = get_yml('/conf/common.yml').get("path_buy_now")
+        self.METHOD = get_yml('/conf/common.yml').get("method_buy_now")
         # 间接继承父类的header  super().__init__() ；把父类的属性拿来为我所用，可以直接用，也可重新复制
         # 【继承】可以继承父类的类属性和方法(包括__init__构造方法)，但不能直接继承实例属性；同BuyerLoginApi().__init__()
         super().__init__()
@@ -32,7 +31,6 @@ class BuyNowApi(BaseBuyerApi):  # 业务成功将订单信息存入redis
     # 立即购买接口没有响应体内容
     # def send(self):
     #     """该方法的参数化移交给init构造方法了"""
-    #     # self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {self.params}')
     #     self.res = self.request(url=self.url, method=self.method, params=self.params, headers=self.header)
     #     return self.res
 

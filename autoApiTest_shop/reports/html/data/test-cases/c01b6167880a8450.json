@@ -1,0 +1,93 @@
+{
+  "uid" : "c01b6167880a8450",
+  "name" : "卖家确认收款",
+  "fullName" : "testcases.test_order_process.TestOrderProcess#test_order_pay",
+  "historyId" : "de35747dc4efd461d70445520d722525",
+  "time" : {
+    "start" : 1677216565041,
+    "stop" : 1677216565762,
+    "duration" : 721
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1677216561258,
+      "stop" : 1677216561974,
+      "duration" : 716
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5317acdad23b90fc",
+      "name" : "log",
+      "source" : "5317acdad23b90fc.txt",
+      "type" : "text/plain",
+      "size" : 3954
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "订单流程"
+  }, {
+    "name" : "feature",
+    "value" : "疯狂购商城"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "test_order_process"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestOrderProcess"
+  }, {
+    "name" : "host",
+    "value" : "H-Lee"
+  }, {
+    "name" : "thread",
+    "value" : "26252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.test_order_process"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c01b6167880a8450.json",
+  "parameterValues" : [ ]
+}

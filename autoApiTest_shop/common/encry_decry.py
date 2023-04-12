@@ -10,7 +10,7 @@
 
 import hashlib
 
-def md5(data: str):
+def md5(data):
     """
     ::file :需要加密的源文件
 

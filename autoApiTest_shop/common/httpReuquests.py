@@ -4,74 +4,10 @@
 # -*-coding=utf-8-*-
 # =============================================================
 import json
-import os
-from urllib.parse import urljoin
-
 import jsonpath
 import requests
+from common.my_logger import logger
 
-from common.logger import logger
-
-
-class HttpRequest(object):
-    """
-    :类作用： 直接发请求，不记录cookies信息
-    :params : 适用于get方法
-    :data: 表单形式，一般用于post方法
-    :json: json格式，用于post方法
-
-    url路径拼接 -->
-        Ⅰ举例 url = urljoin(base_url, '/web/userLoginDetail/login')
-        Ⅱ举例 url = os.path.join(base_url, '/web/userLoginDetail/login')
-
-    """
-
-    @staticmethod
-    def request(method, url, **kwargs):
-        """
-        ::kwargs return a dict.
-        """
-        # 统一将请求方法转化为小写字母
-        method = method.lower()
-        # 判断请求方法
-        if method == 'post':
-            if not kwargs.get("params"):
-                kwargs["params"] = None
-            if kwargs.get("data") is None:
-                kwargs["data"] = None
-            if kwargs.get("json") is None:
-                kwargs["json"] = None
-            if kwargs.get("cookies") is None:
-                kwargs["cookies"] = None
-            if kwargs.get("headers") is None:
-                kwargs["headers"] = None
-            if kwargs.get("files") is None:
-                kwargs["files"] = None
-            # if kwargs["params"]:
-            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            # if kwargs["data"]:
-            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
-            # if kwargs["json"]:
-            #     logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["json"]}')
-            return requests.post(url, **kwargs)
-        if method == 'get':
-            if not kwargs.get("params"):
-                kwargs["params"] = None
-            if kwargs.get("data") is None:
-                kwargs["data"] = None
-            if kwargs.get("json") is None:
-                kwargs["json"] = None
-            if kwargs.get("cookies") is None:
-                kwargs["cookies"] = None
-            if kwargs.get("headers") is None:
-                kwargs["headers"] = None
-            if kwargs.get("files") is None:
-                kwargs["files"] = None
-            # if kwargs["params"]:
-            #     HttpRequest.logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["params"]}')
-            # if kwargs["data"]:
-            #     HttpRequest.logger.info(f'正在发送请求...\n请求方法: {method},请求参数: {kwargs["data"]}')
-            # return requests.get(url, **kwargs)
 
 class HttpRequestCookies:
     """
@@ -123,26 +59,16 @@ class HttpRequestCookies:
         if not kwargs.get("files"):
             kwargs["files"] = self.files
 
-        # if kwargs["params"]:
-        #     # 谁调用该类谁做主，比如BuyerLoginApi继承并调用该类的方法，那么就取最终调用者所在文件的相对位置
-        #     # print(f"当前执行文件所在目录的上上层目录下的logs：{os.path.abspath(os.path.dirname(__file__) + '../../logs/shopLog.log')}")
-        #     # print(f"当前执行文件所在目录的上层目录的上层目录：{os.path.abspath('../../')}")
-        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["params"]}')
-        # if kwargs["data"]:
-        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["data"]}')
-        # if kwargs["json"]:
-        #     self.logger.info(f'正在发送请求...\n请求方法: {self.method},请求参数: {kwargs["json"]}')
+        # 请求入参日志收集
+        for k, v in kwargs.items():  # 遍历字典收集请求参数所有key和value
+            if kwargs[k]:  # 仅打印不为空的参数
+                self.logger.info(f"{self.desc}接口请求入参中的{k}是: {v} ")
 
-        # 收集日志  遍历字典收集左右key和value
-        # for k, v in kwargs.items():
-        #     if kwargs[k]:  # 仅打印不为空的参数
-        #         self.logger.info(f"{self.desc}接口请求中{k}是: {v} ")
-
-        # 获取响应数据   -->  响应状态码和响应文本
+        # 响应数据日志收集 --> 响应状态码和响应文本
         try:
             self.res = self.session.request(**kwargs)  # **kwargs中关键字个数跟调用方有关
             self.logger.info(f"\t{self.desc}接口的响应状态码: {self.res.status_code}")
-            # self.logger.info(f"接口的响应文本: {self.res.text}")
+            self.logger.info(f"\t{self.desc}接口的响应文本: {self.res.text}")
         except Exception as e:
             self.logger.exception("接口发送错误!")
             raise e
@@ -160,9 +86,11 @@ class HttpRequestCookies:
                 res_dict = json.loads(text)  # 转换成python对象dict
                 if index < 0:  # 提取全部
                     result = jsonpath.jsonpath(res_dict, express)
+                    self.logger.info(f'通过{express}从{text}中提取结果{result}')
                     return result
                 else:
                     result = jsonpath.jsonpath(res_dict, express)[index]
+                    self.logger.info(f'通过{express}从{text}中提取结果{result}')
                     return result
             except Exception as e:
                 self.logger.exception(f"通过jsonpath'{express}'从{text}提取时抛出异常……")
@@ -173,4 +101,66 @@ class HttpRequestCookies:
         self.session.close()
 
 
+class HttpRequest(object):
+    """
+    :类作用： 直接发请求，不记录cookies信息
+    :params : 适用于get方法
+    :data: 表单形式，一般用于post方法
+    :json: json格式，用于post方法
+
+    url路径拼接 -->
+        Ⅰ举例 url = urljoin(base_url, '/web/userLoginDetail/login')
+        Ⅱ举例 url = os.path.join(base_url, '/web/userLoginDetail/login')
+
+    """
+    def __init__(self):
+        self.logger = logger
+        self.method = None
+        self.url = None
+        self.params = None
+        self.data = None
+        self.json = None
+        self.cookies = None
+        self.headers = None
+        self.files = None
+        self.res = None
+        self.desc = None
+
+    def request(self, **kwargs):
+        """
+        将调用者init初始化的属性值赋值于kwargs
+
+        ::kwargs kwargs is a dict.
+        """
+
+        if not kwargs.get("method"):  # kwargs为{},kwargs.get("method")返回None; 此处若用kwargs["method"]会报错KeyError
+            kwargs["method"] = self.method  # 调用方会重新赋值method(self实例本身，谁调用就是谁)
+        if not kwargs.get("url"):
+            kwargs["url"] = self.url
+        if not kwargs.get("params"):
+            kwargs["params"] = self.params
+        if not kwargs.get("data"):
+            kwargs["data"] = self.data
+        if not kwargs.get("json"):
+            kwargs["json"] = self.json
+        if not kwargs.get("cookies"):
+            kwargs["cookies"] = self.cookies
+        if not kwargs.get("headers"):
+            kwargs["headers"] = self.headers
+        if not kwargs.get("files"):
+            kwargs["files"] = self.files
+            # 收集日志  遍历字典收集所有key和value
+        for k, v in kwargs.items():
+            if kwargs[k]:  # 仅打印不为空的参数
+                self.logger.info(f"{self.desc}接口请求中{k}是: {v} ")
+
+    # 获取响应数据   -->  响应状态码和响应文本
+        try:
+            self.res = requests.request(**kwargs)  # **kwargs中 关键字的个数 跟调用方有关
+            self.logger.info(f"\t{self.desc}接口的响应状态码: {self.res.status_code}")
+            self.logger.info(f"接口的响应文本: {self.res.text}")
+        except Exception as e:
+            self.logger.exception("接口发送错误!")
+            raise e
+        return self.res
 

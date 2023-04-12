@@ -16,3 +16,14 @@ def singleton(cls):  # Decorator 装饰器
         return _instance[cls]
 
     return _singleton
+
+
+""""""
+class Singleton(object):
+    _instance = None
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = object.__new__(cls)
+        return cls._instance
+

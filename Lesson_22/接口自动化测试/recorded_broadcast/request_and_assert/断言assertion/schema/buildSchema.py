@@ -13,11 +13,12 @@ def buildSchema(obj):
     通过requests库获得的响应一般为python对象(如 dict、list)； 文件流(输入流write、输出流read)需要open，达到可读写状态。
 
     1、每次运行的时候自动保存当前的schema，下次运行对比上次的schema如果发现变更就报错（运用json库中的dump方法，创建json格式的schema文件）
-    2、可以将接口响应值保存为schema
+    2、可以将接口预期响应值保存为schema
         :: 例如 响应值为 {"a": 1, "b": "aaa", "c": "", "d": None}
     3、 （1） open("./demo_schema.json", "w", encoding="utf-8")   这样是可写流文佳
         （2） "./demo_schema.json"  这样写是相对路径
     """
+
     builder = SchemaBuilder()
     builder.add_object(obj)
     # pprint(type(builder.to_schema()))
@@ -40,7 +41,7 @@ def buildSchemaMulti(obj, fp="./demo_schema.json"):  #
     # pprint(type(build.to_schema()))
     # pprint(build.to_schema())
 
-    # 先转换为schema，然后将python对象(schema)转换成json文件流(fp = "./demo_schema.json")
+    # 保存文件： 先转换为schema，然后将python对象(schema)转换成json文件流(fp = "./demo_schema.json")
     json.dump(build.to_schema(), open(fp, "w", encoding="utf-8"))
 
     # print("====================================================\n")
@@ -53,5 +54,7 @@ def buildSchemaMulti(obj, fp="./demo_schema.json"):  #
 
 if __name__ == '__main__':
     obj = {"a": 1, "b": "aaa", "c": "", "d": None}
+    obj1 = ({"a": 1, "b": "aaa", "c": "", "d": "test"}, {"a": 1, "b": "aaa", "c": "", "d": None})
     print(type(obj))
-    buildSchema(obj)
+    # buildSchema(obj)
+    buildSchemaMulti(obj1)

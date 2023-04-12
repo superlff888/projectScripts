@@ -4,7 +4,6 @@
 # =============================================================
 import allure
 import pytest
-
 from api.seller.add_goods import AddGoodsApi
 
 

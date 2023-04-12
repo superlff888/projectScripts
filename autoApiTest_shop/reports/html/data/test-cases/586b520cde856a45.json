@@ -1,0 +1,126 @@
+{
+  "uid" : "586b520cde856a45",
+  "name" : "num为负数",
+  "fullName" : "testcases.test_buy_now.TestBuyNow#test_buy_now_code",
+  "historyId" : "62cf7455fc980f96d181a9d05f14257e",
+  "time" : {
+    "start" : 1677216562864,
+    "stop" : 1677216562952,
+    "duration" : 88
+  },
+  "description" : "BuyNowApi子类从BaseBuyerApi父类构造方法中间接继承了实例属性uid  super().__init__()",
+  "descriptionHtml" : "<p>BuyNowApi子类从BaseBuyerApi父类构造方法中间接继承了实例属性uid  super().<strong>init</strong>()</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "Initialize_a_new_Redis_client",
+    "time" : {
+      "start" : 1677216562860,
+      "stop" : 1677216562863,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1677216561258,
+      "stop" : 1677216561974,
+      "duration" : 716
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "BuyNowApi子类从BaseBuyerApi父类构造方法中间接继承了实例属性uid  super().__init__()",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e2d6e2ee554388f9",
+      "name" : "log",
+      "source" : "e2d6e2ee554388f9.txt",
+      "type" : "text/plain",
+      "size" : 1109
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "买家立即购买接口"
+  }, {
+    "name" : "feature",
+    "value" : "买家接口"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('get_token')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "test_buy_now"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestBuyNow"
+  }, {
+    "name" : "host",
+    "value" : "H-Lee"
+  }, {
+    "name" : "thread",
+    "value" : "26252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.test_buy_now"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case_name",
+    "value" : "'num为负数'"
+  }, {
+    "name" : "except_code",
+    "value" : "400"
+  }, {
+    "name" : "num",
+    "value" : "-1"
+  }, {
+    "name" : "sku_id",
+    "value" : "600"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.usefixtures('get_token')" ]
+  },
+  "source" : "586b520cde856a45.json",
+  "parameterValues" : [ "'num为负数'", "400", "-1", "600" ]
+}

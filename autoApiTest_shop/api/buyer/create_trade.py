@@ -5,7 +5,7 @@
 from api.buyer.base_buyer import BaseBuyerApi
 from api.buyer.buy_now import BuyNowApi
 from api.buyer.buyer_login import BuyerLoginApi
-from common.file_load import conf_parser_obj
+from common.file_load import get_yml
 
 
 class BuyerTradeApi(BaseBuyerApi):
@@ -16,22 +16,24 @@ class BuyerTradeApi(BaseBuyerApi):
     # 创建交易
     def __init__(self):  # path, method, params
         # 通过ini配置文件处理本接口的入参
-        self.path = conf_parser_obj.configParser(["buyer_trade", "path_buyer_trade"])
+        self.path = get_yml('/conf/common.yml').get("path_buyer_trade")
         super().__init__()  # 继承后，init构造方法中必须调用父类构造方法; 间接继承父类实例属性需通过该表达式
         self.desc = '创建交易'  # 便于日志信息描述
         self.url = f"{self.host}" + f"{self.path}"
-        self.method = conf_parser_obj.configParser(["buyer_trade", "method_buyer_trade"])
+        self.method = get_yml('/conf/common.yml').get("method_buyer_trade")
         self.data = {'client': 'PC', 'way': 'BUY_NOW'}
 
 
 if __name__ == '__main__':
     bl = BuyerLoginApi()
+    print(bl.url)
     res = bl.request()
     token = res.json()["access_token"]
     uid = res.json()["uid"]
     BaseBuyerApi.buyer_token = token
     BaseBuyerApi.buyer_uid = uid
     buy_now_api = BuyNowApi()  # sku_id=600, num=1
+    print(buy_now_api.url)
     buy_now_api.request()
     res = BuyerTradeApi().request()
     print(res.json())

@@ -1,0 +1,83 @@
+{
+  "uid" : "1c5a336aa4bd6061",
+  "name" : "test_demo2",
+  "fullName" : "testcases.test_buy_now.TestBuyNow#test_demo2",
+  "historyId" : "e6e093db276476ebfb2a1b0e4ad9b1dd",
+  "time" : {
+    "start" : 1677216563293,
+    "stop" : 1677216563293,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1677216561258,
+      "stop" : 1677216561974,
+      "duration" : 716
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "story",
+    "value" : "功能点"
+  }, {
+    "name" : "feature",
+    "value" : "买家接口"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('get_token')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "test_buy_now"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestBuyNow"
+  }, {
+    "name" : "host",
+    "value" : "H-Lee"
+  }, {
+    "name" : "thread",
+    "value" : "26252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.test_buy_now"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.usefixtures('get_token')" ]
+  },
+  "source" : "1c5a336aa4bd6061.json",
+  "parameterValues" : [ ]
+}

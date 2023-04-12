@@ -1,19 +1,41 @@
 {
-  "total" : 2,
+  "total" : 4,
   "items" : [ {
     "uid" : "71c424629e288e3f6097b6d26c6d3844",
     "name" : "买家接口",
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 3,
+      "passed" : 4,
       "unknown" : 0,
       "total" : 4
     }
   }, {
     "uid" : "fc346a6df73c7cdfd75e26e2d604cfe6",
     "name" : "卖家接口",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "f672580bb359ff6d80021ca6c9445a3d",
+    "name" : "管理员接口",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "96d153de684704960e9505f01c23143d",
+    "name" : "疯狂购商城",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,

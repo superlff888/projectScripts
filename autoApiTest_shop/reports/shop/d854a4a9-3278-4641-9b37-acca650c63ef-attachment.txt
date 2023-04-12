@@ -1,0 +1,5 @@
+INFO     apiAutoTest:httpReuquests.py:65 买家确认收货接口请求入参中的method是: post 
+INFO     apiAutoTest:httpReuquests.py:65 买家确认收货接口请求入参中的url是: http://www.mtxshop.com:7002/trade/orders/20230224000329/rog 
+INFO     apiAutoTest:httpReuquests.py:65 买家确认收货接口请求入参中的headers是: {'Authorization': 'eyJhbGciOiJIUzUxMiJ9.eyJzZWxmT3BlcmF0ZWQiOjAsInN1YiI6IkNMRVJLIiwicm9sZSI6IlNVUEVSX1NFTExFUiIsImZvdW5kZXIiOm51bGwsInJvbGVzIjpbIkJVWUVSIiwiU0VMTEVSIiwiQ0xFUksiXSwic2VsbGVyTmFtZSI6IuadjuWwj-WFteeahOW6lyIsImNsZXJrSWQiOjYwNCwidXVpZCI6bnVsbCwidWlkIjo2MTI5Mywic2VsbGVySWQiOjcyMSwiY2xlcmtOYW1lIjoibGVlc2VsbGVyIiwiZXhwIjoxNjc3MjE3NzYxLCJ1c2VybmFtZSI6ImxlZXNlbGxlciJ9.sxSrN6eviQtaFxQM4Bf9BQUOMyXbLLLpdbWng-sT2QlaZP74S7EU2ALArPOYYJATuxh_0ZGC9MAlUP6lt_crog'} 
+INFO     apiAutoTest:httpReuquests.py:70 	买家确认收货接口的响应状态码: 200
+INFO     apiAutoTest:httpReuquests.py:71 	买家确认收货接口的响应文本:

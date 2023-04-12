@@ -58,7 +58,9 @@ class ConfigParser:
             return value
 
 
+conf = ConfigParser()
+
 if __name__ == '__main__':
-    con = ConfigParser()
-    res = con.get_config('config.ini', 'mysqld', 'port')
+
+    res = conf.get_config('config.ini', 'mysqld', 'port')
     print(res)

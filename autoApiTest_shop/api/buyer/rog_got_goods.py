@@ -12,3 +12,4 @@ class RogApi(BaseBuyerApi):
         super().__init__()
         self.url = f"{self.host}/trade/orders/{order_sn}/rog"
         self.method = 'post'
+        self.desc = '买家确认收货'

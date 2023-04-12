@@ -1,0 +1,96 @@
+{
+  "uid" : "f3872337bc31c2f2",
+  "name" : "商品审核",
+  "fullName" : "testcases.test_audit_goods.TestAuditGoods#test_audit",
+  "historyId" : "68a85a8acf091d8d503ecda0b0e7b94b",
+  "time" : {
+    "start" : 1677216562346,
+    "stop" : 1677216562557,
+    "duration" : 211
+  },
+  "description" : "\n        提取token统一放在fixture\n\n        业务分析：商品审核需要商品id --> 商品的id通过卖家的发布商品接口获取\n\n        ",
+  "descriptionHtml" : "<pre><code>    提取token统一放在fixture\n\n    业务分析：商品审核需要商品id --&gt; 商品的id通过卖家的发布商品接口获取\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1677216561258,
+      "stop" : 1677216561974,
+      "duration" : 716
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        提取token统一放在fixture\n\n        业务分析：商品审核需要商品id --> 商品的id通过卖家的发布商品接口获取\n\n        ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6a3953b53ef4d09b",
+      "name" : "log",
+      "source" : "6a3953b53ef4d09b.txt",
+      "type" : "text/plain",
+      "size" : 5012
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "商品审核"
+  }, {
+    "name" : "feature",
+    "value" : "管理员接口"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcases"
+  }, {
+    "name" : "suite",
+    "value" : "test_audit_goods"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestAuditGoods"
+  }, {
+    "name" : "host",
+    "value" : "H-Lee"
+  }, {
+    "name" : "thread",
+    "value" : "26252-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcases.test_audit_goods"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f3872337bc31c2f2.json",
+  "parameterValues" : [ ]
+}

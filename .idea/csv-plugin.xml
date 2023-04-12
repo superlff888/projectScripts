@@ -17,6 +17,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\MStudent\TestFun_jiguang\__locust\参数化数据不重复使用\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\MStudent\TestFun_jiguang\__locust\参数化重复数据\result_stats_history.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\MStudent\TestFun_jiguang\__locust\集合点\data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\MStudent\autoTest_banXia\apiAutoTest\autoTest_api框架\data\mtxshop_data.csv">
           <value>
             <Attribute>
@@ -46,6 +67,20 @@
           </value>
         </entry>
         <entry key="\MStudent\阶段一：python高级编程\文件处理\files\userTest_demo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\autoApiTest_shop\data\shop_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\autoApiTest_shop\reports\html\data\suites.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -28,3 +28,4 @@ class TestDemo:
         # print(str_emp)
         j = pystache.render(str_emp, **{"name": "lee", "title": "study hard"})  # 返回给定模板字符串，即template参数
         pprint(j)
+

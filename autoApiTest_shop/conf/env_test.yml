@@ -1,10 +1,28 @@
 common:
-  buyerName: mtx0327
-  buyerPassword: '1234567'
-  managerName: admin
-  managerPassword: abc111
-  sellerName: leeseller
-  sellerPassword: '123456'
+    buyerName: leeseller
+    buyerPassword: '123456'
+    method_buyer_login : post
+    path_buyer_login : /passport/login
+    uuid_buyer_login : 223f2010-a07a-11ed-8444-79c596dcd329
+    method_buy_now : post
+    path_buy_now : /trade/carts/buy
+    path_buyer_trade : /trade/create
+    method_buyer_trade : post
+
+    sellerName: leeseller
+    sellerPassword: '123456'
+
+    managerName: admin
+    managerPassword: abc111
+    path_audit : /admin/goods/batch/audit
+    method_audit : post
+    password_manager_login : 98afa509d7ac716e9a537688fe02f5cf
+    path_manager_login : /admin/systems/admin-users/login
+    method_manager_login : get
+    uuid_manager_login : af8a52e0-a2e2-11ed-80b8-df8d6b9ee35f
+
+    captcha: '1512'
+
 http:
   buyer: http://www.mtxshop.com:7002
   seller: http://www.mtxshop.com:7003
@@ -20,4 +38,4 @@ redis:
   mxtshop:
     host: 82.156.74.26
     password: mtx
-    port: 6379
+    port: '6379'

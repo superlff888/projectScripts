@@ -12,12 +12,12 @@ import requests
 
 string = "180vfdvuhkgb"
 
-a = base64.b64encode(string.encode())  # encode二进制字节码编码
-print(a)
-
-b = base64.b64decode(a).decode()  # decode解码成字符串
-
-print(b)
+# a = base64.b64encode(string.encode())  # encode二进制字节码编码
+# print(a)
+#
+# b = base64.b64decode(a).decode()  # decode解码成字符串
+#
+# print(b)
 
 
 class Base64:
