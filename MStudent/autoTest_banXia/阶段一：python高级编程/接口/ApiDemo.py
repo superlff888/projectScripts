@@ -7,7 +7,7 @@ sample:
 """
 import sys
 import requests
-sys.path.append(r"D:\Develop\git_pub_repositories\projectScripts\MStudent\阶段一：python高级编程\接口\util.py")
+sys.path.append(r"/autoTest_banXia/阶段一：python高级编程/接口/util.py")
 from util import get_md5
 
 host = r'http://82.156.74.26:9088/'
@@ -171,7 +171,7 @@ host = r'http://82.156.74.26:9088/'
 def demoUpload():
     # 二进制
     url = host + "/pinter/file/api/upload"
-    path = r"D:\Develop\git_pub_repositories\projectScripts\MStudent\阶段一：python高级编程\接口\验证码1.png"
+    path = r"/autoTest_banXia/阶段一：python高级编程/接口/验证码1.png"
     file = {"file": open(path, "rb")}
     print(file)
     req = requests.post(url=url, files=file)

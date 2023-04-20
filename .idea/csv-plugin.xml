@@ -52,27 +52,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\MStudent\阶段一：python高级编程\接口\soap协议\phone.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\MStudent\阶段一：python高级编程\文件处理\files\userTest.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\MStudent\阶段一：python高级编程\文件处理\files\userTest_demo.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\autoApiTest_shop\data\shop_data.csv">
           <value>
             <Attribute>
